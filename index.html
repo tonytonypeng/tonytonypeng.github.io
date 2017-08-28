@@ -328,33 +328,40 @@
       
         
           
-            <p> python基础语法主要包括循环判断语句、文件操作、函数和面向对象的学习。相关代码可以查看我github中的<a href="https://github.com/tonytonypeng/Python_Basic_Grammar" target="_blank" rel="external">Python_Basic_Grammar</a>.</p>
+            <p> 基础语法主要包括循环判断语句、文件操作、函数和面向对象的学习。相关代码可以查看github中的[基础语法学习]<br> (<a href="https://github.com/tonytonypeng/Python_Basic_Grammar" target="_blank" rel="external">https://github.com/tonytonypeng/Python_Basic_Grammar</a>).</p>
 <h3 id="循环判断语句总结"><a href="#循环判断语句总结" class="headerlink" title="循环判断语句总结"></a>循环判断语句总结</h3><ul>
-<li>if往往用来对条件是否满足进行判断</li>
-<li><p>if有4中基本的使用方法：</p>
-<ul>
-<li><p>1.基本方法</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">if</span> 条件:</div><div class="line">     满足时做的事情</div></pre></td></tr></table></figure>
-</li>
-<li><p>2.满足与否执行不同的事情</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">if</span> 条件:</div><div class="line">     满足时做的事情</div><div class="line">  <span class="keyword">else</span>:</div><div class="line">     不满足时做的事情</div></pre></td></tr></table></figure>
-</li>
-<li><p>3.多个条件的判断</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">if</span> 条件:</div><div class="line">     满足时做的事情</div><div class="line">  <span class="keyword">elif</span> 条件2:</div><div class="line">     满足条件2时做的事情</div><div class="line">  <span class="keyword">elif</span> 条件3:</div><div class="line">     满足条件3时做的事情</div><div class="line">  <span class="keyword">else</span>:</div><div class="line">     条件都不满足时做的事情</div></pre></td></tr></table></figure>
-</li>
-<li><p>4.嵌套</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">if</span> 条件:</div><div class="line">    满足时做的事情</div><div class="line">    这里还可以放入其他任何形式的<span class="keyword">if</span>判断语句</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>while循环一般通过数值是否满足来确定循环的条件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ i = 0</div><div class="line"><span class="keyword">while</span> i&lt;10:</div><div class="line"><span class="built_in">print</span>(<span class="string">"hello"</span>)</div><div class="line">i+=1</div></pre></td></tr></table></figure>
-</li>
+<li>if往往用来对条件是否满足进行判断。</li>
+<li>while循环一般通过数值是否满足来确定循环的条件</li>
 <li><p>for循环一般是对能保存多个数据的变量，进行遍历</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ name = &apos;tony&apos;</div><div class="line">for x in name:</div><div class="line">print(x)</div></pre></td></tr></table></figure>
 </li>
-<li><p>if、while、for等其他语句可以随意组合，这样往往就完成了复杂的功能，<br>具体例子代码可以查看我github中的<a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/if%26while%26other" target="_blank" rel="external">循环判断语句</a></p>
+<li><p>具体例子代码可以查看我github中的<a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/if%26while%26other" target="_blank" rel="external">循环判断语句</a></p>
 </li>
+</ul>
+<h3 id="函数总结"><a href="#函数总结" class="headerlink" title="函数总结"></a>函数总结</h3><ul>
+<li><p>函数是由def+函数名(形参)+(文档说明，调用help查看)+代码构建而成，它的作用主要为了减少重复代码。</p>
+</li>
+<li><p>函数返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 所谓“返回值”，就是程序中函数完成一件事情后，最后给调用者的结果，使用return返回。</div><div class="line">  返回多个值可用元组，之后用divid分开。</div></pre></td></tr></table></figure>
+</li>
+<li><p>局部变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 不同函数可以定义相同名字局部变量，但不会产生影响。</div><div class="line">  局部变量的作用是为了临时保存数据。</div></pre></td></tr></table></figure>
+</li>
+<li><p>全局变量：可变类型和不可变类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ 在函数中修改全局变量使用global：</div><div class="line">   不可变类型如字符串，数字，元组，不使用global时无法修改全局变量。</div><div class="line">   可变类型如字典，列表，不使用global时也可修改全局变量。</div><div class="line">   全局变量和局部变量名字相同情况下使用的会是局部变量，小技巧 强龙不压地头蛇。</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数参数：形参和实参</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ 定义时小括号中的参数，用来接收参数用的，称为 “形参”。</div><div class="line">  调用时小括号中的参数，用来传递给函数用的，称为 “实参”。</div></pre></td></tr></table></figure>
+</li>
+<li><p>函数参数：缺省参数、不定长参数和引用传参</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ 缺省参数：带有默认值的形参，一般位于参数列表的最后：</div><div class="line">    def func(a,b=1)</div><div class="line">  不定长参数：*arg存放未命名参数；*kwarg存放命名参数：</div><div class="line">    def func(*arg,*kwarg)</div><div class="line">  引用传参：Python中函数参数是引用传递（注意不是值传递）。</div></pre></td></tr></table></figure>
+</li>
+<li><p>引用：在python中，值是靠引用来传递来的。我们可以用id()来判断两个变量是否为同一个值的引用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![Quotes](https://github.com/tonytonypeng/Python_Basic_Grammar/blob/master/Function/screen%20plots/Quotes.png)</div></pre></td></tr></table></figure>
+</li>
+<li><p>递归函数：自己调用自己，例如处理阶乘。</p>
+</li>
+<li>匿名函数：lambda [arg1 [,arg2,…..argn]]:expression</li>
 </ul>
 
           
