@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="tonytonypeng">
 <meta property="og:description" content="系统编程包括有进程和线程，相关代码可阅读github 1、进程fork os.fork()，子进程返回0，父进程返回子进程的ID。window下不支持fork。父子进程执行没有顺序。 getpid获取当前进程ID，getppid获取当前进程的父进程ID。 孤儿进程：就是父进程先结束，子进程会由1号进程进行回收。 僵尸进程：子进程先结束，而父进程一直不结束对子进程进行回收。 1pid(子进程id),">
 <meta property="og:locale" content="chinese & Englishi">
-<meta property="og:updated_time" content="2017-08-30T12:11:02.360Z">
+<meta property="og:updated_time" content="2017-08-30T12:12:06.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 系统编程学习">
 <meta name="twitter:description" content="系统编程包括有进程和线程，相关代码可阅读github 1、进程fork os.fork()，子进程返回0，父进程返回子进程的ID。window下不支持fork。父子进程执行没有顺序。 getpid获取当前进程ID，getppid获取当前进程的父进程ID。 孤儿进程：就是父进程先结束，子进程会由1号进程进行回收。 僵尸进程：子进程先结束，而父进程一直不结束对子进程进行回收。 1pid(子进程id),">
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -284,7 +284,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
                 2017-08-29
@@ -331,7 +331,9 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pid(子进程id),result(0表正常退出) = os.wait()，可以阻塞回收子进程</div></pre></td></tr></table></figure>
 </li>
 <li><p>每个进程之间的资源是独立的，不能修改，包括全局变量。</p>
-<h5 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h5></li>
+</li>
+</ul>
+<h5 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h5><ul>
 <li><p>multiprocessing(跨平台)模块提供了一个Process类来代表一个进程对象。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p = Process(target=xxx,args=(xxx,))</div></pre></td></tr></table></figure>
 </li>
@@ -471,10 +473,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
+            Übersicht
           </li>
         </ul>
       
@@ -495,7 +497,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -565,7 +567,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
