@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
                 2017-08-29
@@ -328,7 +328,7 @@
       
         
           
-            <p>系统编程包括有进程和线程，相关代码可阅读<a href="">github</a></p>
+            <p>系统编程包括有进程和线程，相关代码可阅读<a href="https://github.com/tonytonypeng/System-Programming" target="_blank" rel="external">github</a></p>
 <h4 id="1、进程"><a href="#1、进程" class="headerlink" title="1、进程"></a>1、进程</h4><h5 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h5><ul>
 <li>os.fork()，子进程返回0，父进程返回子进程的ID。window下不支持fork。父子进程执行没有顺序。</li>
 <li>getpid获取当前进程ID，getppid获取当前进程的父进程ID。</li>
@@ -366,8 +366,21 @@
 </li>
 <li><p>线程的run方法</p>
 </li>
-<li>共享全局资源：当多个进程同时调用全局资源时会造成混乱。</li>
+<li>共享全局资源：当多个线程同时调用全局资源时会造成混乱。</li>
 <li>同步：解决资源共享问题。就是按照约定，当一个线程执行的时候，另一个线程不执行。</li>
+<li><p>互斥锁：哪里修改全局资源就在哪里加锁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">加锁：lock.acpuire()</div><div class="line">解锁：lock.release()</div></pre></td></tr></table></figure>
+</li>
+<li><p>死锁：拥有各自锁的线程都想拿到对方的锁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">lock.acpuire(True):阻塞等待，会返回一个布尔值。</div><div class="line">lock.acpuire(False):非阻塞等待，也会返回一个布尔值。</div></pre></td></tr></table></figure>
+</li>
+<li><p>银行家算法：通过提前的计算(某种算法)的形式来分配资源。</p>
+</li>
+<li><p>生产者和消费者模式：由于生产能力和消费能力不一致，需要使用阻塞队列降低耦合。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">先进先出：FIFO</div><div class="line">后进先出：LIFO(栈)</div><div class="line">优先级队列：数据小的先出来。</div></pre></td></tr></table></figure>
+</li>
+<li><p>异步：一方发送数据，在没有得到另一方会回应前可以继续执行下去。</p>
+</li>
 </ul>
 
           
@@ -449,7 +462,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T14:14:45+08:00">
                 2017-08-29
@@ -615,7 +628,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T14:36:31+08:00">
                 2017-08-26
@@ -811,7 +824,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T14:36:31+08:00">
                 2017-08-26
@@ -932,7 +945,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -986,7 +999,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
