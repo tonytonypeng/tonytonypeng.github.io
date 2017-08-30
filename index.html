@@ -251,6 +251,167 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/python系统编程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiZhanPeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonytonypeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/08/29/python系统编程/" itemprop="url">
+                  python 系统编程学习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>系统编程包括有进程和线程，相关代码可阅读<a href="">github</a></p>
+<h4 id="1、进程"><a href="#1、进程" class="headerlink" title="1、进程"></a>1、进程</h4><h5 id="fork"><a href="#fork" class="headerlink" title="fork"></a>fork</h5><ul>
+<li>os.fork()，子进程返回0，父进程返回子进程的ID。window下不支持fork。父子进程执行没有顺序。</li>
+<li>getpid获取当前进程ID，getppid获取当前进程的父进程ID。</li>
+<li>孤儿进程：就是父进程先结束，子进程会由1号进程进行回收。</li>
+<li><p>僵尸进程：子进程先结束，而父进程一直不结束对子进程进行回收。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pid(子进程id),result(0表正常退出) = os.wait()，可以阻塞回收子进程</div></pre></td></tr></table></figure>
+</li>
+<li><p>每个进程之间的资源是独立的，不能修改，包括全局变量。</p>
+<h5 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h5></li>
+<li><p>multiprocessing(跨平台)模块提供了一个Process类来代表一个进程对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">p = Process(target=xxx,args=(xxx,))</div></pre></td></tr></table></figure>
+</li>
+<li><p>Process类常用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">is_alive()：判断进程实例是否还在执行；</div><div class="line">join([timeout])：阻塞等待(时间)</div><div class="line">start()：启动</div><div class="line">run()：如果没有给定target参数，对这个对象调用start()方法时，就将执行对象中的run()方法；</div><div class="line">terminate()：杀死所有子进程。</div></pre></td></tr></table></figure>
+</li>
+<li><p>Process类常用属性：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">name：当前进程实例别名，默认为Process-N，N为从1开始递增的整数；</div><div class="line">pid：当前进程实例的PID值；</div></pre></td></tr></table></figure>
+</li>
+<li><p>回收子进程：<a href="">多进程且死循环</a></p>
+<h5 id="Pool"><a href="#Pool" class="headerlink" title="Pool"></a>Pool</h5></li>
+<li>进程池：p = Pool()<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apply_async(func=, args=) ：非阻塞方式；apply：阻塞方式</div><div class="line">close()：关闭Pool，使其不再接受新的任务；</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h5><ul>
+<li><p>进程间通信：q = Queue()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Queue.qsize()：返回当前队列包含的消息数量；</div><div class="line">Queue.put()：消息写入队列；Queue.put_nowait(item)：非阻塞；</div><div class="line">Queue.get()：获取队列消息；Queue.get_nowait()：非阻塞；</div><div class="line">Queue.empty()：如果队列为空，返回True，反之False；</div><div class="line">Queue.full()：如果队列满了，返回True,反之False。</div></pre></td></tr></table></figure>
+</li>
+<li><p>进程池间通信</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">q = Manager().Queue() #使用Manager中的Queue来初始化</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2、线程"><a href="#2、线程" class="headerlink" title="2、线程"></a>2、线程</h4><ul>
+<li><p>t = threading.Thread(target=xxx，args=(xxx))</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">main_thread:主线程；current_thread:当前线程。</div><div class="line">enumerate：可以获取所有线程(包括主线程)。</div><div class="line">除了没有terminate，其余跟process一样。</div><div class="line">主线程结束后会等待子线程结束。</div></pre></td></tr></table></figure>
+</li>
+<li><p>线程的run方法</p>
+</li>
+<li>共享全局资源：当多个进程同时调用全局资源时会造成混乱。</li>
+<li>同步：解决资源共享问题。就是按照约定，当一个线程执行的时候，另一个线程不执行。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/29/python高级语法学习总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -328,7 +489,7 @@
       
         
           
-            <p>高级语法包括有迭代器、生成器、面向对象进阶等，由于内容较多，这里不做长篇累述，相关代码可阅读我的<a href="">github</a></p>
+            <p>高级语法包括有迭代器、生成器、面向对象进阶等，由于内容较多，这里不做长篇累述，相关代码可阅读我的<a href="https://github.com/tonytonypeng/Advanced-Grammar" target="_blank" rel="external">github</a></p>
 <h4 id="1、高级语法"><a href="#1、高级语法" class="headerlink" title="1、高级语法"></a>1、高级语法</h4><ul>
 <li>迭代器：iter()返回一个迭代器，next()函数遍历可迭代对象。适合已存储数据的对象。</li>
 <li>生成器：列表生成器的中括号改为括号或包含yield关键字。适合动态生成数据的对象。</li>
@@ -517,18 +678,20 @@
 </ul>
 <h4 id="四、面向对象（封装、继承、多态）"><a href="#四、面向对象（封装、继承、多态）" class="headerlink" title="四、面向对象（封装、继承、多态）"></a>四、面向对象（封装、继承、多态）</h4><ul>
 <li>类和对象：类是创建对象的模板。类：类名(大驼峰)、属性、方法。</li>
-<li><strong>init</strong>初始化属性，<strong>str</strong>打印对象(return)，<strong>del</strong>删除对象。</li>
+<li>__init__初始化属性，__str__打印对象(return)，__del__删除对象。</li>
 <li>属性：实例属性和类属性。</li>
-<li><p>方法：一般方法：当重写了父类方法，如还需父类的功能，手动调用。还包括：类方法(@classmethod)和静态方法(classmethod)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">方式1：父类名.方法名(对象名，参数1，参数2，，，，，)；Animal.__init__(self)</div><div class="line">方式2：super.方法名(参数1，参数2，，，，)；super.__init__()；（在python3使用）</div><div class="line">方式3：super(子类名，对象名).方法名(参数1，，，，)；super(cat,self).__init__(new_age)</div></pre></td></tr></table></figure>
+<li><p>方法：一般方法：当重写了父类方法，如还需父类的功能，手动调用。还包括：类方法(\@classmethod)和静态方法(classmethod)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">方式1：父类名.方法名(对象名，参数1，参数2，，，，，)；Animal.\_\_init\_\_(self)</div><div class="line">方式2：super.方法名(参数1，参数2，，，，)；super.\_\_init\_\_()；（在python3使用）</div><div class="line">方式3：super(子类名，对象名).方法名(参数1，，，，)；super(cat,self).\_\_init\_\_(new_age)</div></pre></td></tr></table></figure>
 </li>
 <li><p>继承：单继承和多继承。私有属性不会继承。</p>
 </li>
 <li>多态：让父类变量能引用子类对象。</li>
-<li>几种设计模式：单例模式和工厂模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">单例模式：一个类只生成一个对象，可通过__new__方法实现。</div><div class="line">工厂模式：简单工厂模式：解耦；工厂方法模式：让类的实例化推迟到子类。</div></pre></td></tr></table></figure>
+<li>几种设计模式：单例模式和工厂模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">单例模式：一个类只生成一个对象，可通过\_\_new\_\_方法实现。</div><div class="line">工厂模式：简单工厂模式：解耦；工厂方法模式：让类的实例化推迟到子类。</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="简单的面向对象应用"><a href="#简单的面向对象应用" class="headerlink" title="简单的面向对象应用"></a>简单的面向对象应用</h5><p>*<a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/Object-oriented/airplane_attack" target="_blank" rel="external">飞机大战</a><br><img src="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.png" alt="飞机"></p>
+<h5 id="简单的面向对象应用"><a href="#简单的面向对象应用" class="headerlink" title="简单的面向对象应用"></a>简单的面向对象应用</h5><ul>
+<li><a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/Object-oriented/airplane_attack" target="_blank" rel="external">飞机大战</a><br><img src="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.png" alt="飞机"></li>
+</ul>
 <h4 id="五、异常"><a href="#五、异常" class="headerlink" title="五、异常"></a>五、异常</h4><ul>
 <li><p>1、try–&gt;except–&gt;else:没有异常时执行–&gt;finally：有无异常都会执行。</p>
 <ul>
@@ -556,9 +719,9 @@
 </ul>
 <h4 id="六、模块"><a href="#六、模块" class="headerlink" title="六、模块"></a>六、模块</h4><ul>
 <li><p>一个单独的py文件为一个模块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import 模块名 + (as 别名)</div><div class="line">from 模块名 import 功能 + (as 别名)</div><div class="line">from 模块名 import * ；配合__all__:指定哪些模块不能被调用，指定名字也可强制导入。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import 模块名 + (as 别名)</div><div class="line">from 模块名 import 功能 + (as 别名)</div><div class="line">from 模块名 import * ；配合\_\_all\_\_:指定哪些模块不能被调用，指定名字也可强制导入。</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>name</strong>:值为<strong>_main</strong>时本地测试用；值为模块名时被导入可用。</p>
+<li><p>__name__:值为__main__时本地测试用；值为模块名时被导入可用。</p>
 </li>
 </ul>
 <h4 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h4><ul>
@@ -768,7 +931,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>

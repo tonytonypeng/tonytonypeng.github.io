@@ -97,7 +97,7 @@
 <meta property="og:image" content="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/Quotes.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E7%BB%88%E7%AB%AF%E4%BC%A0%E5%8F%82.png">
-<meta property="og:updated_time" content="2017-08-29T04:54:03.771Z">
+<meta property="og:updated_time" content="2017-08-29T14:33:42.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 基础语法学习">
 <meta name="twitter:description" content="基础语法主要包括循环判断语句、文件操作、函数和面向对象的学习。github的基础语法学习代码. 一、循环判断语句总结 if往往用来对条件是否满足进行判断。 while循环一般通过数值是否满足来确定循环的条件 for循环一般是对能保存多个数据的变量，进行遍历  二、函数总结 函数是由def+函数名(形参)+(文档说明，调用help查看)+代码构建而成，它的作用主要为了减少重复代码。 123参数：形">
@@ -349,18 +349,20 @@
 </ul>
 <h4 id="四、面向对象（封装、继承、多态）"><a href="#四、面向对象（封装、继承、多态）" class="headerlink" title="四、面向对象（封装、继承、多态）"></a>四、面向对象（封装、继承、多态）</h4><ul>
 <li>类和对象：类是创建对象的模板。类：类名(大驼峰)、属性、方法。</li>
-<li><strong>init</strong>初始化属性，<strong>str</strong>打印对象(return)，<strong>del</strong>删除对象。</li>
+<li>__init__初始化属性，__str__打印对象(return)，__del__删除对象。</li>
 <li>属性：实例属性和类属性。</li>
-<li><p>方法：一般方法：当重写了父类方法，如还需父类的功能，手动调用。还包括：类方法(@classmethod)和静态方法(classmethod)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">方式1：父类名.方法名(对象名，参数1，参数2，，，，，)；Animal.__init__(self)</div><div class="line">方式2：super.方法名(参数1，参数2，，，，)；super.__init__()；（在python3使用）</div><div class="line">方式3：super(子类名，对象名).方法名(参数1，，，，)；super(cat,self).__init__(new_age)</div></pre></td></tr></table></figure>
+<li><p>方法：一般方法：当重写了父类方法，如还需父类的功能，手动调用。还包括：类方法(\@classmethod)和静态方法(classmethod)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">方式1：父类名.方法名(对象名，参数1，参数2，，，，，)；Animal.\_\_init\_\_(self)</div><div class="line">方式2：super.方法名(参数1，参数2，，，，)；super.\_\_init\_\_()；（在python3使用）</div><div class="line">方式3：super(子类名，对象名).方法名(参数1，，，，)；super(cat,self).\_\_init\_\_(new_age)</div></pre></td></tr></table></figure>
 </li>
 <li><p>继承：单继承和多继承。私有属性不会继承。</p>
 </li>
 <li>多态：让父类变量能引用子类对象。</li>
-<li>几种设计模式：单例模式和工厂模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">单例模式：一个类只生成一个对象，可通过__new__方法实现。</div><div class="line">工厂模式：简单工厂模式：解耦；工厂方法模式：让类的实例化推迟到子类。</div></pre></td></tr></table></figure>
+<li>几种设计模式：单例模式和工厂模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">单例模式：一个类只生成一个对象，可通过\_\_new\_\_方法实现。</div><div class="line">工厂模式：简单工厂模式：解耦；工厂方法模式：让类的实例化推迟到子类。</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="简单的面向对象应用"><a href="#简单的面向对象应用" class="headerlink" title="简单的面向对象应用"></a>简单的面向对象应用</h5><p>*<a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/Object-oriented/airplane_attack" target="_blank" rel="external">飞机大战</a><br><img src="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.png" alt="飞机"></p>
+<h5 id="简单的面向对象应用"><a href="#简单的面向对象应用" class="headerlink" title="简单的面向对象应用"></a>简单的面向对象应用</h5><ul>
+<li><a href="https://github.com/tonytonypeng/Python_Basic_Grammar/tree/master/Object-oriented/airplane_attack" target="_blank" rel="external">飞机大战</a><br><img src="https://github.com/tonytonypeng/Python_Basic_Grammar/raw/master/screen%20plots/%E9%A3%9E%E6%9C%BA%E5%A4%A7%E6%88%98.png" alt="飞机"></li>
+</ul>
 <h4 id="五、异常"><a href="#五、异常" class="headerlink" title="五、异常"></a>五、异常</h4><ul>
 <li><p>1、try–&gt;except–&gt;else:没有异常时执行–&gt;finally：有无异常都会执行。</p>
 <ul>
@@ -388,9 +390,9 @@
 </ul>
 <h4 id="六、模块"><a href="#六、模块" class="headerlink" title="六、模块"></a>六、模块</h4><ul>
 <li><p>一个单独的py文件为一个模块。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import 模块名 + (as 别名)</div><div class="line">from 模块名 import 功能 + (as 别名)</div><div class="line">from 模块名 import * ；配合__all__:指定哪些模块不能被调用，指定名字也可强制导入。</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">import 模块名 + (as 别名)</div><div class="line">from 模块名 import 功能 + (as 别名)</div><div class="line">from 模块名 import * ；配合\_\_all\_\_:指定哪些模块不能被调用，指定名字也可强制导入。</div></pre></td></tr></table></figure>
 </li>
-<li><p><strong>name</strong>:值为<strong>_main</strong>时本地测试用；值为模块名时被导入可用。</p>
+<li><p>__name__:值为__main__时本地测试用；值为模块名时被导入可用。</p>
 </li>
 </ul>
 <h4 id="七、其他"><a href="#七、其他" class="headerlink" title="七、其他"></a>七、其他</h4><ul>
@@ -520,7 +522,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
