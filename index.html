@@ -739,7 +739,12 @@
 <li>__slots__：可以设置给实例添加的属性范围</li>
 <li>私有化：_xx(私有);__xx(与子类区分);__xx__(魔法方法);x_(与python关键字区分)</li>
 <li>属性property：一类装饰器，通过私有属性方法进行装饰，外部可以进行访问和赋值。</li>
-<li>元类:万物皆对象。元类就是类的类，type。</li>
+</ul>
+<h5 id="元类"><a href="#元类" class="headerlink" title="元类"></a>元类</h5><ul>
+<li>type：万物皆对象。元类就是类的类。动态创建类。</li>
+<li>type(参数1)：查看参数1的类型</li>
+<li>type(参数1，参数2，参数3)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">参数1：要创建的类名</div><div class="line">参数2：由父类名称组成的元组</div><div class="line">参数3：包含属性和方法的字典</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="4、垃圾回收"><a href="#4、垃圾回收" class="headerlink" title="4、垃圾回收"></a>4、垃圾回收</h4><ul>
 <li>手动回收：gc.collect()</li>

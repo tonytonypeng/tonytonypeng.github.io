@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="tonytonypeng">
 <meta property="og:description" content="高级语法包括有迭代器、生成器、面向对象进阶等，由于内容较多，这里不做长篇累述，相关代码可阅读我的github 1、高级语法 迭代器：iter()返回一个迭代器，next()函数遍历可迭代对象。适合已存储数据的对象。 生成器：列表生成器的中括号改为括号或包含yield关键字。适合动态生成数据的对象。 闭包：闭包：内部函数和外部函数的数据。修改外部变量可用nolocal声明、装饰器 语法糖@+闭包函数">
 <meta property="og:locale" content="chinese & Englishi">
-<meta property="og:updated_time" content="2017-08-30T09:39:34.581Z">
+<meta property="og:updated_time" content="2017-08-31T03:33:32.960Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 高级语法学习总结">
 <meta name="twitter:description" content="高级语法包括有迭代器、生成器、面向对象进阶等，由于内容较多，这里不做长篇累述，相关代码可阅读我的github 1、高级语法 迭代器：iter()返回一个迭代器，next()函数遍历可迭代对象。适合已存储数据的对象。 生成器：列表生成器的中括号改为括号或包含yield关键字。适合动态生成数据的对象。 闭包：闭包：内部函数和外部函数的数据。修改外部变量可用nolocal声明、装饰器 语法糖@+闭包函数">
@@ -352,7 +352,12 @@
 <li>__slots__：可以设置给实例添加的属性范围</li>
 <li>私有化：_xx(私有);__xx(与子类区分);__xx__(魔法方法);x_(与python关键字区分)</li>
 <li>属性property：一类装饰器，通过私有属性方法进行装饰，外部可以进行访问和赋值。</li>
-<li>元类:万物皆对象。元类就是类的类，type。</li>
+</ul>
+<h5 id="元类"><a href="#元类" class="headerlink" title="元类"></a>元类</h5><ul>
+<li>type：万物皆对象。元类就是类的类。动态创建类。</li>
+<li>type(参数1)：查看参数1的类型</li>
+<li>type(参数1，参数2，参数3)<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">参数1：要创建的类名</div><div class="line">参数2：由父类名称组成的元组</div><div class="line">参数3：包含属性和方法的字典</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h4 id="4、垃圾回收"><a href="#4、垃圾回收" class="headerlink" title="4、垃圾回收"></a>4、垃圾回收</h4><ul>
 <li>手动回收：gc.collect()</li>
@@ -527,7 +532,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、高级语法"><span class="nav-number">1.</span> <span class="nav-text">1、高级语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#装饰器"><span class="nav-number">1.1.</span> <span class="nav-text">装饰器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、细节"><span class="nav-number">2.</span> <span class="nav-text">2、细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、面向对象进阶"><span class="nav-number">3.</span> <span class="nav-text">3、面向对象进阶</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、垃圾回收"><span class="nav-number">4.</span> <span class="nav-text">4、垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、其他"><span class="nav-number">5.</span> <span class="nav-text">5、其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、调试"><span class="nav-number">6.</span> <span class="nav-text">6、调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、编码风格"><span class="nav-number">7.</span> <span class="nav-text">7、编码风格</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、高级语法"><span class="nav-number">1.</span> <span class="nav-text">1、高级语法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#装饰器"><span class="nav-number">1.1.</span> <span class="nav-text">装饰器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、细节"><span class="nav-number">2.</span> <span class="nav-text">2、细节</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、面向对象进阶"><span class="nav-number">3.</span> <span class="nav-text">3、面向对象进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#元类"><span class="nav-number">3.1.</span> <span class="nav-text">元类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4、垃圾回收"><span class="nav-number">4.</span> <span class="nav-text">4、垃圾回收</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5、其他"><span class="nav-number">5.</span> <span class="nav-text">5、其他</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6、调试"><span class="nav-number">6.</span> <span class="nav-text">6、调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7、编码风格"><span class="nav-number">7.</span> <span class="nav-text">7、编码风格</span></a></li></ol></div>
             
 
           </div>
