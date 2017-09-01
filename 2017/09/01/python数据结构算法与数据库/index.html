@@ -1,0 +1,703 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="chinese & Englishi">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="本课程包括数据结构与算法，数据库。 1、数据结构与算法#####算法  程序 = 数据结构 + 算法 算法：计算机处理信息的本质 12345输入：具有0个或多个输入。输出：至少有1个或多个输出。有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。确定性：每一步都有确定的含义，不会出现二义性。可行性：每一步都是可行的，也就是能够执行有限的次数完成。  衡量算法效率：最坏时间复杂">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与数据库学习">
+<meta property="og:url" content="http://yoursite.com/2017/09/01/python数据结构算法与数据库/index.html">
+<meta property="og:site_name" content="tonytonypeng">
+<meta property="og:description" content="本课程包括数据结构与算法，数据库。 1、数据结构与算法#####算法  程序 = 数据结构 + 算法 算法：计算机处理信息的本质 12345输入：具有0个或多个输入。输出：至少有1个或多个输出。有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。确定性：每一步都有确定的含义，不会出现二义性。可行性：每一步都是可行的，也就是能够执行有限的次数完成。  衡量算法效率：最坏时间复杂">
+<meta property="og:locale" content="chinese & Englishi">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/list%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-log.png">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E9%A1%BA%E5%BA%8F%E8%A1%A8.png">
+<meta property="og:updated_time" content="2017-09-01T13:16:14.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据结构与数据库学习">
+<meta name="twitter:description" content="本课程包括数据结构与算法，数据库。 1、数据结构与算法#####算法  程序 = 数据结构 + 算法 算法：计算机处理信息的本质 12345输入：具有0个或多个输入。输出：至少有1个或多个输出。有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。确定性：每一步都有确定的含义，不会出现二义性。可行性：每一步都是可行的，也就是能够执行有限的次数完成。  衡量算法效率：最坏时间复杂">
+<meta name="twitter:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/list%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/python数据结构算法与数据库/"/>
+
+
+
+
+
+  <title> 数据结构与数据库学习 | tonytonypeng </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="chinese & Englishi">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">tonytonypeng</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">For Python learning</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/python数据结构算法与数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiZhanPeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonytonypeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                数据结构与数据库学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T08:42:23+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>本课程包括数据结构与算法，数据库。</p>
+<h4 id="1、数据结构与算法"><a href="#1、数据结构与算法" class="headerlink" title="1、数据结构与算法"></a>1、数据结构与算法</h4><p>#####算法</p>
+<ul>
+<li>程序 = 数据结构 + 算法</li>
+<li><p>算法：计算机处理信息的本质</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">输入：具有0个或多个输入。</div><div class="line">输出：至少有1个或多个输出。</div><div class="line">有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。</div><div class="line">确定性：每一步都有确定的含义，不会出现二义性。</div><div class="line">可行性：每一步都是可行的，也就是能够执行有限的次数完成。</div></pre></td></tr></table></figure>
+</li>
+<li><p>衡量算法效率：最坏时间复杂度O(n)</p>
+</li>
+<li>时间频度<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">T(n) = n**3 + 3n + 5</div><div class="line">计算机运行的时间：依赖计算机硬件环境</div><div class="line">客观分析算法的时间：基本步骤总数 * 基本步骤耗时(与硬件相关)</div><div class="line">函数：增长快效率低；增长慢效率高。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h6><ul>
+<li>时间复杂度<br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/list%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png" alt="内置操作"><br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-log.png" alt="对数"></li>
+<li>最坏时间复杂度：完成工作最多需要多少基本操作。</li>
+<li><p>时间复杂度计算规则</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">基本操作：只有常数项，为O(1)</div><div class="line">顺序结构: 按加法进行计算；</div><div class="line">循环结构：按乘法计算</div><div class="line">分支结构：取最大值</div><div class="line">判断算法效率，只关注最高阶项</div><div class="line">没有特殊说明时，时间复杂度都是指最坏时间复杂度</div></pre></td></tr></table></figure>
+</li>
+<li><p>常见时间复杂度：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">从小到大：O(1)&lt;O(logn)&lt;O(n)&lt;O(nlogn)&lt;O(n**2)&lt;O(n**3)&lt;O(2**n)&lt;O(n!)&lt;O(n**n)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="list操作性能测试"><a href="#list操作性能测试" class="headerlink" title="list操作性能测试"></a>list操作性能测试</h5><ul>
+<li>timeit模块：可以用来测试一小段Python代码的执行速度。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">timer = Timer(&apos;&apos;)</div><div class="line">Timer.timeit(number=1000000):默认执行100万次。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><ul>
+<li>数据结构：是计算机存储、组织数据的方式。数据结构是指相互之间存在一种或多种特定关系的数据元素的集合。数据结构会决定算法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">结构：表头(容量 + 元素个数) + 数据</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h6><ul>
+<li><p>数据地址：申请一大块连续的内存，依次存入数据，从而维护数据之间的顺序关系。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">内存基本存储单位：一个字节 = 8位bit</div><div class="line">内存地址：连续的内存地址，返回第一个基本存储单元的地址。</div><div class="line">一个int整数占用4个字节(2**32)。</div><div class="line">地址用16进制</div></pre></td></tr></table></figure>
+</li>
+<li><p>表头地址：在数据地址上再多个表头地址。</p>
+</li>
+<li><p>一体式结构：表头与数据申请连续地址。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">扩容：重新申请新地址，内存首地址会变。</div></pre></td></tr></table></figure>
+</li>
+<li><p>分离式结构：不连续，表头地址最后会存储数据地址。常用这种方式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">扩容：只需数据地址重新申请地址，表头地址不变。</div></pre></td></tr></table></figure>
+</li>
+<li><p>数据地址(元素外置)：通过存储数据地址来查找数据，存储不同的数据类型。</p>
+</li>
+<li>顺序表<br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E9%A1%BA%E5%BA%8F%E8%A1%A8.png" alt="顺序表"></li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/30/python网络编程/" rel="next" title="python网络编程学习">
+                <i class="fa fa-chevron-left"></i> python网络编程学习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="LiZhanPeng" />
+          <p class="site-author-name" itemprop="name">LiZhanPeng</p>
+           
+              <p class="site-description motion-element" itemprop="description">For Python learning</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、数据结构与算法"><span class="nav-number">1.</span> <span class="nav-text">1、数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.0.1.</span> <span class="nav-text">时间复杂度</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#list操作性能测试"><span class="nav-number">1.1.</span> <span class="nav-text">list操作性能测试</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据结构"><span class="nav-number">1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#顺序表"><span class="nav-number">1.2.1.</span> <span class="nav-text">顺序表</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">LiZhanPeng</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
