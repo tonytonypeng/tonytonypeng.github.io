@@ -97,7 +97,10 @@
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/list%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-log.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E9%A1%BA%E5%BA%8F%E8%A1%A8.png">
-<meta property="og:updated_time" content="2017-09-07T08:38:45.116Z">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
+<meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png">
+<meta property="og:updated_time" content="2017-09-07T10:27:44.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与数据库学习">
 <meta name="twitter:description" content="本课程包括数据结构与算法，数据库。详细代码可阅读我的github 一、数据结构与算法算法 程序 = 数据结构 + 算法 算法：计算机处理信息的本质 12345输入：具有0个或多个输入。输出：至少有1个或多个输出。有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。确定性：每一步都有确定的含义，不会出现二义性。可行性：每一步都是可行的，也就是能够执行有限的次数完成。  衡量算法">
@@ -444,6 +447,10 @@
 <li><p>数据类型</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">整数：int，bit</div><div class="line">小数：decimal</div><div class="line">字符串：varchar,char</div><div class="line">日期时间: date, time, datetime</div><div class="line">枚举类型(enum)</div></pre></td></tr></table></figure>
 </li>
+<li><p>数值类型<br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png" alt="数值类型"></p>
+</li>
+<li>字符串类型<br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E5%AD%97%E7%AC%A6%E4%B8%B2.png" alt="字符串"></li>
+<li>日期时间类型<br><img src="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png" alt="日期"></li>
 <li><p>命令行脚本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">连接数据库：mysql -uroot -p</div><div class="line">查看版本：select version();</div><div class="line">修改输入提示符：prompt python&gt;；\D完整日期，\d数据库名称，\u使用用户，\h主机名称。</div></pre></td></tr></table></figure>
 </li>
@@ -451,7 +458,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">显示当前时间：select now();</div><div class="line">查看所有数据库：show database;</div><div class="line">查看当前使用的数据库：select database();</div><div class="line">使用数据库：use py3</div><div class="line">创建数据库：create database abc charset=utf-8;</div><div class="line">删除数据库：drop database abc；</div></pre></td></tr></table></figure>
 </li>
 <li><p>数据表操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">查看表：show tables;</div><div class="line">查看表结构：desc student；</div><div class="line">查看表创建的语句：show create table class；</div><div class="line">创建表：create table student(</div><div class="line">  id int unsigned primary key not null auto_increment,</div><div class="line">  name varchar(5)</div><div class="line">  )；</div><div class="line">添加字段：alter table student add aeg int;</div><div class="line">修改字段，同时修改名称和类型：alter table student change aeg age varchar(5)；</div><div class="line">只修改类型：alter table student modify age int；</div><div class="line">删除字段：alter table student drop age;</div><div class="line">删除表：drop table student；</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">查看表：show tables;</div><div class="line">查看表结构：desc student；</div><div class="line">查看表创建的语句：show create table class；</div><div class="line">创建表：create table student(</div><div class="line">  id int unsigned(无符号类型) primary key(主键) not null(是否为空) auto_increment,</div><div class="line">  name varchar(5) default &apos;&apos;(默认空字符),</div><div class="line">  age tinyint unsigned default 0,</div><div class="line">  height decimal(5,2),</div><div class="line">  sex enum(&apos;男&apos;,&apos;女&apos;),</div><div class="line">  )；</div><div class="line">添加字段：alter table student add aeg int;</div><div class="line">修改字段，同时修改名称和类型：alter table student change aeg age varchar(5)；</div><div class="line">只修改类型：alter table student modify age int；</div><div class="line">删除字段：alter table student drop age;</div><div class="line">删除表：drop table student；</div></pre></td></tr></table></figure>
 </li>
 </ul>
 
