@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -241,6 +241,185 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiZhanPeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonytonypeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/10/数据库/" itemprop="url">
+                  Untitled
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:14:13+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>– 数据库<br>    存储数据，把数据持久化到硬盘</p>
+<p>– RDBMS<br>    关系型数据库系统<br>    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性<br>    oracle<br>    MySQL<br>    sqlserver<br>    sqlite</p>
+<p>– SQL<br>    在关系型数据库中使用的语言<br>    不区分大小写 SelEcT</p>
+<p>– MySQL<br>    被卖给Sun，Sun被卖给Oracle<br>    开源、免费<br>    支持各种操作系统：windows、linux、macos</p>
+<p>– 服务端(Server)<br>    – 查询服务是否开启<br>        ps ajx | grep mysql 看mysqld进程是否存在<br>    – 开启服务<br>        sudo service mysql start<br>    – 停止服务<br>        sudo service mysql stop<br>    – 重启服务<br>        sudo service mysql restart</p>
+<p>– 客户端操作(Client)</p>
+<pre><code>-- navicat(GUI的使用)
+
+-- 数据完整性
+    5.0版本后，数据类型的长度指的是数据显示的宽度
+    varchar(10),指的是能放最多10个字符，一个字母或一个数字或一个中文都是一个字符
+    int(1),指的是放int类型的数据范围是4个字节的大小，跟设置的长度
+    decimal(5,2)表示共存5位数，小数占2位
+    列：数据类型、取值范围、是否为空
+    行：必须有一个唯一标示，需要有一个主键
+    表：引用了另一个表的数据，通过外键约束范围
+
+-- 终端命令
+    -- mysql -uroot -pmysql -u -p 后面都没有空格
+
+    -- 数据库操作
+        -- 查看所有数据库
+            show databases;
+        -- 查看当前使用的数据库
+            select database();
+        -- 使用某一个数据库
+            use py3;
+        -- 创建数据库
+            create database abc charset=utf8;
+        -- 删除数据库
+            drop database abc;
+
+    -- 数据表操作
+        -- 查看所有表
+            show tables;
+        -- 查看表结构
+            desc class;
+        -- 查看表创建的语句
+            show create table class;
+        -- 创建表
+            create table student(
+                id int unsigned primary key not null auto_increment,
+                name varchar(5)
+                );
+        -- 添加字段
+            alter table student add aeg int;
+        -- 修改字段 同时修改名称和类型
+            alter table student change aeg age varchar(5);
+        -- 修改字段 只修改类型
+            alter table student modify age int;
+        -- 删除字段
+            alter table student drop age;
+        -- 删除表
+            drop table student;
+
+
+    -- 数据操作
+
+    -- 数据备份和恢复
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -288,7 +467,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T08:42:23+08:00">
                 2017-09-01
@@ -491,8 +670,10 @@
 <li>消除重复行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select distinct 列1,... from 表名;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h6 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from 表名 where 条件;</div></pre></td></tr></table></figure>
-<ul>
+<h6 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h6><ul>
+<li><p>条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from 表名 where 条件;</div></pre></td></tr></table></figure>
+</li>
 <li><p>比较运算符:=,&gt;,&gt;=,&lt;,&lt;=,!=,&lt;&gt;。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id &gt; 3;</div></pre></td></tr></table></figure>
 </li>
@@ -585,8 +766,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from 表名</div><div class="line">where ....</div><div class="line">group by ...</div><div class="line">select distinct *</div><div class="line">having ...</div><div class="line">order by ...</div><div class="line">limit start,count</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h6 id="MySQL内置函数"><a href="#MySQL内置函数" class="headerlink" title="MySQL内置函数"></a>MySQL内置函数</h6><p>####### 字符串函数</p>
-<ul>
+<h5 id="MySQL内置函数"><a href="#MySQL内置函数" class="headerlink" title="MySQL内置函数"></a>MySQL内置函数</h5><h6 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h6><ul>
 <li><p>连接</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select concat(name,&apos;的性别是&apos;,gender) from students;</div></pre></td></tr></table></figure>
 </li>
@@ -594,8 +774,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select left(name,1) from student;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>####### 流程控制函数</p>
-<ul>
+<h6 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h6><ul>
 <li>根据性别显示信息，如果是男，显示x靓仔，是女，显示x靓女，其他的显示xxx<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">select</div><div class="line">case gender</div><div class="line">when 1 then concat(left(name,1),&apos;靓仔&apos;)</div><div class="line">when 2 then concat(left(name,1),&apos;靓女&apos;)</div><div class="line">else concat(left(name,1),&apos;xxx&apos;)</div><div class="line">end</div><div class="line">,name,gender</div><div class="line">from students;</div></pre></td></tr></table></figure>
 </li>
 </ul>
@@ -679,7 +858,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T20:13:49+08:00">
                 2017-08-30
@@ -883,7 +1062,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
                 2017-08-29
@@ -1061,7 +1240,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T14:14:45+08:00">
                 2017-08-29
@@ -1232,7 +1411,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posted on</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T14:36:31+08:00">
                 2017-08-26
@@ -1427,8 +1606,8 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
@@ -1482,7 +1661,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
