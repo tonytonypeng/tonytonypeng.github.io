@@ -100,7 +100,7 @@
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Data-structure-algorithm-and-database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:updated_time" content="2017-09-07T10:27:44.031Z">
+<meta property="og:updated_time" content="2017-09-10T07:06:43.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构与数据库学习">
 <meta name="twitter:description" content="本课程包括数据结构与算法，数据库。详细代码可阅读我的github 一、数据结构与算法算法 程序 = 数据结构 + 算法 算法：计算机处理信息的本质 12345输入：具有0个或多个输入。输出：至少有1个或多个输出。有穷性：在有限的步骤之后自动结束，而不会无限循环，且在可接受的时间内完成。确定性：每一步都有确定的含义，不会出现二义性。可行性：每一步都是可行的，也就是能够执行有限的次数完成。  衡量算法">
@@ -461,6 +461,145 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">查看表：show tables;</div><div class="line">查看表结构：desc student；</div><div class="line">查看表创建的语句：show create table class；</div><div class="line">创建表：create table student(</div><div class="line">  id int unsigned(无符号类型) primary key(主键) not null(是否为空) auto_increment,</div><div class="line">  name varchar(5) default &apos;&apos;(默认空字符),</div><div class="line">  age tinyint unsigned default 0,</div><div class="line">  height decimal(5,2),</div><div class="line">  sex enum(&apos;男&apos;,&apos;女&apos;),</div><div class="line">  )；</div><div class="line">添加字段：alter table student add aeg int;</div><div class="line">修改字段，同时修改名称和类型：alter table student change aeg age varchar(5)；</div><div class="line">只修改类型：alter table student modify age int；</div><div class="line">删除字段：alter table student drop age;</div><div class="line">删除表：drop table student；</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h6 id="数据的增删改查"><a href="#数据的增删改查" class="headerlink" title="数据的增删改查"></a>数据的增删改查</h6><ul>
+<li><p>查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">查询所有列：select * from 表名;</div><div class="line">查询指定列：select 列1,列2,... from 表名;</div><div class="line">可以使用as为列或表指定别名：select 列1 as 别名,列2 as 别名,... from 表名;</div></pre></td></tr></table></figure>
+</li>
+<li><p>增加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">全列插入：insert into 表名 values(...);</div><div class="line">部分列插入:insert into 表名(列1,...) values(值1,...);</div><div class="line">全列多行插入:1、insert into 表名 values(...),(...)...;2、insert into 表名(列1,...) values(值1,...),(值1,...)...;</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update 表名 set 列1=值1,列2=值2... where 条件；</div></pre></td></tr></table></figure>
+</li>
+<li><p>删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete from 表名 where 条件；</div></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑删除：本质就是修改操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alter table students add isdelete bit类型 default false;</div><div class="line">update students set isdelete=1 where id=1;</div><div class="line">查看：select * from lol where isdelete=0;</div></pre></td></tr></table></figure>
+</li>
+<li><p>备份：备份文件可以不用先创建。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump –uroot –p 数据库名 &gt; python.sql;</div></pre></td></tr></table></figure>
+</li>
+<li><p>恢复：得先创建好新仓库。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot –p 新数据库名 &lt; python.sql;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h6><ul>
+<li>三范式<br><img src="" alt="范式1"><br><img src="" alt="范式2"><br><img src="" alt="范式3"></li>
+<li>E-R模型<br><img src="" alt="一对一"><br><img src="" alt="一对多"><br><img src="" alt="多对多"></li>
+</ul>
+<h5 id="MySQL查询"><a href="#MySQL查询" class="headerlink" title="MySQL查询"></a>MySQL查询</h5><ul>
+<li>消除重复行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select distinct 列1,... from 表名;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from 表名 where 条件;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>比较运算符:=,&gt;,&gt;=,&lt;,&lt;=,!=,&lt;&gt;。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id &gt; 3;</div></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑运算符:and,or,not</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id &gt; 3 and gender=0;</div></pre></td></tr></table></figure>
+</li>
+<li><p>模糊查询:like,%表示任意多个任意字符,_表示一个任意字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where name like &apos;黄%&apos; or name like &apos;_靖&apos;</div></pre></td></tr></table></figure>
+</li>
+<li><p>范围查询:in表示在一个非连续的范围内。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id in(1,3,8);</div></pre></td></tr></table></figure>
+</li>
+<li><p>空判断:判空is null,null与’’是不同的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where height is null;</div></pre></td></tr></table></figure>
+</li>
+<li><p>优先级</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">优先级由高到低的顺序为：小括号，not，比较运算符，逻辑运算符</div><div class="line">and比or先运算，如果同时出现并希望先算or，需要结合()使用</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h6><ul>
+<li>select * from 表名 order by 列1 asc|desc,列2 asc|desc,…;asc从小到大排列，即升序,desc从大到小排序，即降序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where gender=1 and isdelete=0 order by id desc;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h6><ul>
+<li><p>count(*)表示计算总行数，括号中写星与列名，结果是相同的，聚合函数不能在 where 中使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select count(*) from students;</div></pre></td></tr></table></figure>
+</li>
+<li><p>max(列)表示求此列的最大值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select max(id) as 别名 from students where gender=0;</div></pre></td></tr></table></figure>
+</li>
+<li><p>min(列)表示求此列的最小值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select sum(id) from students where gender=1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>avg(列)表示求此列的平均值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select avg(id) from students where isdelete=0 and gender=0;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h6><ul>
+<li><p>select 列1,列2,聚合… from 表名 group by 列1,列2…。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select age as 年龄,count(*) as 数量 from students group by age;</div></pre></td></tr></table></figure>
+</li>
+<li><p>分组后的数据筛选:select 列1,列2,聚合… from 表名 group by 列1,列2,列3… having 列1,…聚合…。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select gender as 性别,count(*)</div><div class="line">from students</div><div class="line">group by gender</div><div class="line">having gender=1;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h6><ul>
+<li><p>select * from 表名 limit start,count; 从start开始，获取count条数据，start索引从0开始</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where gender=1 limit 0,3;</div></pre></td></tr></table></figure>
+</li>
+<li><p>已知：每页显示m条数据，当前显示第n页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where isdelete=0 limit (n-1)*m,m</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h6><ul>
+<li>select * from 表1 inner或left或right join 表2 on 表1.列=表2.列</li>
+<li><p>内连接查询：交集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students inner join pythons on students.cls_id = pythons.id;</div></pre></td></tr></table></figure>
+</li>
+<li><p>左连接查询:查询的结果为两个表匹配到的数据，左表特有的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students as s left join pythons as p on s.cls_id = p.id;</div></pre></td></tr></table></figure>
+</li>
+<li><p>右连接查询：查询的结果为两个表匹配到的数据，右表特有的数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students as s inner join pythons as p on s.cls_id = p.id;</div></pre></td></tr></table></figure>
+</li>
+<li><p>自关联：多引用，同一张表。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select dis.* from areas as dis inner join areas as city on city.aid=dis.pid where city.atitle=&apos;广州市&apos;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>子查询：在一个 select 语句中,嵌入了另外一个 select 语句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">标量子查询: 子查询返回的结果是一个数据(一行一列)</div><div class="line">列子查询: 返回的结果是一列(一列多行)</div><div class="line">行子查询: 返回的结果是一行(一行多列)</div><div class="line">表级子查询: 返回的结果是多行多列</div></pre></td></tr></table></figure>
+</li>
+<li><p>标量子查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where age &gt; (select avg(age) from students);</div></pre></td></tr></table></figure>
+</li>
+<li><p>列级子查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name from pythons where id in (select cls_id from students);</div></pre></td></tr></table></figure>
+</li>
+<li><p>行级查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where (height,age) = (select max(height),max(age) from students);</div></pre></td></tr></table></figure>
+</li>
+<li><p>表查询：from后面可以跟查询出来的数据，取别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select * from</div><div class="line">(select stu.*,pys.name as clsname from students as stu inner join pythons as pys on stu.cls_id = pys.id)</div><div class="line">as t1;</div></pre></td></tr></table></figure>
+</li>
+<li><p>子查询中特定关键字使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">in 范围</div><div class="line">格式: 主查询 where 条件 in (列子查询)</div><div class="line"></div><div class="line">any | some 任意一个</div><div class="line">格式: 主查询 where 列 = any (列子查询)</div><div class="line">在条件查询的结果中匹配任意一个即可,等价于 in</div><div class="line"></div><div class="line">all:例如要比里面任意一个要大。</div><div class="line">格式: 主查询 where 列 = all(列子查询) : 等于里面所有</div><div class="line">格式: 朱查询 where 列 &lt;&gt;all(列子查询) : 不等一其中所有</div></pre></td></tr></table></figure>
+</li>
+<li><p>总结</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">select distinct *</div><div class="line">from 表名</div><div class="line">where ....</div><div class="line">group by ... having ...</div><div class="line">order by ...</div><div class="line">limit start,count</div></pre></td></tr></table></figure>
+</li>
+<li><p>执行顺序为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from 表名</div><div class="line">where ....</div><div class="line">group by ...</div><div class="line">select distinct *</div><div class="line">having ...</div><div class="line">order by ...</div><div class="line">limit start,count</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="MySQL内置函数"><a href="#MySQL内置函数" class="headerlink" title="MySQL内置函数"></a>MySQL内置函数</h6><p>####### 字符串函数</p>
+<ul>
+<li><p>连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select concat(name,&apos;的性别是&apos;,gender) from students;</div></pre></td></tr></table></figure>
+</li>
+<li><p>截取</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select left(name,1) from student;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>####### 流程控制函数</p>
+<ul>
+<li>根据性别显示信息，如果是男，显示x靓仔，是女，显示x靓女，其他的显示xxx<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">select</div><div class="line">case gender</div><div class="line">when 1 then concat(left(name,1),&apos;靓仔&apos;)</div><div class="line">when 2 then concat(left(name,1),&apos;靓女&apos;)</div><div class="line">else concat(left(name,1),&apos;xxx&apos;)</div><div class="line">end</div><div class="line">,name,gender</div><div class="line">from students;</div></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -616,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、数据结构与算法"><span class="nav-number">1.</span> <span class="nav-text">一、数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算法"><span class="nav-number">1.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.1.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#list操作性能测试"><span class="nav-number">1.1.2.</span> <span class="nav-text">list操作性能测试</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据结构"><span class="nav-number">1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#顺序表"><span class="nav-number">1.2.1.</span> <span class="nav-text">顺序表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#链表"><span class="nav-number">1.2.2.</span> <span class="nav-text">链表</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序算法"><span class="nav-number">1.3.</span> <span class="nav-text">排序算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#搜索"><span class="nav-number">1.4.</span> <span class="nav-text">搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#树"><span class="nav-number">1.4.1.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二叉树"><span class="nav-number">1.4.2.</span> <span class="nav-text">二叉树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、数据库"><span class="nav-number">2.</span> <span class="nav-text">二、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据库简介"><span class="nav-number">2.1.</span> <span class="nav-text">数据库简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql基本使用"><span class="nav-number">2.2.</span> <span class="nav-text">mysql基本使用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、数据结构与算法"><span class="nav-number">1.</span> <span class="nav-text">一、数据结构与算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#算法"><span class="nav-number">1.1.</span> <span class="nav-text">算法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#时间复杂度"><span class="nav-number">1.1.1.</span> <span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#list操作性能测试"><span class="nav-number">1.1.2.</span> <span class="nav-text">list操作性能测试</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据结构"><span class="nav-number">1.2.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#顺序表"><span class="nav-number">1.2.1.</span> <span class="nav-text">顺序表</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#链表"><span class="nav-number">1.2.2.</span> <span class="nav-text">链表</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序算法"><span class="nav-number">1.3.</span> <span class="nav-text">排序算法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#搜索"><span class="nav-number">1.4.</span> <span class="nav-text">搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#树"><span class="nav-number">1.4.1.</span> <span class="nav-text">树</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#二叉树"><span class="nav-number">1.4.2.</span> <span class="nav-text">二叉树</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、数据库"><span class="nav-number">2.</span> <span class="nav-text">二、数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#数据库简介"><span class="nav-number">2.1.</span> <span class="nav-text">数据库简介</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#mysql基本使用"><span class="nav-number">2.2.</span> <span class="nav-text">mysql基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#数据的增删改查"><span class="nav-number">2.2.1.</span> <span class="nav-text">数据的增删改查</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数据库的设计"><span class="nav-number">2.2.2.</span> <span class="nav-text">数据库的设计</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL查询"><span class="nav-number">2.3.</span> <span class="nav-text">MySQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#条件"><span class="nav-number">2.3.1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#排序"><span class="nav-number">2.3.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#聚合函数"><span class="nav-number">2.3.3.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#分组"><span class="nav-number">2.3.4.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#分页"><span class="nav-number">2.3.5.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#连接查询"><span class="nav-number">2.3.6.</span> <span class="nav-text">连接查询</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#MySQL内置函数"><span class="nav-number">2.3.7.</span> <span class="nav-text">MySQL内置函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
