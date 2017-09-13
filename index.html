@@ -863,15 +863,17 @@
 
       -- 客户端2
           查询看不到数据
-</code></pre><p>  – 索引</p>
-<pre><code>创建索引
-如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
-字段类型如果不是字符串，可以不填写长度部分
-create index 索引名称 on 表名(字段名称(长度))
-create index name_index on students(name(20))
-create index age_index on students(age)
 
-一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
+-- 索引
+
+    创建索引
+    如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
+    字段类型如果不是字符串，可以不填写长度部分
+    create index 索引名称 on 表名(字段名称(长度))
+    create index name_index on students(name(20))
+    create index age_index on students(age)
+
+    一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
 </code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
 <h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
 sudo service mongod start

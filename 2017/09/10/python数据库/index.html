@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="tonytonypeng">
 <meta property="og:description" content="详细代码可阅读我的github MySQL基本使用-- 数据库     存储数据，把数据持久化到硬盘  -- RDBMS     关系型数据库系统     用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性     oracle     MySQL     sqlserver     sqlite  -- SQL     在关系型数据库中使用的语言     不区分大小写 SelEcT  -">
 <meta property="og:locale" content="chinese & Englishi">
-<meta property="og:updated_time" content="2017-09-13T08:51:05.478Z">
+<meta property="og:updated_time" content="2017-09-13T08:52:46.324Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库">
 <meta name="twitter:description" content="详细代码可阅读我的github MySQL基本使用-- 数据库     存储数据，把数据持久化到硬盘  -- RDBMS     关系型数据库系统     用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性     oracle     MySQL     sqlserver     sqlite  -- SQL     在关系型数据库中使用的语言     不区分大小写 SelEcT  -">
@@ -857,15 +857,17 @@
 
       -- 客户端2
           查询看不到数据
-</code></pre><p>  – 索引</p>
-<pre><code>创建索引
-如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
-字段类型如果不是字符串，可以不填写长度部分
-create index 索引名称 on 表名(字段名称(长度))
-create index name_index on students(name(20))
-create index age_index on students(age)
 
-一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
+-- 索引
+
+    创建索引
+    如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
+    字段类型如果不是字符串，可以不填写长度部分
+    create index 索引名称 on 表名(字段名称(长度))
+    create index name_index on students(name(20))
+    create index age_index on students(age)
+
+    一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
 </code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
 <h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
 sudo service mongod start
