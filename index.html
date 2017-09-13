@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:14:13+08:00">
                 2017-09-10
@@ -796,66 +796,73 @@
       end
       $$
       delimiter ;
-</code></pre><p>   – 存储过程</p>
-<pre><code>语法如下
-delimiter //
-create procedure 存储过程名称(in i int,out res varchar(30))
-begin
-sql语句
-end
-//
-delimiter ;
 
-delimiter //
-create procedure select_stu()
-begin
-select * from students;
-end
-//
-delimiter ;
-</code></pre><p>  – 视图<br>      create view 视图名称 as select语句;</p>
-<pre><code>create view stu_view as select s.name as 姓名,p.name as &apos;班级&apos; from students as s inner join pythons as p on s.cls_id = p.id;
-</code></pre><p>  – 事物</p>
-<pre><code>500 a 消费 200  a女 消费 100
+-- 存储过程
 
-update set account=account-200
+    语法如下
+    delimiter //
+    create procedure 存储过程名称(in i int,out res varchar(30))
+    begin
+    sql语句
+    end
+    //
+    delimiter ;
 
-update set account=account-100
+    delimiter //
+    create procedure select_stu()
+    begin
+    select * from students;
+    end
+    //
+    delimiter ;
 
--- 提交
-    -- 客户端1
-        begin -- 开启事物
+-- 视图
+    create view 视图名称 as select语句;
 
-        insert into pythons(name) values(&apos;python7&apos;);
+    create view stu_view as select s.name as 姓名,p.name as &apos;班级&apos; from students as s inner join pythons as p on s.cls_id = p.id;
 
-        查询可以看到数据
+-- 事物
 
-    -- 客户端2
-        查询看不到数据
+    500 a 消费 200  a女 消费 100
 
-    -- 客户端1
-        commit
+    update set account=account-200
 
-    -- 客户端2
-        查询看不到数据
+    update set account=account-100
 
--- 回滚
-    -- 客户端1
-        begin -- 开启事物
+  -- 提交
+      -- 客户端1
+          begin -- 开启事物
 
-        insert into pythons(name) values(&apos;python7&apos;);
+          insert into pythons(name) values(&apos;python7&apos;);
 
-        查询可以看到数据
+          查询可以看到数据
 
-    -- 客户端2
-        查询看不到数据
+      -- 客户端2
+          查询看不到数据
 
-    -- 客户端1
-        rollback
-        查询看到的是以前的数据
+      -- 客户端1
+          commit
 
-    -- 客户端2
-        查询看不到数据
+      -- 客户端2
+          查询看不到数据
+
+  -- 回滚
+      -- 客户端1
+          begin -- 开启事物
+
+          insert into pythons(name) values(&apos;python7&apos;);
+
+          查询可以看到数据
+
+      -- 客户端2
+          查询看不到数据
+
+      -- 客户端1
+          rollback
+          查询看到的是以前的数据
+
+      -- 客户端2
+          查询看不到数据
 </code></pre><p>  – 索引</p>
 <pre><code>创建索引
 如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
@@ -1312,7 +1319,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T08:42:23+08:00">
                 2017-09-01
@@ -1525,7 +1532,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T20:13:49+08:00">
                 2017-08-30
@@ -1729,7 +1736,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
                 2017-08-29
@@ -1907,7 +1914,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T14:14:45+08:00">
                 2017-08-29
@@ -2078,7 +2085,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T14:36:31+08:00">
                 2017-08-26
@@ -2274,7 +2281,7 @@ db.student.drop()
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -2328,7 +2335,7 @@ db.student.drop()
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
