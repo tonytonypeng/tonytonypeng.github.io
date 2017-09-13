@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%8F%B3%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/pycharm%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
-<meta property="og:updated_time" content="2017-09-13T08:08:46.724Z">
+<meta property="og:updated_time" content="2017-09-13T08:17:55.106Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库">
 <meta name="twitter:description" content="详细代码可阅读我的github 数据库 数据库：存储数据，把数据持久化到硬盘。 RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。 关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合) 1oracle，mysql，ms mysql server，spilte  SQL:结构化查询语言，是一门关系型数据库语言">
@@ -684,120 +684,374 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rowcount只读属性，表示最近一次execute()执行后受影响的行数</div><div class="line">connection获得当前连接对象</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p> – [{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
-<h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><p>– 开启服务<br>sudo service mongod start</p>
-<p>– 停止服务<br>sudo service mongod stop</p>
-<p>– 重启服务<br>sudo service mongod restart</p>
-<h4 id="命令行客户端"><a href="#命令行客户端" class="headerlink" title="命令行客户端"></a>命令行客户端</h4><p>– 登录<br>mongo</p>
-<p>进入后连接点是test仓库</p>
-<p>– 不需要创建仓库，直接use，如果仓库里面没有数据，不会创建</p>
-<h5 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h5><p>– 创建集合<br>db.createCollection(name, options)</p>
-<p>db.createCollection(‘student’)</p>
-<p>– 查看当前数据库的集合<br>show collections</p>
-<p>– 删除命令  仓库里面没有数据时，会自动删除仓库<br>db.集合名称.drop()</p>
-<p>db.student.drop()</p>
-<p>– 插入 如果集合不存在，自动创建</p>
-<p>语法<br>db.集合名称.insert(document)</p>
-<p>db.stu.insert({name:’百里守约’,age:20})</p>
-<p>– 简单查询</p>
-<p>语法<br>db.集合名称.find()<br>db.stu.find()</p>
-<p>db.stu.find({name:’百里守约’}) 相当于sql中的where</p>
-<p>– 更新</p>
-<p>语法<br>db.集合名称.update(<br>    <query> ,<update>,{multi: <boolean>}<br>)<br>参数query:查询条件，类似sql语句update中where部分<br>参数update:更新操作符，类似sql语句update中set部分<br>参数multi:可选，默认是false，表示只更新找到的第一条记录，值为true表示把满足条件的文档全部更新</boolean></update></query></p>
-<p>db.stu.update({name:’百里守约’},{name:’百里玄策’}) – 根据条件查找到一个文档，更新成新的文档</p>
-<p>指定属性更新，通过操作符$set  如更新的字段不存在，会新添加这个字段<br>db.stu.update({name:’百里玄策2’},{$set:{name:’百里守约’}})</p>
-<p>删除某个文档的字段<br>db.stu.update({name:’百里守约’},{$unset:{name:’’}})</p>
-<p>更新多条记录<br>db.stu.update({age:20},{$set:{age:30}}) – 不写multi 只更新结果的第一条</p>
-<p>db.stu.update({age:20},{$set:{age:30}},{multi:true})</p>
-<p>– 删除</p>
-<p>语法<br>db.集合名称.remove(<br>    <query>,{justOne: <boolean>}<br>)<br>参数query:可选，删除的文档的条件<br>参数justOne:可选，如果设为true或1，则只删除一条，默认false，表示删除多条</boolean></query></p>
-<p>db.stu.remove({name:’百里守约’})</p>
-<p>– 创建集合，指定大小 内部会针对size计算，结果是256字节的整数倍</p>
-<p>添加数据超出size，会把第一条数据删除</p>
-<p>db.createCollection(‘sub’,{capped:true,size:10})</p>
-<p>db.sub.insert({title:’linux’,count:10})<br>db.sub.insert({title:’linux1’,count:10})<br>db.sub.insert({title:’linux2’,count:10})<br>db.sub.insert({title:’linux3’,count:10})<br>db.sub.insert({title:’linux4’,count:10})</p>
-<h5 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h5><p>– 基本查询<br>方法find()：查询<br>db.集合名称.find({条件文档})<br>方法findOne()：查询，只返回第一个<br>db.集合名称.findOne({条件文档})<br>方法pretty()：将结果格式化<br>db.集合名称.find({条件文档}).pretty()</p>
-<p>– 比较运算符</p>
-<p>等于，默认是等于判断，没有运算符<br>小于$lt  less than<br>小于或等于$lte less than equals<br>大于$gt great than<br>大于或等于$gte great than equals<br>不等于$ne not equals<br>例1：查询名称等于’郭靖’的学生</p>
-<p>db.stu.find({name:’郭靖’})</p>
-<p>– 查询年龄小于30岁<br>db.stu.find({age:{$lt:30}})<br>db.stu.find({age:{$lte:20}})</p>
-<p>– 查询不等于18岁<br>db.stu.find({age:{$ne:20}})</p>
-<p>– 逻辑运算符</p>
-<p>查询时可以有多个条件，多个条件之间需要通过逻辑运算符连接<br>逻辑与：默认是逻辑与的关系</p>
-<p>– 查询18的男生<br>db.stu.find({age:18,gender:true})</p>
-<p>– 查询18的学生或者家乡为大理的学生<br>db.stu.find({$or:[{age:18},{hometown:’大理’}]})</p>
-<p>例3：查询年龄大于或等于18，并且性别为true的学生<br>db.stu.find({<br>    $or:[{age:{$gt:18}},{age:18}],<br>    gender:true<br>})</p>
-<p>– 范围运算符</p>
-<p>使用”$in”，”$nin” 判断是否在某个范围内<br>例6：查询年龄为18、28的学生</p>
-<p>db.stu.find({age:{$in:[18,20]}})</p>
-<p>db.stu.find({age:{$nin:[18,20]}})</p>
-<p>– 支持正则表达式</p>
-<p>mongodb提供的终端shell，同时也是一个js的执行器，可以编写js的代码和函数<br>使用//或$regex编写正则表达式<br>例7：查询姓黄的学生<br>db.stu.find({name:/黄/})<br>db.stu.find({name:{$regex:’^黄’}})</p>
-<p>– 自定义查询</p>
-<p>使用$where后面写一个函数，返回满足条件的数据<br>例7：查询年龄大于30的学生</p>
-<p>db.stu.find({<br>    $where:function(){</p>
-<pre><code>    return this.age&gt;30;
-}
-</code></pre><p>})</p>
-<p>– Limit</p>
-<pre><code>方法limit()：用于读取指定数量的文档
-语法：
-db.集合名称.find().limit(NUMBER)
+<h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
+<h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
+sudo service mongod start
 
--- 查询前2条数据
-db.stu.find().limit(2)
-</code></pre><p>– skip</p>
-<pre><code>方法skip()：用于跳过指定数量的文档
-语法：
-db.集合名称.find().skip(NUMBER)
+-- 停止服务
+sudo service mongod stop
 
--- 跳过前2条，查询剩下的数据
-db.stu.find().skip(2)
+-- 重启服务
+sudo service mongod restart
+</code></pre><h4 id="命令行客户端"><a href="#命令行客户端" class="headerlink" title="命令行客户端"></a>命令行客户端</h4><pre><code>-- 登录
+mongo
 
-db.stu.find().limit(3).skip(3)
-db.stu.find().skip(3).limit(3)
-</code></pre><p>– 投影</p>
-<p>在查询到的返回结果中，只选择必要的字段，而不是选择一个文档的整个字段<br>如：一个文档有5个字段，需要显示只有3个，投影其中3个字段即可<br>语法：<br>参数为字段与值，值为1表示显示，值为0不显示<br>db.集合名称.find({},{字段名称:1,…})</p>
-<p>db.stu.find({},{name:1,hometown:1})</p>
-<p>– 指定不显示id</p>
-<p>db.stu.find({},{name:1,hometown:1,_id:0})</p>
-<p>– 排序</p>
-<p>方法sort()，用于对结果集进行排序<br>语法<br>db.集合名称.find().sort({字段:1,…})<br>参数1为升序排列<br>参数-1为降序排列<br>例1：根据性别降序，再根据年龄升序</p>
-<p>db.stu.find().sort({age:1,gender:1})</p>
-<p>– 统计个数</p>
-<p>方法count()用于统计结果集中文档条数<br>语法<br>db.集合名称.find({条件}).count()</p>
-<p>db.stu.find().count()或db.stu.count()</p>
-<p>db.stu.find({gender:true}).count() 或 db.stu.count({gender:true})</p>
-<p>– 消除重复</p>
-<p>方法distinct()对数据进行去重<br>语法<br>db.集合名称.distinct(‘去重字段’,{条件})<br>例:查找年龄大于18的学生，来自哪些省份</p>
-<p>db.stu.distinct(‘hometown’,{age:{$gt:18}})</p>
-<h5 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h5><p>聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()<br>语法<br>db.集合名称.aggregate({管道:{表达式}})</p>
-<p>$group</p>
-<p>将集合中的文档分组，可用于统计结果<br>_id表示分组的依据，使用某个字段的格式为’$字段’<br>例1：统计男生、女生的总人数</p>
-<p>db.stu.aggregate(<br>    {<br>        $group:<br>        {<br>            _id:’$gender’,<br>            count:{$sum:1}<br>        }<br>    }<br>)<br>按照性别分组，求每组的年龄总数<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$sum:’$age’} } } )</p>
-<p>按照性别分组，求每组的平均年龄<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$avg:’$age’} } } )</p>
-<p>按照性别分组，把年龄组成数组<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$push:’$name’} } } )</p>
-<p>按照性别分组，把整个文档组成数组<br>db.stu.aggregate( { $group: {_id:’$gender’, count:{$push:’$$ROOT’} } } )</p>
-<p>Group by null</p>
-<p>将集合中所有文档分为一组<br>例2：求学生总人数、平均年龄<br>db.stu.aggregate(<br>    {$group:<br>        {<br>            _id:null,<br>            counter:{$sum:1},<br>            avgAge:{$avg:’$age’}<br>        }<br>    }<br>)</p>
-<p>– $match</p>
-<p>用于过滤数据，只输出符合条件的文档<br>使用MongoDB的标准查询操作<br>例1：查询年龄大于20的学生<br>db.stu.aggregate({<br>    $match:{age:{$gt:20}}<br>}<br>)</p>
-<p>例2：查询年龄大于20的男生、女生人数<br>db.stu.aggregate(<br>    {$match:{age:{$gt:20}}},<br>    {$group:{_id:’$gender’,counter:{$sum:1}}}<br>)</p>
-<p>– $project</p>
-<p>修改输入文档的结构，如重命名、增加、删除字段、创建计算结果<br>例1：查询学生的姓名、年龄</p>
-<p>db.stu.aggregate(<br>    {<br>        $project:{name:1,age:1,_id:0}<br>    }<br>)</p>
-<p>– 分组后再投影<br>db.stu.aggregate(<br>    {$group: { _id:’$gender’, count:{$avg:’$age’} }},<br>    {$project:{count:1,_id:0}}<br>)</p>
-<p>– $sort</p>
-<p>将输入文档排序后输出<br>例1：查询学生信息，按年龄升序<br>db.stu.aggregate({$sort:{age:1}})</p>
-<p>– $skip</p>
-<p>跳过指定数量的文档，并返回余下的文档<br>例2：查询从第3条开始的学生信息<br>db.stu.aggregate({$skip:2})<br>例3：统计男生、女生人数，按人数升序，取第二条数据</p>
-<p>db.stu.aggregate(<br>    {$group:{_id:’$gender’,counter:{$sum:1}}},<br>    {$sort:{counter:1}},<br>    {$skip:1},<br>    {$limit:1}<br>)<br>注意，必须先skip，再limit</p>
-<p>– $unwind</p>
-<p>将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值<br>语法1</p>
-<p>对某字段值进行拆分<br>db.集合名称.aggregate({$unwind:’$字段名称’})</p>
-<p>db.t2.insert({_id:1,item:’t-shirt’,size:[‘S’,’M’,’L’]})</p>
-<p>db.t2.aggregate(<br>    {$unwind:<br>        {path:’$size’,<br>        preserveNullAndEmptyArrays:true<br>        }<br>    }<br>)</p>
+进入后连接点是test仓库
 
+-- 不需要创建仓库，直接use，如果仓库里面没有数据，不会创建
+</code></pre><h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><pre><code>-- 创建集合
+db.createCollection(name, options)
+
+db.createCollection(&apos;student&apos;)
+
+-- 查看当前数据库的集合
+show collections
+
+-- 删除命令  仓库里面没有数据时，会自动删除仓库
+db.集合名称.drop()
+
+db.student.drop()
+
+-- 插入 如果集合不存在，自动创建
+
+    语法
+    db.集合名称.insert(document)
+
+    db.stu.insert({name:&apos;百里守约&apos;,age:20})
+
+-- 简单查询
+
+    语法
+    db.集合名称.find()
+    db.stu.find()
+
+    db.stu.find({name:&apos;百里守约&apos;}) 相当于sql中的where
+
+-- 更新
+
+    语法
+    db.集合名称.update(
+        &lt;query&gt; ,&lt;update&gt;,{multi: &lt;boolean&gt;}
+    )
+    参数query:查询条件，类似sql语句update中where部分
+    参数update:更新操作符，类似sql语句update中set部分
+    参数multi:可选，默认是false，表示只更新找到的第一条记录，值为true表示把满足条件的文档全部更新
+
+    db.stu.update({name:&apos;百里守约&apos;},{name:&apos;百里玄策&apos;}) -- 根据条件查找到一个文档，更新成新的文档
+
+
+    指定属性更新，通过操作符$set  如更新的字段不存在，会新添加这个字段
+    db.stu.update({name:&apos;百里玄策2&apos;},{$set:{name:&apos;百里守约&apos;}})
+
+
+    删除某个文档的字段
+    db.stu.update({name:&apos;百里守约&apos;},{$unset:{name:&apos;&apos;}})
+
+
+    更新多条记录
+    db.stu.update({age:20},{$set:{age:30}}) -- 不写multi 只更新结果的第一条
+
+    db.stu.update({age:20},{$set:{age:30}},{multi:true})
+
+-- 删除
+
+    语法
+    db.集合名称.remove(
+        &lt;query&gt;,{justOne: &lt;boolean&gt;}
+    )
+    参数query:可选，删除的文档的条件
+    参数justOne:可选，如果设为true或1，则只删除一条，默认false，表示删除多条
+
+
+    db.stu.remove({name:&apos;百里守约&apos;})
+
+
+-- 创建集合，指定大小 内部会针对size计算，结果是256字节的整数倍
+
+    添加数据超出size，会把第一条数据删除
+
+    db.createCollection(&apos;sub&apos;,{capped:true,size:10})
+
+    db.sub.insert({title:&apos;linux&apos;,count:10})
+    db.sub.insert({title:&apos;linux1&apos;,count:10})
+    db.sub.insert({title:&apos;linux2&apos;,count:10})
+    db.sub.insert({title:&apos;linux3&apos;,count:10})
+    db.sub.insert({title:&apos;linux4&apos;,count:10})
+</code></pre><h4 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h4><pre><code>-- 基本查询
+
+    方法find()：查询
+    db.集合名称.find({条件文档})
+    方法findOne()：查询，只返回第一个
+    db.集合名称.findOne({条件文档})
+    方法pretty()：将结果格式化
+    db.集合名称.find({条件文档}).pretty()
+
+
+  -- 比较运算符
+
+      等于，默认是等于判断，没有运算符
+      小于$lt  less than
+      小于或等于$lte less than equals
+      大于$gt great than
+      大于或等于$gte great than equals
+      不等于$ne not equals
+      例1：查询名称等于&apos;郭靖&apos;的学生
+
+      db.stu.find({name:&apos;郭靖&apos;})
+
+      -- 查询年龄小于30岁
+      db.stu.find({age:{$lt:30}})
+      db.stu.find({age:{$lte:20}})
+
+      -- 查询不等于18岁
+      db.stu.find({age:{$ne:20}})
+
+  -- 逻辑运算符
+
+      查询时可以有多个条件，多个条件之间需要通过逻辑运算符连接
+      逻辑与：默认是逻辑与的关系
+
+      -- 查询18的男生
+      db.stu.find({age:18,gender:true})
+
+      -- 查询18的学生或者家乡为大理的学生
+      db.stu.find({$or:[{age:18},{hometown:&apos;大理&apos;}]})
+
+
+      例3：查询年龄大于或等于18，并且性别为true的学生
+      db.stu.find({
+          $or:[{age:{$gt:18}},{age:18}],
+          gender:true
+      })
+
+
+  -- 范围运算符
+
+      使用&quot;$in&quot;，&quot;$nin&quot; 判断是否在某个范围内
+      例6：查询年龄为18、28的学生
+
+      db.stu.find({age:{$in:[18,20]}})
+
+      db.stu.find({age:{$nin:[18,20]}})
+
+
+  -- 支持正则表达式
+
+      mongodb提供的终端shell，同时也是一个js的执行器，可以编写js的代码和函数
+      使用//或$regex编写正则表达式
+      例7：查询姓黄的学生
+      db.stu.find({name:/黄/})
+      db.stu.find({name:{$regex:&apos;^黄&apos;}})
+
+
+
+  -- 自定义查询
+
+      使用$where后面写一个函数，返回满足条件的数据
+      例7：查询年龄大于30的学生
+
+      db.stu.find({
+          $where:function(){
+
+              return this.age&gt;30;
+          }
+      })
+
+
+
+      -- Limit
+
+          方法limit()：用于读取指定数量的文档
+          语法：
+          db.集合名称.find().limit(NUMBER)
+
+          -- 查询前2条数据
+          db.stu.find().limit(2)
+
+      -- skip
+
+          方法skip()：用于跳过指定数量的文档
+          语法：
+          db.集合名称.find().skip(NUMBER)
+
+          -- 跳过前2条，查询剩下的数据
+          db.stu.find().skip(2)
+
+          db.stu.find().limit(3).skip(3)
+          db.stu.find().skip(3).limit(3)
+
+
+  -- 投影
+
+      在查询到的返回结果中，只选择必要的字段，而不是选择一个文档的整个字段
+      如：一个文档有5个字段，需要显示只有3个，投影其中3个字段即可
+      语法：
+      参数为字段与值，值为1表示显示，值为0不显示
+      db.集合名称.find({},{字段名称:1,...})
+
+      db.stu.find({},{name:1,hometown:1})
+
+  -- 指定不显示id
+
+      db.stu.find({},{name:1,hometown:1,\_id:0})
+
+
+  -- 排序
+
+      方法sort()，用于对结果集进行排序
+      语法
+      db.集合名称.find().sort({字段:1,...})
+      参数1为升序排列
+      参数-1为降序排列
+      例1：根据性别降序，再根据年龄升序
+
+      db.stu.find().sort({age:1,gender:1})
+
+  -- 统计个数
+
+      方法count()用于统计结果集中文档条数
+      语法
+      db.集合名称.find({条件}).count()
+
+      db.stu.find().count()或db.stu.count()
+
+      db.stu.find({gender:true}).count() 或 db.stu.count({gender:true})
+
+
+
+  -- 消除重复
+
+      方法distinct()对数据进行去重
+      语法
+      db.集合名称.distinct(&apos;去重字段&apos;,{条件})
+      例:查找年龄大于18的学生，来自哪些省份
+
+      db.stu.distinct(&apos;hometown&apos;,{age:{$gt:18}})
+
+
+
+  -- 聚合 aggregate
+
+      聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()
+      语法
+      db.集合名称.aggregate({管道:{表达式}})
+
+      $group
+
+      将集合中的文档分组，可用于统计结果
+      \_id表示分组的依据，使用某个字段的格式为&apos;$字段&apos;
+      例1：统计男生、女生的总人数
+
+      db.stu.aggregate(
+          {
+              $group:
+              {
+                  \_id:&apos;$gender&apos;,
+                  count:{$sum:1}
+              }
+          }
+      )
+      按照性别分组，求每组的年龄总数
+      db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$sum:&apos;$age&apos;} } } )
+
+      按照性别分组，求每组的平均年龄
+      db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} } } )
+
+      按照性别分组，把年龄组成数组
+      db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$name&apos;} } } )
+
+      按照性别分组，把整个文档组成数组
+      db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$$ROOT&apos;} } } )
+
+
+  --Group by null
+
+      将集合中所有文档分为一组
+      例2：求学生总人数、平均年龄
+      db.stu.aggregate(
+          {$group:
+              {
+                  \_id:null,
+                  counter:{$sum:1},
+                  avgAge:{$avg:&apos;$age&apos;}
+              }
+          }
+      )
+
+  -- $match
+
+      用于过滤数据，只输出符合条件的文档
+      使用MongoDB的标准查询操作
+      例1：查询年龄大于20的学生
+      db.stu.aggregate({
+          $match:{age:{$gt:20}}
+      }
+      )
+
+      例2：查询年龄大于20的男生、女生人数
+      db.stu.aggregate(
+          {$match:{age:{$gt:20}}},
+          {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}}
+      )
+
+
+  -- $project
+
+      修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
+      例1：查询学生的姓名、年龄
+
+      db.stu.aggregate(
+          {
+              $project:{name:1,age:1,\_id:0}
+          }
+      )
+
+  -- 分组后再投影
+      db.stu.aggregate(
+          {$group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} }},
+          {$project:{count:1,\_id:0}}
+      )
+
+  -- $sort
+
+      将输入文档排序后输出
+      例1：查询学生信息，按年龄升序
+      db.stu.aggregate({$sort:{age:1}})
+
+
+  -- $skip
+
+      跳过指定数量的文档，并返回余下的文档
+      例2：查询从第3条开始的学生信息
+      db.stu.aggregate({$skip:2})
+      例3：统计男生、女生人数，按人数升序，取第二条数据
+
+      db.stu.aggregate(
+          {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}},
+          {$sort:{counter:1}},
+          {$skip:1},
+          {$limit:1}
+      )
+      注意，必须先skip，再limit
+
+  -- $unwind
+
+      将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
+      语法1
+
+      对某字段值进行拆分
+      db.集合名称.aggregate({$unwind:&apos;$字段名称&apos;})
+
+      db.t2.insert({_id:1,item:&apos;t-shirt&apos;,size:[&apos;S&apos;,&apos;M&apos;,&apos;L&apos;]})
+
+      db.t2.aggregate(
+          {$unwind:
+              {path:&apos;$size&apos;,
+              preserveNullAndEmptyArrays:true
+              }
+          }
+      )
+</code></pre>
       
     </div>
 
@@ -952,7 +1206,7 @@ db.stu.find().skip(3).limit(3)
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql基本使用"><span class="nav-number">2.</span> <span class="nav-text">mysql基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据的增删改查"><span class="nav-number">3.</span> <span class="nav-text">数据的增删改查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的设计"><span class="nav-number">4.</span> <span class="nav-text">数据库的设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL查询"><span class="nav-number">5.</span> <span class="nav-text">MySQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#条件"><span class="nav-number">5.1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">5.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合函数"><span class="nav-number">5.3.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分组"><span class="nav-number">5.4.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分页"><span class="nav-number">5.5.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接查询"><span class="nav-number">5.6.</span> <span class="nav-text">连接查询</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL内置函数"><span class="nav-number">6.</span> <span class="nav-text">MySQL内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串函数"><span class="nav-number">6.1.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数学函数"><span class="nav-number">6.2.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间日期函数"><span class="nav-number">6.3.</span> <span class="nav-text">时间日期函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换函数"><span class="nav-number">6.4.</span> <span class="nav-text">类型转换函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程控制函数"><span class="nav-number">6.5.</span> <span class="nav-text">流程控制函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL高级"><span class="nav-number">7.</span> <span class="nav-text">MySQL高级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#账户管理"><span class="nav-number">7.1.</span> <span class="nav-text">账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#权限管理"><span class="nav-number">7.1.1.</span> <span class="nav-text">权限管理</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">7.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#变量"><span class="nav-number">7.2.1.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储过程"><span class="nav-number">7.3.</span> <span class="nav-text">存储过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#视图"><span class="nav-number">7.4.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事务"><span class="nav-number">7.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引"><span class="nav-number">7.6.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL与python交互"><span class="nav-number">8.</span> <span class="nav-text">MySQL与python交互</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装环境"><span class="nav-number">8.1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问数据库"><span class="nav-number">8.2.</span> <span class="nav-text">访问数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#connection对象"><span class="nav-number">8.2.1.</span> <span class="nav-text">connection对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cursor对象"><span class="nav-number">8.2.2.</span> <span class="nav-text">cursor对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-number"></span> <span class="nav-text">Mongo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mongodb-服务端"><span class="nav-number">1.</span> <span class="nav-text">mongodb 服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行客户端"><span class="nav-number">2.</span> <span class="nav-text">命令行客户端</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#基本操作"><span class="nav-number">2.1.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据查询"><span class="nav-number">2.2.</span> <span class="nav-text">数据查询</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合"><span class="nav-number">2.3.</span> <span class="nav-text">聚合</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql基本使用"><span class="nav-number">2.</span> <span class="nav-text">mysql基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据的增删改查"><span class="nav-number">3.</span> <span class="nav-text">数据的增删改查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的设计"><span class="nav-number">4.</span> <span class="nav-text">数据库的设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL查询"><span class="nav-number">5.</span> <span class="nav-text">MySQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#条件"><span class="nav-number">5.1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">5.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合函数"><span class="nav-number">5.3.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分组"><span class="nav-number">5.4.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分页"><span class="nav-number">5.5.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接查询"><span class="nav-number">5.6.</span> <span class="nav-text">连接查询</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL内置函数"><span class="nav-number">6.</span> <span class="nav-text">MySQL内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串函数"><span class="nav-number">6.1.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数学函数"><span class="nav-number">6.2.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间日期函数"><span class="nav-number">6.3.</span> <span class="nav-text">时间日期函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换函数"><span class="nav-number">6.4.</span> <span class="nav-text">类型转换函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程控制函数"><span class="nav-number">6.5.</span> <span class="nav-text">流程控制函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL高级"><span class="nav-number">7.</span> <span class="nav-text">MySQL高级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#账户管理"><span class="nav-number">7.1.</span> <span class="nav-text">账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#权限管理"><span class="nav-number">7.1.1.</span> <span class="nav-text">权限管理</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">7.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#变量"><span class="nav-number">7.2.1.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储过程"><span class="nav-number">7.3.</span> <span class="nav-text">存储过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#视图"><span class="nav-number">7.4.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事务"><span class="nav-number">7.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引"><span class="nav-number">7.6.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL与python交互"><span class="nav-number">8.</span> <span class="nav-text">MySQL与python交互</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装环境"><span class="nav-number">8.1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问数据库"><span class="nav-number">8.2.</span> <span class="nav-text">访问数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#connection对象"><span class="nav-number">8.2.1.</span> <span class="nav-text">connection对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cursor对象"><span class="nav-number">8.2.2.</span> <span class="nav-text">cursor对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-number"></span> <span class="nav-text">Mongo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mongodb-服务端"><span class="nav-number">1.</span> <span class="nav-text">mongodb 服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行客户端"><span class="nav-number">2.</span> <span class="nav-text">命令行客户端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据查询"><span class="nav-number">4.</span> <span class="nav-text">数据查询</span></a></li></ol></div>
             
 
           </div>
