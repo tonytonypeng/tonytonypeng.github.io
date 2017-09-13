@@ -107,7 +107,7 @@
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%8F%B3%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/pycharm%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
-<meta property="og:updated_time" content="2017-09-13T08:02:13.975Z">
+<meta property="og:updated_time" content="2017-09-13T08:08:46.724Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库">
 <meta name="twitter:description" content="详细代码可阅读我的github 数据库 数据库：存储数据，把数据持久化到硬盘。 RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。 关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合) 1oracle，mysql，ms mysql server，spilte  SQL:结构化查询语言，是一门关系型数据库语言">
@@ -771,126 +771,33 @@ db.stu.find().skip(3).limit(3)
 <p>– 消除重复</p>
 <p>方法distinct()对数据进行去重<br>语法<br>db.集合名称.distinct(‘去重字段’,{条件})<br>例:查找年龄大于18的学生，来自哪些省份</p>
 <p>db.stu.distinct(‘hometown’,{age:{$gt:18}})</p>
-<h5 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h5><pre><code>聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()
-语法
-db.集合名称.aggregate({管道:{表达式}})
+<h5 id="聚合"><a href="#聚合" class="headerlink" title="聚合"></a>聚合</h5><p>聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()<br>语法<br>db.集合名称.aggregate({管道:{表达式}})</p>
+<p>$group</p>
+<p>将集合中的文档分组，可用于统计结果<br>_id表示分组的依据，使用某个字段的格式为’$字段’<br>例1：统计男生、女生的总人数</p>
+<p>db.stu.aggregate(<br>    {<br>        $group:<br>        {<br>            _id:’$gender’,<br>            count:{$sum:1}<br>        }<br>    }<br>)<br>按照性别分组，求每组的年龄总数<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$sum:’$age’} } } )</p>
+<p>按照性别分组，求每组的平均年龄<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$avg:’$age’} } } )</p>
+<p>按照性别分组，把年龄组成数组<br>db.stu.aggregate( { $group: { _id:’$gender’, count:{$push:’$name’} } } )</p>
+<p>按照性别分组，把整个文档组成数组<br>db.stu.aggregate( { $group: {_id:’$gender’, count:{$push:’$$ROOT’} } } )</p>
+<p>Group by null</p>
+<p>将集合中所有文档分为一组<br>例2：求学生总人数、平均年龄<br>db.stu.aggregate(<br>    {$group:<br>        {<br>            _id:null,<br>            counter:{$sum:1},<br>            avgAge:{$avg:’$age’}<br>        }<br>    }<br>)</p>
+<p>– $match</p>
+<p>用于过滤数据，只输出符合条件的文档<br>使用MongoDB的标准查询操作<br>例1：查询年龄大于20的学生<br>db.stu.aggregate({<br>    $match:{age:{$gt:20}}<br>}<br>)</p>
+<p>例2：查询年龄大于20的男生、女生人数<br>db.stu.aggregate(<br>    {$match:{age:{$gt:20}}},<br>    {$group:{_id:’$gender’,counter:{$sum:1}}}<br>)</p>
+<p>– $project</p>
+<p>修改输入文档的结构，如重命名、增加、删除字段、创建计算结果<br>例1：查询学生的姓名、年龄</p>
+<p>db.stu.aggregate(<br>    {<br>        $project:{name:1,age:1,_id:0}<br>    }<br>)</p>
+<p>– 分组后再投影<br>db.stu.aggregate(<br>    {$group: { _id:’$gender’, count:{$avg:’$age’} }},<br>    {$project:{count:1,_id:0}}<br>)</p>
+<p>– $sort</p>
+<p>将输入文档排序后输出<br>例1：查询学生信息，按年龄升序<br>db.stu.aggregate({$sort:{age:1}})</p>
+<p>– $skip</p>
+<p>跳过指定数量的文档，并返回余下的文档<br>例2：查询从第3条开始的学生信息<br>db.stu.aggregate({$skip:2})<br>例3：统计男生、女生人数，按人数升序，取第二条数据</p>
+<p>db.stu.aggregate(<br>    {$group:{_id:’$gender’,counter:{$sum:1}}},<br>    {$sort:{counter:1}},<br>    {$skip:1},<br>    {$limit:1}<br>)<br>注意，必须先skip，再limit</p>
+<p>– $unwind</p>
+<p>将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值<br>语法1</p>
+<p>对某字段值进行拆分<br>db.集合名称.aggregate({$unwind:’$字段名称’})</p>
+<p>db.t2.insert({_id:1,item:’t-shirt’,size:[‘S’,’M’,’L’]})</p>
+<p>db.t2.aggregate(<br>    {$unwind:<br>        {path:’$size’,<br>        preserveNullAndEmptyArrays:true<br>        }<br>    }<br>)</p>
 
-$group
-
-将集合中的文档分组，可用于统计结果
-\_id表示分组的依据，使用某个字段的格式为&apos;$字段&apos;
-例1：统计男生、女生的总人数
-
-db.stu.aggregate(
-    {
-        $group:
-        {
-            \_id:&apos;$gender&apos;,
-            count:{$sum:1}
-        }
-    }
-)
-按照性别分组，求每组的年龄总数
-db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$sum:&apos;$age&apos;} } } )
-
-按照性别分组，求每组的平均年龄
-db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} } } )
-
-按照性别分组，把年龄组成数组
-db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$name&apos;} } } )
-
-按照性别分组，把整个文档组成数组
-db.stu.aggregate( { $group: {\_id:&apos;$gender&apos;, count:{$push:&apos;$$ROOT&apos;} } } )
-
-
-Group by null
-
-将集合中所有文档分为一组
-例2：求学生总人数、平均年龄
-db.stu.aggregate(
-    {$group:
-        {
-            \_id:null,
-            counter:{$sum:1},
-            avgAge:{$avg:&apos;$age&apos;}
-        }
-    }
-)
-
--- $match
-
-用于过滤数据，只输出符合条件的文档
-使用MongoDB的标准查询操作
-例1：查询年龄大于20的学生
-db.stu.aggregate({
-    $match:{age:{$gt:20}}
-}
-)
-
-例2：查询年龄大于20的男生、女生人数
-db.stu.aggregate(
-    {$match:{age:{$gt:20}}},
-    {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}}
-)
-
-
--- $project
-
-修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
-例1：查询学生的姓名、年龄
-
-db.stu.aggregate(
-    {
-        $project:{name:1,age:1,\_id:0}
-    }
-)
-
--- 分组后再投影
-db.stu.aggregate(
-    {$group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} }},
-    {$project:{count:1,\_id:0}}
-)
-
--- $sort
-
-将输入文档排序后输出
-例1：查询学生信息，按年龄升序
-db.stu.aggregate({$sort:{age:1}})
-
-
--- $skip
-
-跳过指定数量的文档，并返回余下的文档
-例2：查询从第3条开始的学生信息
-db.stu.aggregate({$skip:2})
-例3：统计男生、女生人数，按人数升序，取第二条数据
-
-db.stu.aggregate(
-    {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}},
-    {$sort:{counter:1}},
-    {$skip:1},
-    {$limit:1}
-)
-注意，必须先skip，再limit
-
--- $unwind
-
-将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
-语法1
-
-对某字段值进行拆分
-db.集合名称.aggregate({$unwind:&apos;$字段名称&apos;})
-
-db.t2.insert({_id:1,item:&apos;t-shirt&apos;,size:[&apos;S&apos;,&apos;M&apos;,&apos;L&apos;]})
-
-db.t2.aggregate(
-    {$unwind:
-        {path:&apos;$size&apos;,
-        preserveNullAndEmptyArrays:true
-        }
-    }
-)
-</code></pre>
       
     </div>
 
