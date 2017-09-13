@@ -329,11 +329,11 @@
         
           
             <p>详细代码可阅读我的<a href="https://github.com/tonytonypeng/Database" target="_blank" rel="external">github</a></p>
-<h3 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h3><p>– 数据库<br>    存储数据，把数据持久化到硬盘</p>
-<p>– RDBMS<br>    关系型数据库系统<br>    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性<br>    oracle<br>    MySQL<br>    sqlserver<br>    sqlite</p>
-<p>– SQL<br>    在关系型数据库中使用的语言<br>    不区分大小写 SelEcT</p>
-<p>– MySQL<br>    被卖给Sun，Sun被卖给Oracle<br>    开源、免费<br>    支持各种操作系统：windows、linux、macos</p>
-<p>– 服务端(Server)<br>    – 查询服务是否开启<br>        ps ajx | grep mysql 看mysqld进程是否存在<br>    – 开启服务<br>        sudo service mysql start<br>    – 停止服务<br>        sudo service mysql stop<br>    – 重启服务<br>        sudo service mysql restart</p>
+<h3 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h3><p>  – 数据库<br>      存储数据，把数据持久化到硬盘</p>
+<p>  – RDBMS<br>      关系型数据库系统<br>      用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性<br>      oracle<br>      MySQL<br>      sqlserver<br>      sqlite</p>
+<p>  – SQL<br>      在关系型数据库中使用的语言<br>      不区分大小写 SelEcT</p>
+<p>  – MySQL<br>      被卖给Sun，Sun被卖给Oracle<br>      开源、免费<br>      支持各种操作系统：windows、linux、macos</p>
+<p>  – 服务端(Server)<br>      – 查询服务是否开启<br>          ps ajx | grep mysql 看mysqld进程是否存在<br>      – 开启服务<br>          sudo service mysql start<br>      – 停止服务<br>          sudo service mysql stop<br>      – 重启服务<br>          sudo service mysql restart</p>
 <p>– 客户端操作(Client)</p>
 <pre><code>-- navicat(GUI的使用)
 
@@ -706,69 +706,71 @@
           insert into xxx values(&apos;name&apos;,,,);
           zu000&apos;,,); drop database xx;
           insert into xxx values(&apos;zu000&apos;,,); drop database xx;&apos;,,,);
-</code></pre><p>  – 函数<br>      – 创建</p>
-<pre><code>    只能调用select into 语句
-    select avg(age) into res from students;
+-- 函数
+    -- 创建
 
-    语法如下
-    delimiter $$
-    create function 函数名称(参数列表) returns 返回类型
-    begin
-    sql语句
-    end
-    $$
-    delimiter ;
+      只能调用select into 语句
+      select avg(age) into res from students;
+
+      语法如下
+      delimiter $$
+      create function 函数名称(参数列表) returns 返回类型
+      begin
+      sql语句
+      end
+      $$
+      delimiter ;
 
 
-    delimiter $$
-    create function my_trim(str varchar(10)) returns varchar(10)
-    begin
-    return rtrim(ltrim(str))
-    end
-    $$
-    delimiter ;
+      delimiter $$
+      create function my_trim(str varchar(10)) returns varchar(10)
+      begin
+      return rtrim(ltrim(str))
+      end
+      $$
+      delimiter ;
 
--- 调用
+  -- 调用
 
-    select my_trim(&apos;  abc   &apos;);
+      select my_trim(&apos;  abc   &apos;);
 
--- 变量
-    临时变量，只能用在 begin end 之间
-    declare i int default 0
-    set i = 5
+  -- 变量
+      临时变量，只能用在 begin end 之间
+      declare i int default 0
+      set i = 5
 
-    用户变量/会话变量
-    set @age=20
-    select @age:=avg(age) from students;
-    select @age
+      用户变量/会话变量
+      set @age=20
+      select @age:=avg(age) from students;
+      select @age
 
-    系统变量
-    set @@wait_timeout = 1000
-    select @@wait_timeout
+      系统变量
+      set @@wait_timeout = 1000
+      select @@wait_timeout
 
-    set global wait_timeout =2000
-    select @@global.wait_timeout
+      set global wait_timeout =2000
+      select @@global.wait_timeout
 
--- 函数示例
+  -- 函数示例
 
-    要求：定义函数odd，输出1-100间的偶数
+      要求：定义函数odd，输出1-100间的偶数
 
-    delimiter $$
-    create function odd() returns varchar(300)
-    begin
-    declare i int default 1;
-    declare res varchar default &apos;&apos;;
-    while i&lt;=100 do
-        if i%2=0 then
-        concat(res,&apos;,&apos;,i);
-        end if;
-        i = i+1;
-    end while;
-    return res;
-    end
-    $$
-    delimiter ;
-</code></pre><p>  – 存储过程<br>      创建</p>
+      delimiter $$
+      create function odd() returns varchar(300)
+      begin
+      declare i int default 1;
+      declare res varchar default &apos;&apos;;
+      while i&lt;=100 do
+          if i%2=0 then
+          concat(res,&apos;,&apos;,i);
+          end if;
+          i = i+1;
+      end while;
+      return res;
+      end
+      $$
+      delimiter ;
+</code></pre><p>   – 存储过程</p>
 <pre><code>语法如下
 delimiter //
 create procedure 存储过程名称(in i int,out res varchar(30))
