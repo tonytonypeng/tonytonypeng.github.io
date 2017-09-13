@@ -87,31 +87,17 @@
 
 
 
-<meta name="description" content="详细代码可阅读我的github 数据库 数据库：存储数据，把数据持久化到硬盘。 RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。 关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合) 1oracle，mysql，ms mysql server，spilte  SQL:结构化查询语言，是一门关系型数据库语言">
+<meta name="description" content="详细代码可阅读我的github MySQL基本使用– 数据库    存储数据，把数据持久化到硬盘 – RDBMS    关系型数据库系统    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性    oracle    MySQL    sqlserver    sqlite – SQL    在关系型数据库中使用的语言    不区分大小写 SelEcT – MySQL    被卖给Su">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库">
 <meta property="og:url" content="http://yoursite.com/2017/09/10/python数据库/index.html">
 <meta property="og:site_name" content="tonytonypeng">
-<meta property="og:description" content="详细代码可阅读我的github 数据库 数据库：存储数据，把数据持久化到硬盘。 RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。 关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合) 1oracle，mysql，ms mysql server，spilte  SQL:结构化查询语言，是一门关系型数据库语言">
+<meta property="og:description" content="详细代码可阅读我的github MySQL基本使用– 数据库    存储数据，把数据持久化到硬盘 – RDBMS    关系型数据库系统    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性    oracle    MySQL    sqlserver    sqlite – SQL    在关系型数据库中使用的语言    不区分大小写 SelEcT – MySQL    被卖给Su">
 <meta property="og:locale" content="chinese & Englishi">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%AD%97%E7%AC%A6%E4%B8%B2.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F1.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F2.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F3.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E4%B8%80%E5%AF%B9%E4%B8%80.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E4%B8%80%E5%AF%B9%E5%A4%9A.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%A4%9A%E5%AF%B9%E5%A4%9A.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%B7%A6%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%8F%B3%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/pycharm%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png">
-<meta property="og:updated_time" content="2017-09-13T08:17:55.106Z">
+<meta property="og:updated_time" content="2017-09-13T08:33:24.221Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库">
-<meta name="twitter:description" content="详细代码可阅读我的github 数据库 数据库：存储数据，把数据持久化到硬盘。 RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。 关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合) 1oracle，mysql，ms mysql server，spilte  SQL:结构化查询语言，是一门关系型数据库语言">
-<meta name="twitter:image" content="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png">
+<meta name="twitter:description" content="详细代码可阅读我的github MySQL基本使用– 数据库    存储数据，把数据持久化到硬盘 – RDBMS    关系型数据库系统    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性    oracle    MySQL    sqlserver    sqlite – SQL    在关系型数据库中使用的语言    不区分大小写 SelEcT – MySQL    被卖给Su">
 
 
 
@@ -337,354 +323,515 @@
 
       
         <p>详细代码可阅读我的<a href="https://github.com/tonytonypeng/Database" target="_blank" rel="external">github</a></p>
-<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
-<li>数据库：存储数据，把数据持久化到硬盘。</li>
-<li>RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。</li>
-<li><p>关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">oracle，mysql，ms mysql server，spilte</div></pre></td></tr></table></figure>
-</li>
-<li><p>SQL:结构化查询语言，是一门关系型数据库语言，不区分大小写。</p>
-</li>
-<li>MySQL：开源，免费，支持各种操作系统</li>
-</ul>
-<h4 id="mysql基本使用"><a href="#mysql基本使用" class="headerlink" title="mysql基本使用"></a>mysql基本使用</h4><ul>
-<li><p>服务器端</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">查询服务是否开启：ps ajx | grep mysql</div><div class="line">开启服务：sudo service mysql start</div><div class="line">停止服务：sudo service mysqll stop</div><div class="line">重启服务：sudo service mysql restart</div></pre></td></tr></table></figure>
-</li>
-<li><p>配置：配置文件目录为/etc/mysql/mysql.cnf</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">bind-address：服务器绑定的ip，默认为127.0.0.1，只允许本机可以访问。改成固定ip：只能这个ip才能访问。注销掉：任何主机任何ip都可以访问。</div><div class="line">port:默认3306端口</div><div class="line">datadir：数据库存储文件的地方，默认为/var/lib/mysql</div></pre></td></tr></table></figure>
-</li>
-<li><p>客户端：navicast(GUI)的使用，图形化界面客户端。</p>
-</li>
-<li><p>数据完整性：在表中为了更加准确的存储数据，保证数据的正确有效，可以在创建表的时候，为表添加一些强制性的验证，包括数据字段的类型、约束</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">5.0版本后，数据类型的长度指数据显示的宽度。</div><div class="line">varchar(10)，指的是能放最多10个字符，一个字母或一个数字或一个中文都是一个字符。</div><div class="line">int(1),指的是放int类型的数据范围是4个字节的大小，跟设置的长度无关。</div><div class="line">decimal表示浮点数，如decimal(5,2)表示共存5位数，小数占2位.</div><div class="line">列：数据类型、取值范围，是否为空。</div><div class="line">行：必须有一个唯一标示，需要要有一个主键。</div><div class="line">表：引用了另一个表的数据，通过外键约束范围。</div></pre></td></tr></table></figure>
-</li>
-<li><p>数据类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">整数：int，bit</div><div class="line">小数：decimal</div><div class="line">字符串：varchar,char</div><div class="line">日期时间: date, time, datetime</div><div class="line">枚举类型(enum)</div></pre></td></tr></table></figure>
-</li>
-<li><p>数值类型<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E6%95%B0%E5%80%BC%E7%B1%BB%E5%9E%8B.png" alt="数值类型"></p>
-</li>
-<li>字符串类型<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%AD%97%E7%AC%A6%E4%B8%B2.png" alt="字符串"></li>
-<li>日期时间类型<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E6%97%A5%E6%9C%9F%E6%97%B6%E9%97%B4%E7%B1%BB%E5%9E%8B.png" alt="日期"></li>
-<li><p>命令行脚本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">连接数据库：mysql -uroot -p</div><div class="line">查看版本：select version();</div><div class="line">修改输入提示符：prompt python&gt;；\D完整日期，\d数据库名称，\u使用用户，\h主机名称。</div></pre></td></tr></table></figure>
-</li>
-<li><p>数据库操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">显示当前时间：select now();</div><div class="line">查看所有数据库：show database;</div><div class="line">查看当前使用的数据库：select database();</div><div class="line">使用数据库：use py3</div><div class="line">创建数据库：create database abc charset=utf-8;</div><div class="line">删除数据库：drop database abc；</div></pre></td></tr></table></figure>
-</li>
-<li><p>数据表操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">查看表：show tables;</div><div class="line">查看表结构：desc student；</div><div class="line">查看表创建的语句：show create table class；</div><div class="line">创建表：create table student(</div><div class="line">  id int unsigned(无符号类型) primary key(主键) not null(是否为空) auto_increment,</div><div class="line">  name varchar(5) default &apos;&apos;(默认空字符),</div><div class="line">  age tinyint unsigned default 0,</div><div class="line">  height decimal(5,2),</div><div class="line">  sex enum(&apos;男&apos;,&apos;女&apos;),</div><div class="line">  )；</div><div class="line">添加字段：alter table student add aeg int;</div><div class="line">修改字段，同时修改名称和类型：alter table student change aeg age varchar(5)；</div><div class="line">只修改类型：alter table student modify age int；</div><div class="line">删除字段：alter table student drop age;</div><div class="line">删除表：drop table student；</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="数据的增删改查"><a href="#数据的增删改查" class="headerlink" title="数据的增删改查"></a>数据的增删改查</h4><ul>
-<li><p>查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">查询所有列：select * from 表名;</div><div class="line">查询指定列：select 列1,列2,... from 表名;</div><div class="line">可以使用as为列或表指定别名：select 列1 as 别名,列2 as 别名,... from 表名;</div></pre></td></tr></table></figure>
-</li>
-<li><p>增加</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">全列插入：insert into 表名 values(...);</div><div class="line">部分列插入:insert into 表名(列1,...) values(值1,...);</div><div class="line">全列多行插入:1、insert into 表名 values(...),(...)...;2、insert into 表名(列1,...) values(值1,...),(值1,...)...;</div></pre></td></tr></table></figure>
-</li>
-<li><p>修改</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">update 表名 set 列1=值1,列2=值2... where 条件；</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">delete from 表名 where 条件；</div></pre></td></tr></table></figure>
-</li>
-<li><p>逻辑删除：本质就是修改操作。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">alter table students add isdelete bit类型 default false;</div><div class="line">update students set isdelete=1 where id=1;</div><div class="line">查看：select * from lol where isdelete=0;</div></pre></td></tr></table></figure>
-</li>
-<li><p>备份：备份文件可以不用先创建。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysqldump –uroot –p 数据库名 &gt; python.sql;</div></pre></td></tr></table></figure>
-</li>
-<li><p>恢复：得先创建好新仓库。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot –p 新数据库名 &lt; python.sql;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="数据库的设计"><a href="#数据库的设计" class="headerlink" title="数据库的设计"></a>数据库的设计</h4><ul>
-<li>三范式<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F1.png" alt="范式1"><br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F2.png" alt="范式2"><br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%8C%83%E5%BC%8F3.png" alt="范式3"></li>
-<li>E-R模型<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E4%B8%80%E5%AF%B9%E4%B8%80.png" alt="一对一"><br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E4%B8%80%E5%AF%B9%E5%A4%9A.png" alt="一对多"><br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%A4%9A%E5%AF%B9%E5%A4%9A.png" alt="多对多"></li>
-</ul>
-<h4 id="MySQL查询"><a href="#MySQL查询" class="headerlink" title="MySQL查询"></a>MySQL查询</h4><ul>
-<li>消除重复行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select distinct 列1,... from 表名;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h5><ul>
-<li><p>条件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from 表名 where 条件;</div></pre></td></tr></table></figure>
-</li>
-<li><p>比较运算符:=,&gt;,&gt;=,&lt;,&lt;=,!=,&lt;&gt;。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id &gt; 3;</div></pre></td></tr></table></figure>
-</li>
-<li><p>逻辑运算符:and,or,not</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id &gt; 3 and gender=0;</div></pre></td></tr></table></figure>
-</li>
-<li><p>模糊查询:like,%表示任意多个任意字符,_表示一个任意字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where name like &apos;黄%&apos; or name like &apos;_靖&apos;</div></pre></td></tr></table></figure>
-</li>
-<li><p>范围查询:in表示在一个非连续的范围内。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where id in(1,3,8);</div></pre></td></tr></table></figure>
-</li>
-<li><p>空判断:判空is null,null与’’是不同的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where height is null;</div></pre></td></tr></table></figure>
-</li>
-<li><p>优先级</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">优先级由高到低的顺序为：小括号，not，比较运算符，逻辑运算符</div><div class="line">and比or先运算，如果同时出现并希望先算or，需要结合()使用</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h5><ul>
-<li>select * from 表名 order by 列1 asc|desc,列2 asc|desc,…;asc从小到大排列，即升序,desc从大到小排序，即降序。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where gender=1 and isdelete=0 order by id desc;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="聚合函数"><a href="#聚合函数" class="headerlink" title="聚合函数"></a>聚合函数</h5><ul>
-<li><p>count(*)表示计算总行数，括号中写星与列名，结果是相同的，聚合函数不能在 where 中使用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select count(*) from students;</div></pre></td></tr></table></figure>
-</li>
-<li><p>max(列)表示求此列的最大值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select max(id) as 别名 from students where gender=0;</div></pre></td></tr></table></figure>
-</li>
-<li><p>min(列)表示求此列的最小值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select sum(id) from students where gender=1;</div></pre></td></tr></table></figure>
-</li>
-<li><p>avg(列)表示求此列的平均值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select avg(id) from students where isdelete=0 and gender=0;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h5><ul>
-<li><p>select 列1,列2,聚合… from 表名 group by 列1,列2…。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select age as 年龄,count(*) as 数量 from students group by age;</div></pre></td></tr></table></figure>
-</li>
-<li><p>分组后的数据筛选:select 列1,列2,聚合… from 表名 group by 列1,列2,列3… having 列1,…聚合…。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">select gender as 性别,count(*)</div><div class="line">from students</div><div class="line">group by gender</div><div class="line">having gender=1;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h5><ul>
-<li><p>select * from 表名 limit start,count; 从start开始，获取count条数据，start索引从0开始</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where gender=1 limit 0,3;</div></pre></td></tr></table></figure>
-</li>
-<li><p>已知：每页显示m条数据，当前显示第n页</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where isdelete=0 limit (n-1)*m,m</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="连接查询"><a href="#连接查询" class="headerlink" title="连接查询"></a>连接查询</h5><ul>
-<li>select * from 表1 inner或left或right join 表2 on 表1.列=表2.列</li>
-<li><p>内连接查询：交集</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students inner join pythons on students.cls_id = pythons.id;</div></pre></td></tr></table></figure>
-</li>
-<li><p>左连接查询:查询的结果为两个表匹配到的数据，左表特有的数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students as s left join pythons as p on s.cls_id = p.id;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%B7%A6%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png" alt="左连接"></p>
-<ul>
-<li>右连接查询：查询的结果为两个表匹配到的数据，右表特有的数据。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students as s inner join pythons as p on s.cls_id = p.id;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E5%8F%B3%E8%BF%9E%E6%8E%A5%E6%9F%A5%E8%AF%A2.png" alt="右连接"></p>
-<ul>
-<li><p>自关联：多引用，同一张表。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select dis.* from areas as dis inner join areas as city on city.aid=dis.pid where city.atitle=&apos;广州市&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>子查询：在一个 select 语句中,嵌入了另外一个 select 语句。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">标量子查询: 子查询返回的结果是一个数据(一行一列)</div><div class="line">列子查询: 返回的结果是一列(一列多行)</div><div class="line">行子查询: 返回的结果是一行(一行多列)</div><div class="line">表级子查询: 返回的结果是多行多列</div></pre></td></tr></table></figure>
-</li>
-<li><p>标量子查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where age &gt; (select avg(age) from students);</div></pre></td></tr></table></figure>
-</li>
-<li><p>列级子查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name from pythons where id in (select cls_id from students);</div></pre></td></tr></table></figure>
-</li>
-<li><p>行级查询</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from students where (height,age) = (select max(height),max(age) from students);</div></pre></td></tr></table></figure>
-</li>
-<li><p>表查询：from后面可以跟查询出来的数据，取别名</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select * from</div><div class="line">(select stu.*,pys.name as clsname from students as stu inner join pythons as pys on stu.cls_id = pys.id)</div><div class="line">as t1;</div></pre></td></tr></table></figure>
-</li>
-<li><p>子查询中特定关键字使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">in 范围</div><div class="line">格式: 主查询 where 条件 in (列子查询)</div><div class="line"></div><div class="line">any | some 任意一个</div><div class="line">格式: 主查询 where 列 = any (列子查询)</div><div class="line">在条件查询的结果中匹配任意一个即可,等价于 in</div><div class="line"></div><div class="line">all:例如要比里面任意一个要大。</div><div class="line">格式: 主查询 where 列 = all(列子查询) : 等于里面所有</div><div class="line">格式: 朱查询 where 列 &lt;&gt;all(列子查询) : 不等一其中所有</div></pre></td></tr></table></figure>
-</li>
-<li><p>总结</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">select distinct *</div><div class="line">from 表名</div><div class="line">where ....</div><div class="line">group by ... having ...</div><div class="line">order by ...</div><div class="line">limit start,count</div></pre></td></tr></table></figure>
-</li>
-<li><p>执行顺序为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">from 表名</div><div class="line">where ....</div><div class="line">group by ...</div><div class="line">select distinct *</div><div class="line">having ...</div><div class="line">order by ...</div><div class="line">limit start,count</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="MySQL内置函数"><a href="#MySQL内置函数" class="headerlink" title="MySQL内置函数"></a>MySQL内置函数</h4><h5 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h5><ul>
-<li>查看字符的ascii码值：select ascii(‘a’)；</li>
-<li>查看ascii码值对应的字符：select char(97)；</li>
-<li>包含字符个数：select length(‘abc’)；</li>
-<li>拼接：select concat(12,34,’ab’)；</li>
-<li>截取：left(str,len)返回字左端len个字符；right(str,len)返回右端len个字符；substring(str,pos,len)返回pos起len个字符；</li>
-<li>去除空格：ltrim(str)删除了左空格；rtrim(str)删除了右空格；trim([方向 remstr from str)删除remstr后字符，方向词包括both、leading、trailing，表示两侧、左、右</li>
-<li>返回由n个空格字符组成的一个字符串：select space(10);</li>
-<li>替换字符串replace(str,from_str,to_str)：select replace(‘abc123’,’123’,’def’);</li>
-<li>大小写转换：select lower(str),select upper(str)；</li>
-</ul>
-<h5 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h5><ul>
-<li>求绝对值abs(n)：select abs(-32);</li>
-<li>求m除以n的余数mod(m,n)，同运算符%：select mod(10,3);select 10%3;</li>
-<li>地板floor(n)，表示不大于n的最大整数：select floor(2.3);</li>
-<li>天花板ceiling(n)，表示不小于n的最大整数：select ceiling(2.3);</li>
-<li>求四舍五入值round(n,d)，n表示原数，d表示小数位置，默认为0：select round(1.6);</li>
-<li>求x的y次幂pow(x,y)：select pow(2,3);</li>
-<li>获取圆周率PI()：select PI();</li>
-<li>随机数rand()，值为0-1.0的浮点数：select rand();</li>
-</ul>
-<h5 id="时间日期函数"><a href="#时间日期函数" class="headerlink" title="时间日期函数"></a>时间日期函数</h5><ul>
-<li>获取年月日等子值：select year(date)；month(date)；day(date)；hour(time)；minute(time)；second(time)；</li>
-<li>日期计算，使用+-运算符，数字后面的关键字为year、month、day、hour、minute、second：select ‘2016-12-21’+interval 1 day;</li>
-<li><p>日期格式化date_format(date,format)，参数format可选值如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">%Y 获取年，返回完整年份;%y 获取年，返回简写年份;%m 获取月，返回月份;%d 获取日，返回天值</div><div class="line">%H 获取时，返回24进制的小时数;%h 获取时，返回12进制的小时数;%i 获取分，返回分钟数;%s 获取秒，返回秒数</div></pre></td></tr></table></figure>
-</li>
-<li><p>当前日期:select current_date();</p>
-</li>
-<li>当前时间:select current_time();</li>
-<li>当前日期时间:select now();</li>
-</ul>
-<h5 id="类型转换函数"><a href="#类型转换函数" class="headerlink" title="类型转换函数"></a>类型转换函数</h5><ul>
-<li>cast(value as type)</li>
-<li>convert(value, type)</li>
-<li>value表示要转换的值</li>
-<li>type表示目标类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">二进制binary;字符型char，可指定字符个数如char(10);日期date;时间time;日期时间型datetime;浮点数decimal;整数signed;无符号整数unsigned</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h5><ul>
-<li>等值判断:case 值 when 比较值1 then 结果1 when 比较值2 then 结果2 … else 结果 end</li>
-<li>非等值判断，可以进行 &gt; 、&lt;、!=等判断:case when 条件1 then 结果1 when 条件2 then 结果2 … else 结果 end</li>
-<li>if(表达式,结果1,结果2):如果表达式的结果为true，则返回结果1,否则返回结果2</li>
-<li>ifnull(表达式1,表达式2):如果表达式1不为null，则返回表达式1的结果，否则返回表达式2的结果</li>
-<li>nullif(表达式1,表达式2)：如果表达式1等于表达式2，则返回null，否则返回表达式1的结果</li>
-<li>根据性别显示信息，如果是男，显示x靓仔，是女，显示x靓女，其他的显示xxx<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">select</div><div class="line">case gender</div><div class="line">when 1 then concat(left(name,1),&apos;靓仔&apos;)</div><div class="line">when 2 then concat(left(name,1),&apos;靓女&apos;)</div><div class="line">else concat(left(name,1),&apos;xxx&apos;)</div><div class="line">end</div><div class="line">,name,gender</div><div class="line">from students;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h4><h5 id="账户管理"><a href="#账户管理" class="headerlink" title="账户管理"></a>账户管理</h5><ul>
-<li>服务实例级账号：，启动了一个mysqld，即为一个数据库实例；如果某用户如root,拥有服务实例级分配的权限，那么该账号就可以删除所有的数据库、连同这些库中的表</li>
-<li>数据库级别账号：对特定数据库执行增删改查的所有操作</li>
-<li>数据表级别账号：对特定表执行增删改查等所有操作</li>
-<li>字段级别的权限：对某些表的特定字段进行操作</li>
-<li>存储程序级别的账号：对存储程序进行增删改查的操作</li>
-</ul>
-<h6 id="权限管理"><a href="#权限管理" class="headerlink" title="权限管理"></a>权限管理</h6><ul>
-<li>实例级账号上执行，即root。</li>
-<li>所有用户及权限信息存储在mysql数据库的user表中，查看user表的结构:desc user\G;</li>
-<li>查看所有用户:select host,user,authentication_string(密码，加密后的值) from user;</li>
-<li><p>创建账户并授权：grant 权限列表 on 数据库 to ‘用户名’@’访问主机’ identified by ‘密码’;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">grant all privileges on python.* to &apos;py&apos;@&apos;%&apos; identified by &apos;123&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>授权：grant 权限名称 on 数据库 to 账户1,账户2,… with grant option;</p>
-</li>
-<li>查看用户有哪些权限:show grants for py;</li>
-<li>回收权限<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">revoke 权限列表 on 数据库名.* from  &apos;用户名&apos;@&apos;主机&apos;;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h5><ul>
-<li><p>创建:delimiter $$–&gt;create function 函数名称(参数列表) returns 返回类型;–&gt;begin–&gt;sql语句;–&gt;end–&gt;$$–&gt;delimiter ;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">delimiter $$</div><div class="line">create function py_trim(str varchar(100)) returns varchar(100)</div><div class="line">begin</div><div class="line">declare x varchar(100);</div><div class="line">set x=ltrim(rtrim(str));</div><div class="line">return x;</div><div class="line">end</div><div class="line">$$</div><div class="line">(还原分割符)delimiter ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看:所有函数存储在mysql数据库下的proc表中,说明：存储过程与函数都存储在proc表中，区别在type字段，func表中无数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select name,type from mysql.proc where db=&apos;python&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>调用:select 函数名称(参数列表);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select py_trim(&apos; a &apos;);</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除:函数的代码无法修改，如果不能满足要求可以删除后重新创建。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">drop function 函数名称;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h6 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h6><ul>
-<li><p>临时变量：declare 变量名 类型 default 默认值;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">定义变量：declare x varchar(100);</div><div class="line">设置变量值：set 变量名=值----&gt;例：set x=&apos;abc&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>用户变量/会话变量:只有在当前连接用户有效,其他连接用户无法访问,使用@标识声明用户变量,使用 select 来查看用户变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">--定义用户变量</div><div class="line">-- set @变量名 = 值;</div><div class="line">set @age = 20;</div><div class="line">-- 查看用户变量</div><div class="line">select @age;</div><div class="line">-- 但是如果在 select 语句中这么使用就会有问题, 因为 &apos;=&apos; 在 select 语句中是判断是否相等</div><div class="line">-- mysql 使用 := 在 select 语句中表示赋值</div><div class="line">set @maxage = 0;</div><div class="line">select @maxage := max(age) from students;</div></pre></td></tr></table></figure>
-</li>
-<li><p>系统变量:任何一个用户都可以访问,使用 @@来标识系统变量,使用 select 来查看系统变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">-- 查询所有的系统变量</div><div class="line">show variables;</div><div class="line">-- 查看系统变量</div><div class="line">select @@max_connections;</div><div class="line">-- 当前用户/会话中修改系统变量</div><div class="line">set max_connections = 1000;</div><div class="line">-- 全局修改,所有的访问用户都会生效</div><div class="line">set global max_connection = 1000;</div></pre></td></tr></table></figure>
-</li>
-<li><p>判断</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">if 条件1 then</div><div class="line">语句1;</div><div class="line">elseif 条件2 then</div><div class="line">语句2;</div><div class="line">else</div><div class="line">语句</div><div class="line">end if;</div></pre></td></tr></table></figure>
-</li>
-<li><p>循环</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">while 条件 do</div><div class="line">语句;</div><div class="line">end while;</div><div class="line">退出循环：leave，相当于break</div><div class="line">退出本次循环：iterate，相当于continue</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="存储过程"><a href="#存储过程" class="headerlink" title="存储过程"></a>存储过程</h5><ul>
-<li><p>创建</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">delimiter //</div><div class="line">create procedure 存储过程名称(参数列表)</div><div class="line">begin</div><div class="line">sql语句</div><div class="line">end</div><div class="line">//</div><div class="line">delimiter ;</div></pre></td></tr></table></figure>
-</li>
-<li><p>所有存储过程和函数，都存储在mysql数据库下的proc表中。</p>
-</li>
-<li><p>查看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查看表结构：desc mysql.proc\G;</div><div class="line">查看python数据库的所有存储过程:select name,type,body from mysql.proc where db=&apos;py3&apos;;</div></pre></td></tr></table></figure>
-</li>
-<li><p>调用:call 存储过程(参数列表);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">call proc_stu();</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除：drop procedure 存储过程名称;</p>
-</li>
-</ul>
-<h5 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h5><ul>
-<li><p>定义视图。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">create view 视图名称 as select语句;</div><div class="line">例：创建视图，查询学生对应的成绩信息</div><div class="line">create view v_stu_sco as</div><div class="line">select students.* ,scores.score from scores</div><div class="line">inner join students on scores.stuid=students.id;</div></pre></td></tr></table></figure>
-</li>
-<li><p>查看视图：show tables;</p>
-</li>
-<li>删除视图:drop view 视图名称;</li>
-<li>使用：视图的用途就是查询<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select * from v_stu_score;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h5 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h5><ul>
-<li>维持数据的一致性。</li>
-<li><p>事务四大特性(简称ACID)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">原子性(Atomicity)：事务中的全部操作在数据库中是不可分割的，要么全部完成，要么均不执行。</div><div class="line">一致性(Consistency)：几个并行执行的事务，其执行结果必须与按某一顺序串行执行的结果相一致。</div><div class="line">隔离性(Isolation)：事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</div><div class="line">持久性(Durability)：对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现故障。</div></pre></td></tr></table></figure>
-</li>
-<li><p>表的引擎类型必须是innodb类型才可以使用事务，这是mysql表的默认引擎。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">查看表的创建语句，可以看到engine=innodb。</div><div class="line">show create table students;</div></pre></td></tr></table></figure>
-</li>
-<li><p>开启事务:begin;</p>
-</li>
-<li>提交事务:commit;</li>
-<li>回滚事务:放弃缓存中变更的数据,rollback;</li>
-</ul>
-<h5 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h5><ul>
-<li>查看索引:show index from 表名;</li>
-<li><p>创建索引:如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致;字段类型如果不是字符串，可以不填写长度部分</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">create index 索引名称 on 表名(字段名称(长度))</div></pre></td></tr></table></figure>
-</li>
-<li><p>删除索引：drop index 索引名称 on 表名;</p>
-</li>
-<li>缺点:虽然索引大大提高了查询速度，同时却会降低更新表的速度.</li>
-</ul>
-<h4 id="MySQL与python交互"><a href="#MySQL与python交互" class="headerlink" title="MySQL与python交互"></a>MySQL与python交互</h4><h5 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h5><ul>
-<li><p>安装虚拟环境</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo pip install virtualenv</div><div class="line">sudo pip install virtualenvwrapper</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建虚拟环境：mkvirtualenv 虚拟环境名称。</p>
-</li>
-<li>退出虚拟环境：deactivate</li>
-<li>使用虚拟环境：workon 虚拟环境名称。</li>
-<li>删除虚拟环境：rmvirtualenv 虚拟环境名称</li>
-<li>查看虚拟环境中所有包：pip list</li>
-</ul>
-<h5 id="访问数据库"><a href="#访问数据库" class="headerlink" title="访问数据库"></a>访问数据库</h5><ul>
-<li>使用python DB API访问数据库流程，相关代码查看<a href="https://github.com/tonytonypeng/Database/blob/master/%E6%95%B0%E6%8D%AE%E5%BA%93/mysql_python%E4%BA%A4%E4%BA%92.py" target="_blank" rel="external">github</a><br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E6%B5%81%E7%A8%8B.png" alt="流程"></li>
-<li>pycharm定义环境<br><img src="https://github.com/tonytonypeng/Database/raw/master/%E5%9B%BE%E7%89%87/pycharm%E6%90%AD%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83.png" alt="环境"></li>
-<li>在py文件中引入pymysql模块:from pymysql import *</li>
-</ul>
-<h6 id="connection对象"><a href="#connection对象" class="headerlink" title="connection对象"></a>connection对象</h6><ul>
-<li>创建对象:conn = connect(host=,port=,database=,user=,password=,charset=)</li>
-<li>对象方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">close()关闭连接</div><div class="line">commit()提交</div><div class="line">rollback()回滚</div><div class="line">cursor()返回Cursor对象，用于执行sql语句并获得结果</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h6 id="cursor对象"><a href="#cursor对象" class="headerlink" title="cursor对象"></a>cursor对象</h6><ul>
-<li>获取Cursor对象：cs1=conn.cursor()</li>
-<li><p>对象的方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">close()关闭</div><div class="line">execute(operation [, parameters ])执行语句，返回受影响的行数，主要用于执行insert、update、delete语句，也可以执行create、alter、drop等语句</div><div class="line">fetchone()获取第一行数据，继续调用会获取下一行数据</div><div class="line">fetchall()获取结果集的所有行</div><div class="line">fetchmany(n)指定获取多少行</div></pre></td></tr></table></figure>
-</li>
-<li><p>对象的属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rowcount只读属性，表示最近一次execute()执行后受影响的行数</div><div class="line">connection获得当前连接对象</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
+<h3 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h3><p>– 数据库<br>    存储数据，把数据持久化到硬盘</p>
+<p>– RDBMS<br>    关系型数据库系统<br>    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性<br>    oracle<br>    MySQL<br>    sqlserver<br>    sqlite</p>
+<p>– SQL<br>    在关系型数据库中使用的语言<br>    不区分大小写 SelEcT</p>
+<p>– MySQL<br>    被卖给Sun，Sun被卖给Oracle<br>    开源、免费<br>    支持各种操作系统：windows、linux、macos</p>
+<p>– 服务端(Server)<br>    – 查询服务是否开启<br>        ps ajx | grep mysql 看mysqld进程是否存在<br>    – 开启服务<br>        sudo service mysql start<br>    – 停止服务<br>        sudo service mysql stop<br>    – 重启服务<br>        sudo service mysql restart</p>
+<p>– 客户端操作(Client)</p>
+<pre><code>-- navicat(GUI的使用)
+
+-- 数据完整性
+    5.0版本后，数据类型的长度指的是数据显示的宽度
+    varchar(10),指的是能放最多10个字符，一个字母或一个数字或一个中文都是一个字符
+    int(1),指的是放int类型的数据范围是4个字节的大小，跟设置的长度
+    decimal(5,2)表示共存5位数，小数占2位
+    列：数据类型、取值范围、是否为空
+    行：必须有一个唯一标示，需要有一个主键
+    表：引用了另一个表的数据，通过外键约束范围
+
+-- 终端命令
+    -- mysql -uroot -pmysql -u -p 后面都没有空格
+
+    -- 数据库操作
+        -- 查看所有数据库
+            show databases;
+        -- 查看当前使用的数据库
+            select database();
+        -- 使用某一个数据库
+            use py3;
+        -- 创建数据库
+            create database abc charset=utf8;
+        -- 删除数据库
+            drop database abc;
+
+    -- 数据表操作
+        -- 查看所有表
+            show tables;
+        -- 查看表结构
+            desc class;
+        -- 查看表创建的语句
+            show create table class;
+        -- 创建表
+            create table student(
+                id int unsigned primary key not null auto_increment,
+                name varchar(5)
+                );
+        -- 添加字段
+            alter table student add aeg int;
+        -- 修改字段 同时修改名称和类型
+            alter table student change aeg age varchar(5);
+        -- 修改字段 只修改类型
+            alter table student modify age int;
+        -- 删除字段
+            alter table student drop age;
+        -- 删除表
+            drop table student;
+
+
+    -- 数据操作
+
+        -- 查询数据
+            select * from class;
+            select name from class;
+            select name as 名称 from class;
+        -- 插入数据 表名后面没有指定列，values 的值需要对应上表所有的字段，顺序也是一致
+            insert into student values(1,&apos;嘻嘻嘻&apos;);
+            insert into student(name) values(&apos;啊课&apos;);
+            insert into student(name) values(&apos;啊课&apos;),(&apos;黄忠&apos;);
+        -- 更新数据
+            update student set name=&apos;诸葛亮&apos; where id=4;-- 找到id=4的一行数据，把其中的name改为
+            update student set name=&apos;诸葛亮&apos;,age=20 where id=4;
+            update student set age=18;-- 把每一行的数据中的 age改成18
+
+        -- 删除数据
+            delete from student where id=5;-- 删除id为5的那条数据
+            delete from student;-- 删除所有的数据
+
+            -- 逻辑删除 在表中添加列，记录数据是否删除 bit(1)
+                alter table student add isdelete bit default 0;
+                -- 想删除数据时
+                    update student set isdelete=1 where id=5;
+                -- 查询数据时，只要没有删除的数据
+                    select * from student where isdelete=0;
+
+    -- 数据备份和恢复
+        -- 备份
+            mysqldump -uroot -p py3 &gt; py3.sql
+
+        -- 恢复
+            -- 先创建数据库 aaa
+            mysql -uroot -p aaa &lt; py3.sql
+</code></pre><h3 id="MySQL-查询"><a href="#MySQL-查询" class="headerlink" title="MySQL 查询"></a>MySQL 查询</h3><pre><code>-- 创建表
+    create table students(
+        id int unsigned primary key auto_increment not null,
+        name varchar(20) default &apos;&apos;,
+        age tinyint unsigned default 0,
+        height decimal(5,2),
+        gender enum(&apos;男&apos;,&apos;女&apos;,&apos;人妖&apos;,&apos;保密&apos;),
+        cls_id int unsigned default 0,
+        isdelete bit default 0
+        );
+-- 准备数据
+    insert into students values
+    (0,&apos;小铭&apos;,18,180.00,2,1,0),
+    (0,&apos;小月月&apos;,18,180.00,2,2,1),
+    (0,&apos;彭于晏&apos;,29,185.00,1,1,0),
+    (0,&apos;刘德华&apos;,59,175.00,1,2,1),
+    (0,&apos;芙蓉&apos;,38,160.00,2,1,0),
+    (0,&apos;凤姐&apos;,28,150.00,4,2,1),
+    (0,&apos;王祖贤&apos;,18,172.00,2,1,1),
+    (0,&apos;周杰伦&apos;,36,NULL,1,1,0),
+    (0,&apos;程坤&apos;,27,181.00,1,2,0),
+    (0,&apos;刘亦菲&apos;,25,166.00,2,2,0),
+    (0,&apos;金星&apos;,33,162.00,3,3,1),
+    (0,&apos;静香&apos;,12,180.00,2,4,0),
+    (0,&apos;周杰&apos;,34,176.00,2,5,0);
+
+-- 去除重复结果
+
+    select distinct 列1,... from 表名;
+    -- 查询不重复的年龄
+    select distinct age from students;
+    -- 出现age和height都不重复的数据
+    select distinct age,height from students;
+
+-- 条件查询
+    select * from 表名 where 条件;
+
+    -- 比较运算符
+        -- 查询编号大于3的学生
+            select * from students where id &gt; 3;
+        -- 查询姓名不是“黄蓉”的学生
+            select * from students where name!=&apos;黄蓉&apos;;
+            select * from students where name&lt;&gt;&apos;黄蓉&apos;;
+    -- 逻辑运算符
+        -- 查询编号大于3的女同学
+            select * from students where id&gt;3 and gender=&apos;女&apos;;-- gender=2；
+        -- 查询编号小于4或没被删除的学生
+            select * from students where id &lt; 4 or isdelete=0;
+    -- 模糊查询
+
+        % 代表n个字符
+        _ 代表一个字符
+
+        -- 查询姓黄的学生
+            select * from students where name like &apos;黄%&apos;;
+        -- 查询姓黄的学生,而且姓名为两个字
+            select * from students where name like &apos;黄_&apos;;
+
+    -- 范围查询
+
+        -- 查询编号是1或3或8的学生
+            select * from students where id in(1,3,8); -- not in 取反
+        -- 查询年龄在18到28的学生
+            select * from students where age between 18 and 28;
+    -- 空判断
+
+        -- 查询没有填写身高的学生
+            select * from students where height is null;-- is not 取反
+
+-- 排序
+    -- 按照年龄排序  倒序 age desc
+    select * from students order by age;
+    -- 先按年龄正序，在按身高正序
+    select * from students order by age,height;
+
+-- 聚合函数
+
+    -- 统计行数
+        select count(\*) from students;
+
+        select max(age) as 最大年龄,min(age) as 最小年龄, avg(age) as 平均年龄,sum(age) from students;
+
+-- 分组
+    -- 按照某一列分组，select后只能显示那一列，还能统计数据
+    select gender,count(\*) from students group by gender;
+    -- 根据多列分组
+    select age,height,count(\*) from students group by age,height;
+    -- 分组后，按条件筛选数据，不能用where，只能用having
+    select gender from students group by gender having gender=1;
+
+-- 分页
+    -- limit index,num   index 第一天数据为0
+    select * from students limit 3,4;-- 从索引3位置开始，查询4条数据  4，5，6，7
+
+-- 表连接
+
+    -- 内连接 学生有班级信息，班级里也与学生
+    select * from students as s inner join pythons as p on s.cls_id=p.id;
+    -- 左连接 查询所有的学生在哪个班级
+    select * from students as a left join pythons as p on a.cls_id=p.id
+    -- 右连接 查询所有的班级都有哪些学生
+    select * from students as a right join pythons as p on a.cls_id=p.id;
+
+
+    -- 自关联
+        -- 查询广东省的所有市
+        select city.atitle,pro.atitle from areas as city inner join areas as pro on city.pid=pro.aid where pro.atitle=&apos;广东省&apos;;
+
+    -- 子查询
+        -- 标量子查询 子查询里面返回的就是一个值，一行一列
+            -- 查询班级学生的平均身高
+            select avg(height) from students;
+            -- 查询大于平均身高的学生
+            select * from students where height &gt; (select avg(height) from students);
+
+        -- 列级子查询 子查询返回的是一个集合，一列多行
+
+            -- 查询还有学生在班的所有班级名字
+                找出学生表中所有的班级 id
+                找出班级表中对应的名字
+            select * from pythons where id in (select distinct cls_id from students);
+
+        -- 行级子查询 子查询返回的是一行多列的值
+
+            -- 需求: 查找班级年龄最大,身高最高的学生
+            select max(age),max(height) from students;
+            select * from students where age=59 and height=185.00;
+            select * from students where (age,height)=(select max(age),max(height) from students)
+
+        -- 表级子查询 from 后的表是查询处理的表
+            查询学生与班级对应的信息
+            select * from students as s inner join pythons as p on s.cls_id=p.id;
+            select res.stu_name,res.p_name from (select s.name as stu_name,p.name as p_name from students as s inner join pythons as p on s.cls_id=p.id) as res
+            -- 按照年龄倒序，前10名中的女生
+            select r.* from (select s.* from students as s s.gender=2 order by age desc limit 10)  as r where r.gender=2
+
+    -- 函数
+        -- 连接
+             select concat(name,&apos;的性别是&apos; ,gender) from students;
+        -- 截取
+            select left(name,1) from students;
+        -- 根据性别显示信息，如果是男，显示x靓仔，女的，x靓女，其他的显示xxx
+            select
+            case gender
+            when 1 then concat(left(name,1),&apos;靓仔&apos;)
+            when 2 then concat(left(name,1),&apos;靓女&apos;)
+            else concat(left(name,1),&apos;\**&apos;)
+            end
+            ,name , gender
+            from students;
+
+            a = 3 if b==1 else 2
+</code></pre><h3 id="查询演练"><a href="#查询演练" class="headerlink" title="查询演练"></a>查询演练</h3><pre><code>-- 求所有电脑产品的平均价格,并且保留两位小数
+    select round(avg(price),2) from goods;
+-- 查询所有价格大于平均价格的商品，并且按价格降序排序
+    select * from goods where price &gt; (select round(avg(price),2) from goods) order by price desc;
+-- 查询类型为&apos;超极本&apos;的商品价格
+    select * from goods where cate=&apos;超级本&apos;;
+-- 查询价格大于或等于&quot;超级本&quot;价格的商品，并且按价格降序排列
+    select * from goods where price &gt;=any (select price from goods where cate=&apos;超级本&apos;)
+    select * from goods where price not in (select price from goods where cate=&apos;超级本&apos;)
+
+数据分表
+
+-- 创建“商品分类”表
+    create table if not exists goods_cates(
+        cate_id int unsigned primary key auto_increment,
+        cate_name varchar(40)
+    );
+-- 查询商品中的分类
+    select distinct cate from goods；
+-- 把分类添加到“商品分类”表
+    insert into goods_cates(cate_name) select distinct cate from goods;
+
+-- 创建“商品品牌”表，插入数据
+    create table a select * from b;
+    create table goods_brands(
+        brand_id int unsigned primary key auto_increment not null,
+        brand_name varchar(20)
+        ) select distinct brand_name from goods;
+
+-- 更新商品表中的分类为商品分类表的id
+    select * from goods as g inner join goods_cates as c on g.cate=c.cate_name;
+    update goods as g inner join goods_cates as c on g.cate=c.cate_name set g.cate = c.cate_id;
+
+-- 更新商品表中的品牌为品牌分类表的id
+    select * from goods as g inner join goods_brands as c on g.brand_name=c.brand_name;
+    update goods as g inner join goods_brands as c on g.brand_name=c.brand_name
+    set g.brand_name=c.brand_id;
+
+-- 插入数据
+        insert into goods (name,cate_id,brand_id,price)
+        values(&apos;LaserJet Pro P1606dn 黑白激光打印机&apos;,&apos;12&apos;,&apos;4&apos;,&apos;1849&apos;);
+        insert into goods_cates(cate_name) values (&apos;路由器&apos;),(&apos;交换机&apos;),(&apos;网卡&apos;);
+        insert into goods_brands(brand_name) values (&apos;海尔&apos;),(&apos;清华同方&apos;),(&apos;神舟&apos;);
+
+-- 查询商品的信息，包括商品类型和商品品牌
+    select g.name,c.cate_name,b.brand_name from goods as g
+    inner join goods_cates as c on g.cate_id=c.cate_id
+    inner join goods_brands as b on g.brand_id=b.brand_id
+
+-- 左连接，查询所有商品对应的类型和品牌
+    select g.name,c.cate_name,b.brand_name from goods as g
+    left join goods_cates as c on g.cate_id=c.cate_id
+    left join goods_brands as b on g.brand_id=b.brand_id
+
+-- 右连接，查询所有商品类型和品牌对应的商品信息
+    select g.name,c.cate_name,b.brand_name from goods as g
+    right join goods_cates as c on g.cate_id=c.cate_id
+    right join goods_brands as b on g.brand_id=b.brand_id
+
+-- 外键 必须保证此表的列和引用的列类型一致（符号问题）   约束插入或更新时，某一列的值的范围，外键指向的是另一个表的某一列
+    alter table goods add FOREIGN KEY goods_1(cate_id) REFERENCES goods_cates(cate_id);
+    alter table goods add FOREIGN KEY goods_2(brand_id) REFERENCES goods_brands(brand_id);
+    影响插入和更新的效率
+
+-- 删除外键
+        使用show create table goods , 查看CONSTRAINT
+        alter table goods drop foreign key goods_ibfk_1;
+
+      创建外键时，mysql自动在那一列创建了索引，删除外键时不会自动删除，需要手动删除
+
+        alter table goods dorp index goods;
+</code></pre><h3 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h3><pre><code>--账户管理
+
+  -- 账户管理是在mysql仓库中
+  -- user表记录了所有的账户信息
+
+  -- 创建账户并授权
+
+      语法如下：
+      grant 权限列表 on 数据库 to &apos;用户名&apos;@&apos;访问主机&apos; identified by &apos;密码&apos;;
+
+      grant all privileges on py3.* to &apos;py3&apos;@&apos;%&apos; identified by &apos;123&apos;;
+
+  -- 回收权限
+
+      revoke 权限列表 on 数据库名.* from  &apos;用户名&apos;@&apos;主机&apos;;
+
+      revoke select on py3.* from &apos;py3&apos;@&apos;%&apos;;
+
+  -- 修改密码 自己修改自己的密码
+
+      语法1：不需登录
+      mysqladmin -u py -p password &apos;新密码&apos;
+
+      mysqladmin -upy3 -p password &apos;123456&apos;; -- 回车后输入原来的密码
+
+  -- 语法2：使用root登录，修改mysql数据库的user表
+      使用password()函数进行密码加密
+      注意修改完成后需要刷新权限
+
+      update user set authentication_string=password(&apos;123&apos;) where user=&apos;py3&apos;;
+
+      flush privileges
+
+  -- 删除账户
+
+      语法1：使用root登录
+      drop user &apos;用户名&apos;@&apos;主机&apos;;
+      drop user &apos;py3&apos;@&apos;%&apos;;
+
+      -- 语法2：使用root登录，删除mysql数据库的user表中数据
+          delete from user where user=&apos;用户名&apos;;
+          例：
+          delete from user where user=&apos;py&apos;;
+
+          -- 操作结束之后需要刷新权限
+          flush privileges
+
+  -- root账户忘记密码
+      -- 1、配置数据库登录是不需要密码
+          /etc/mysql/mysql.conf.d/mysqld.cnf
+          在[mysqld]后面添加 skip-grant-tables
+          重启数据库
+      -- 2、登录数据库，修改密码
+
+          mysql -uroot
+          update user set authentication_string=password(&apos;123&apos;) where user=&apos;root&apos;;
+
+      -- 3、配置登录需要密码
+          skip-grant-tables去掉
+
+          name = &apos;uo1241&apos;
+
+          insert into xxx values(&apos;name&apos;,,,);
+          zu000&apos;,,); drop database xx;
+          insert into xxx values(&apos;zu000&apos;,,); drop database xx;&apos;,,,);
+</code></pre><p>  – 函数<br>      – 创建</p>
+<pre><code>    只能调用select into 语句
+    select avg(age) into res from students;
+
+    语法如下
+    delimiter $$
+    create function 函数名称(参数列表) returns 返回类型
+    begin
+    sql语句
+    end
+    $$
+    delimiter ;
+
+
+    delimiter $$
+    create function my_trim(str varchar(10)) returns varchar(10)
+    begin
+    return rtrim(ltrim(str))
+    end
+    $$
+    delimiter ;
+
+-- 调用
+
+    select my_trim(&apos;  abc   &apos;);
+
+-- 变量
+    临时变量，只能用在 begin end 之间
+    declare i int default 0
+    set i = 5
+
+    用户变量/会话变量
+    set @age=20
+    select @age:=avg(age) from students;
+    select @age
+
+    系统变量
+    set @@wait_timeout = 1000
+    select @@wait_timeout
+
+    set global wait_timeout =2000
+    select @@global.wait_timeout
+
+-- 函数示例
+
+    要求：定义函数odd，输出1-100间的偶数
+
+    delimiter $$
+    create function odd() returns varchar(300)
+    begin
+    declare i int default 1;
+    declare res varchar default &apos;&apos;;
+    while i&lt;=100 do
+        if i%2=0 then
+        concat(res,&apos;,&apos;,i);
+        end if;
+        i = i+1;
+    end while;
+    return res;
+    end
+    $$
+    delimiter ;
+</code></pre><p>  – 存储过程<br>      创建</p>
+<pre><code>语法如下
+delimiter //
+create procedure 存储过程名称(in i int,out res varchar(30))
+begin
+sql语句
+end
+//
+delimiter ;
+
+delimiter //
+create procedure select_stu()
+begin
+select * from students;
+end
+//
+delimiter ;
+</code></pre><p>  – 视图<br>      create view 视图名称 as select语句;</p>
+<pre><code>create view stu_view as select s.name as 姓名,p.name as &apos;班级&apos; from students as s inner join pythons as p on s.cls_id = p.id;
+</code></pre><p>  – 事物</p>
+<pre><code>500 a 消费 200  a女 消费 100
+
+update set account=account-200
+
+update set account=account-100
+
+-- 提交
+    -- 客户端1
+        begin -- 开启事物
+
+        insert into pythons(name) values(&apos;python7&apos;);
+
+        查询可以看到数据
+
+    -- 客户端2
+        查询看不到数据
+
+    -- 客户端1
+        commit
+
+    -- 客户端2
+        查询看不到数据
+
+-- 回滚
+    -- 客户端1
+        begin -- 开启事物
+
+        insert into pythons(name) values(&apos;python7&apos;);
+
+        查询可以看到数据
+
+    -- 客户端2
+        查询看不到数据
+
+    -- 客户端1
+        rollback
+        查询看到的是以前的数据
+
+    -- 客户端2
+        查询看不到数据
+</code></pre><p>  – 索引</p>
+<pre><code>创建索引
+如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
+字段类型如果不是字符串，可以不填写长度部分
+create index 索引名称 on 表名(字段名称(长度))
+create index name_index on students(name(20))
+create index age_index on students(age)
+
+一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
+</code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
 <h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
 sudo service mongod start
 
@@ -1097,6 +1244,10 @@ db.student.drop()
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2017/09/13/haha/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -1167,7 +1318,7 @@ db.student.drop()
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
@@ -1206,7 +1357,7 @@ db.student.drop()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库"><span class="nav-number">1.</span> <span class="nav-text">数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mysql基本使用"><span class="nav-number">2.</span> <span class="nav-text">mysql基本使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据的增删改查"><span class="nav-number">3.</span> <span class="nav-text">数据的增删改查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据库的设计"><span class="nav-number">4.</span> <span class="nav-text">数据库的设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL查询"><span class="nav-number">5.</span> <span class="nav-text">MySQL查询</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#条件"><span class="nav-number">5.1.</span> <span class="nav-text">条件</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#排序"><span class="nav-number">5.2.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#聚合函数"><span class="nav-number">5.3.</span> <span class="nav-text">聚合函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分组"><span class="nav-number">5.4.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分页"><span class="nav-number">5.5.</span> <span class="nav-text">分页</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#连接查询"><span class="nav-number">5.6.</span> <span class="nav-text">连接查询</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL内置函数"><span class="nav-number">6.</span> <span class="nav-text">MySQL内置函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符串函数"><span class="nav-number">6.1.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数学函数"><span class="nav-number">6.2.</span> <span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#时间日期函数"><span class="nav-number">6.3.</span> <span class="nav-text">时间日期函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#类型转换函数"><span class="nav-number">6.4.</span> <span class="nav-text">类型转换函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#流程控制函数"><span class="nav-number">6.5.</span> <span class="nav-text">流程控制函数</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL高级"><span class="nav-number">7.</span> <span class="nav-text">MySQL高级</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#账户管理"><span class="nav-number">7.1.</span> <span class="nav-text">账户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#权限管理"><span class="nav-number">7.1.1.</span> <span class="nav-text">权限管理</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#函数"><span class="nav-number">7.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#变量"><span class="nav-number">7.2.1.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#存储过程"><span class="nav-number">7.3.</span> <span class="nav-text">存储过程</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#视图"><span class="nav-number">7.4.</span> <span class="nav-text">视图</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事务"><span class="nav-number">7.5.</span> <span class="nav-text">事务</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#索引"><span class="nav-number">7.6.</span> <span class="nav-text">索引</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL与python交互"><span class="nav-number">8.</span> <span class="nav-text">MySQL与python交互</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装环境"><span class="nav-number">8.1.</span> <span class="nav-text">安装环境</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#访问数据库"><span class="nav-number">8.2.</span> <span class="nav-text">访问数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#connection对象"><span class="nav-number">8.2.1.</span> <span class="nav-text">connection对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cursor对象"><span class="nav-number">8.2.2.</span> <span class="nav-text">cursor对象</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-number"></span> <span class="nav-text">Mongo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mongodb-服务端"><span class="nav-number">1.</span> <span class="nav-text">mongodb 服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行客户端"><span class="nav-number">2.</span> <span class="nav-text">命令行客户端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本操作"><span class="nav-number">3.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据查询"><span class="nav-number">4.</span> <span class="nav-text">数据查询</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL基本使用"><span class="nav-number">1.</span> <span class="nav-text">MySQL基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL-查询"><span class="nav-number">2.</span> <span class="nav-text">MySQL 查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询演练"><span class="nav-number">3.</span> <span class="nav-text">查询演练</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL高级"><span class="nav-number">4.</span> <span class="nav-text">MySQL高级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mongo"><span class="nav-number">5.</span> <span class="nav-text">Mongo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#mongodb-服务端"><span class="nav-number">5.1.</span> <span class="nav-text">mongodb 服务端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令行客户端"><span class="nav-number">5.2.</span> <span class="nav-text">命令行客户端</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本操作"><span class="nav-number">5.3.</span> <span class="nav-text">基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据查询"><span class="nav-number">5.4.</span> <span class="nav-text">数据查询</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -251,7 +251,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/python数据库/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/13/haha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LiZhanPeng">
@@ -273,8 +273,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/09/10/python数据库/" itemprop="url">
-                  数据库
+                <a class="post-title-link" href="/2017/09/13/haha/" itemprop="url">
+                  Unbenannt
                 </a>
               
             
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:14:13+08:00">
-                2017-09-10
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-13T16:24:14+08:00">
+                2017-09-13
               </time>
             
 
@@ -328,8 +328,7 @@
       
         
           
-            <p>详细代码可阅读我的<a href="https://github.com/tonytonypeng/Database" target="_blank" rel="external">github</a></p>
-<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
+            <h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
 <li>数据库：存储数据，把数据持久化到硬盘。</li>
 <li>RDBMS：Relational Database Management System 数据库系统，分关系型(主流)和非关系型。</li>
 <li><p>关系型：行(实例对象)，列(属性)，表(行的集合)，库(表的集合)</p>
@@ -676,7 +675,636 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rowcount只读属性，表示最近一次execute()执行后受影响的行数</div><div class="line">connection获得当前连接对象</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/10/python数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="LiZhanPeng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="tonytonypeng">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/10/python数据库/" itemprop="url">
+                  数据库
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:14:13+08:00">
+                2017-09-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>详细代码可阅读我的<a href="https://github.com/tonytonypeng/Database" target="_blank" rel="external">github</a></p>
+<h3 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h3><p>– 数据库<br>    存储数据，把数据持久化到硬盘</p>
+<p>– RDBMS<br>    关系型数据库系统<br>    用二维表存储数据，一行代表一条数据，每一条数据拥有多个属性<br>    oracle<br>    MySQL<br>    sqlserver<br>    sqlite</p>
+<p>– SQL<br>    在关系型数据库中使用的语言<br>    不区分大小写 SelEcT</p>
+<p>– MySQL<br>    被卖给Sun，Sun被卖给Oracle<br>    开源、免费<br>    支持各种操作系统：windows、linux、macos</p>
+<p>– 服务端(Server)<br>    – 查询服务是否开启<br>        ps ajx | grep mysql 看mysqld进程是否存在<br>    – 开启服务<br>        sudo service mysql start<br>    – 停止服务<br>        sudo service mysql stop<br>    – 重启服务<br>        sudo service mysql restart</p>
+<p>– 客户端操作(Client)</p>
+<pre><code>-- navicat(GUI的使用)
+
+-- 数据完整性
+    5.0版本后，数据类型的长度指的是数据显示的宽度
+    varchar(10),指的是能放最多10个字符，一个字母或一个数字或一个中文都是一个字符
+    int(1),指的是放int类型的数据范围是4个字节的大小，跟设置的长度
+    decimal(5,2)表示共存5位数，小数占2位
+    列：数据类型、取值范围、是否为空
+    行：必须有一个唯一标示，需要有一个主键
+    表：引用了另一个表的数据，通过外键约束范围
+
+-- 终端命令
+    -- mysql -uroot -pmysql -u -p 后面都没有空格
+
+    -- 数据库操作
+        -- 查看所有数据库
+            show databases;
+        -- 查看当前使用的数据库
+            select database();
+        -- 使用某一个数据库
+            use py3;
+        -- 创建数据库
+            create database abc charset=utf8;
+        -- 删除数据库
+            drop database abc;
+
+    -- 数据表操作
+        -- 查看所有表
+            show tables;
+        -- 查看表结构
+            desc class;
+        -- 查看表创建的语句
+            show create table class;
+        -- 创建表
+            create table student(
+                id int unsigned primary key not null auto_increment,
+                name varchar(5)
+                );
+        -- 添加字段
+            alter table student add aeg int;
+        -- 修改字段 同时修改名称和类型
+            alter table student change aeg age varchar(5);
+        -- 修改字段 只修改类型
+            alter table student modify age int;
+        -- 删除字段
+            alter table student drop age;
+        -- 删除表
+            drop table student;
+
+
+    -- 数据操作
+
+        -- 查询数据
+            select * from class;
+            select name from class;
+            select name as 名称 from class;
+        -- 插入数据 表名后面没有指定列，values 的值需要对应上表所有的字段，顺序也是一致
+            insert into student values(1,&apos;嘻嘻嘻&apos;);
+            insert into student(name) values(&apos;啊课&apos;);
+            insert into student(name) values(&apos;啊课&apos;),(&apos;黄忠&apos;);
+        -- 更新数据
+            update student set name=&apos;诸葛亮&apos; where id=4;-- 找到id=4的一行数据，把其中的name改为
+            update student set name=&apos;诸葛亮&apos;,age=20 where id=4;
+            update student set age=18;-- 把每一行的数据中的 age改成18
+
+        -- 删除数据
+            delete from student where id=5;-- 删除id为5的那条数据
+            delete from student;-- 删除所有的数据
+
+            -- 逻辑删除 在表中添加列，记录数据是否删除 bit(1)
+                alter table student add isdelete bit default 0;
+                -- 想删除数据时
+                    update student set isdelete=1 where id=5;
+                -- 查询数据时，只要没有删除的数据
+                    select * from student where isdelete=0;
+
+    -- 数据备份和恢复
+        -- 备份
+            mysqldump -uroot -p py3 &gt; py3.sql
+
+        -- 恢复
+            -- 先创建数据库 aaa
+            mysql -uroot -p aaa &lt; py3.sql
+</code></pre><h3 id="MySQL-查询"><a href="#MySQL-查询" class="headerlink" title="MySQL 查询"></a>MySQL 查询</h3><pre><code>-- 创建表
+    create table students(
+        id int unsigned primary key auto_increment not null,
+        name varchar(20) default &apos;&apos;,
+        age tinyint unsigned default 0,
+        height decimal(5,2),
+        gender enum(&apos;男&apos;,&apos;女&apos;,&apos;人妖&apos;,&apos;保密&apos;),
+        cls_id int unsigned default 0,
+        isdelete bit default 0
+        );
+-- 准备数据
+    insert into students values
+    (0,&apos;小铭&apos;,18,180.00,2,1,0),
+    (0,&apos;小月月&apos;,18,180.00,2,2,1),
+    (0,&apos;彭于晏&apos;,29,185.00,1,1,0),
+    (0,&apos;刘德华&apos;,59,175.00,1,2,1),
+    (0,&apos;芙蓉&apos;,38,160.00,2,1,0),
+    (0,&apos;凤姐&apos;,28,150.00,4,2,1),
+    (0,&apos;王祖贤&apos;,18,172.00,2,1,1),
+    (0,&apos;周杰伦&apos;,36,NULL,1,1,0),
+    (0,&apos;程坤&apos;,27,181.00,1,2,0),
+    (0,&apos;刘亦菲&apos;,25,166.00,2,2,0),
+    (0,&apos;金星&apos;,33,162.00,3,3,1),
+    (0,&apos;静香&apos;,12,180.00,2,4,0),
+    (0,&apos;周杰&apos;,34,176.00,2,5,0);
+
+-- 去除重复结果
+
+    select distinct 列1,... from 表名;
+    -- 查询不重复的年龄
+    select distinct age from students;
+    -- 出现age和height都不重复的数据
+    select distinct age,height from students;
+
+-- 条件查询
+    select * from 表名 where 条件;
+
+    -- 比较运算符
+        -- 查询编号大于3的学生
+            select * from students where id &gt; 3;
+        -- 查询姓名不是“黄蓉”的学生
+            select * from students where name!=&apos;黄蓉&apos;;
+            select * from students where name&lt;&gt;&apos;黄蓉&apos;;
+    -- 逻辑运算符
+        -- 查询编号大于3的女同学
+            select * from students where id&gt;3 and gender=&apos;女&apos;;-- gender=2；
+        -- 查询编号小于4或没被删除的学生
+            select * from students where id &lt; 4 or isdelete=0;
+    -- 模糊查询
+
+        % 代表n个字符
+        _ 代表一个字符
+
+        -- 查询姓黄的学生
+            select * from students where name like &apos;黄%&apos;;
+        -- 查询姓黄的学生,而且姓名为两个字
+            select * from students where name like &apos;黄_&apos;;
+
+    -- 范围查询
+
+        -- 查询编号是1或3或8的学生
+            select * from students where id in(1,3,8); -- not in 取反
+        -- 查询年龄在18到28的学生
+            select * from students where age between 18 and 28;
+    -- 空判断
+
+        -- 查询没有填写身高的学生
+            select * from students where height is null;-- is not 取反
+
+-- 排序
+    -- 按照年龄排序  倒序 age desc
+    select * from students order by age;
+    -- 先按年龄正序，在按身高正序
+    select * from students order by age,height;
+
+-- 聚合函数
+
+    -- 统计行数
+        select count(\*) from students;
+
+        select max(age) as 最大年龄,min(age) as 最小年龄, avg(age) as 平均年龄,sum(age) from students;
+
+-- 分组
+    -- 按照某一列分组，select后只能显示那一列，还能统计数据
+    select gender,count(\*) from students group by gender;
+    -- 根据多列分组
+    select age,height,count(\*) from students group by age,height;
+    -- 分组后，按条件筛选数据，不能用where，只能用having
+    select gender from students group by gender having gender=1;
+
+-- 分页
+    -- limit index,num   index 第一天数据为0
+    select * from students limit 3,4;-- 从索引3位置开始，查询4条数据  4，5，6，7
+
+-- 表连接
+
+    -- 内连接 学生有班级信息，班级里也与学生
+    select * from students as s inner join pythons as p on s.cls_id=p.id;
+    -- 左连接 查询所有的学生在哪个班级
+    select * from students as a left join pythons as p on a.cls_id=p.id
+    -- 右连接 查询所有的班级都有哪些学生
+    select * from students as a right join pythons as p on a.cls_id=p.id;
+
+
+    -- 自关联
+        -- 查询广东省的所有市
+        select city.atitle,pro.atitle from areas as city inner join areas as pro on city.pid=pro.aid where pro.atitle=&apos;广东省&apos;;
+
+    -- 子查询
+        -- 标量子查询 子查询里面返回的就是一个值，一行一列
+            -- 查询班级学生的平均身高
+            select avg(height) from students;
+            -- 查询大于平均身高的学生
+            select * from students where height &gt; (select avg(height) from students);
+
+        -- 列级子查询 子查询返回的是一个集合，一列多行
+
+            -- 查询还有学生在班的所有班级名字
+                找出学生表中所有的班级 id
+                找出班级表中对应的名字
+            select * from pythons where id in (select distinct cls_id from students);
+
+        -- 行级子查询 子查询返回的是一行多列的值
+
+            -- 需求: 查找班级年龄最大,身高最高的学生
+            select max(age),max(height) from students;
+            select * from students where age=59 and height=185.00;
+            select * from students where (age,height)=(select max(age),max(height) from students)
+
+        -- 表级子查询 from 后的表是查询处理的表
+            查询学生与班级对应的信息
+            select * from students as s inner join pythons as p on s.cls_id=p.id;
+            select res.stu_name,res.p_name from (select s.name as stu_name,p.name as p_name from students as s inner join pythons as p on s.cls_id=p.id) as res
+            -- 按照年龄倒序，前10名中的女生
+            select r.* from (select s.* from students as s s.gender=2 order by age desc limit 10)  as r where r.gender=2
+
+    -- 函数
+        -- 连接
+             select concat(name,&apos;的性别是&apos; ,gender) from students;
+        -- 截取
+            select left(name,1) from students;
+        -- 根据性别显示信息，如果是男，显示x靓仔，女的，x靓女，其他的显示xxx
+            select
+            case gender
+            when 1 then concat(left(name,1),&apos;靓仔&apos;)
+            when 2 then concat(left(name,1),&apos;靓女&apos;)
+            else concat(left(name,1),&apos;\**&apos;)
+            end
+            ,name , gender
+            from students;
+
+            a = 3 if b==1 else 2
+</code></pre><h3 id="查询演练"><a href="#查询演练" class="headerlink" title="查询演练"></a>查询演练</h3><pre><code>-- 求所有电脑产品的平均价格,并且保留两位小数
+    select round(avg(price),2) from goods;
+-- 查询所有价格大于平均价格的商品，并且按价格降序排序
+    select * from goods where price &gt; (select round(avg(price),2) from goods) order by price desc;
+-- 查询类型为&apos;超极本&apos;的商品价格
+    select * from goods where cate=&apos;超级本&apos;;
+-- 查询价格大于或等于&quot;超级本&quot;价格的商品，并且按价格降序排列
+    select * from goods where price &gt;=any (select price from goods where cate=&apos;超级本&apos;)
+    select * from goods where price not in (select price from goods where cate=&apos;超级本&apos;)
+
+数据分表
+
+-- 创建“商品分类”表
+    create table if not exists goods_cates(
+        cate_id int unsigned primary key auto_increment,
+        cate_name varchar(40)
+    );
+-- 查询商品中的分类
+    select distinct cate from goods；
+-- 把分类添加到“商品分类”表
+    insert into goods_cates(cate_name) select distinct cate from goods;
+
+-- 创建“商品品牌”表，插入数据
+    create table a select * from b;
+    create table goods_brands(
+        brand_id int unsigned primary key auto_increment not null,
+        brand_name varchar(20)
+        ) select distinct brand_name from goods;
+
+-- 更新商品表中的分类为商品分类表的id
+    select * from goods as g inner join goods_cates as c on g.cate=c.cate_name;
+    update goods as g inner join goods_cates as c on g.cate=c.cate_name set g.cate = c.cate_id;
+
+-- 更新商品表中的品牌为品牌分类表的id
+    select * from goods as g inner join goods_brands as c on g.brand_name=c.brand_name;
+    update goods as g inner join goods_brands as c on g.brand_name=c.brand_name
+    set g.brand_name=c.brand_id;
+
+-- 插入数据
+        insert into goods (name,cate_id,brand_id,price)
+        values(&apos;LaserJet Pro P1606dn 黑白激光打印机&apos;,&apos;12&apos;,&apos;4&apos;,&apos;1849&apos;);
+        insert into goods_cates(cate_name) values (&apos;路由器&apos;),(&apos;交换机&apos;),(&apos;网卡&apos;);
+        insert into goods_brands(brand_name) values (&apos;海尔&apos;),(&apos;清华同方&apos;),(&apos;神舟&apos;);
+
+-- 查询商品的信息，包括商品类型和商品品牌
+    select g.name,c.cate_name,b.brand_name from goods as g
+    inner join goods_cates as c on g.cate_id=c.cate_id
+    inner join goods_brands as b on g.brand_id=b.brand_id
+
+-- 左连接，查询所有商品对应的类型和品牌
+    select g.name,c.cate_name,b.brand_name from goods as g
+    left join goods_cates as c on g.cate_id=c.cate_id
+    left join goods_brands as b on g.brand_id=b.brand_id
+
+-- 右连接，查询所有商品类型和品牌对应的商品信息
+    select g.name,c.cate_name,b.brand_name from goods as g
+    right join goods_cates as c on g.cate_id=c.cate_id
+    right join goods_brands as b on g.brand_id=b.brand_id
+
+-- 外键 必须保证此表的列和引用的列类型一致（符号问题）   约束插入或更新时，某一列的值的范围，外键指向的是另一个表的某一列
+    alter table goods add FOREIGN KEY goods_1(cate_id) REFERENCES goods_cates(cate_id);
+    alter table goods add FOREIGN KEY goods_2(brand_id) REFERENCES goods_brands(brand_id);
+    影响插入和更新的效率
+
+-- 删除外键
+        使用show create table goods , 查看CONSTRAINT
+        alter table goods drop foreign key goods_ibfk_1;
+
+      创建外键时，mysql自动在那一列创建了索引，删除外键时不会自动删除，需要手动删除
+
+        alter table goods dorp index goods;
+</code></pre><h3 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h3><pre><code>--账户管理
+
+  -- 账户管理是在mysql仓库中
+  -- user表记录了所有的账户信息
+
+  -- 创建账户并授权
+
+      语法如下：
+      grant 权限列表 on 数据库 to &apos;用户名&apos;@&apos;访问主机&apos; identified by &apos;密码&apos;;
+
+      grant all privileges on py3.* to &apos;py3&apos;@&apos;%&apos; identified by &apos;123&apos;;
+
+  -- 回收权限
+
+      revoke 权限列表 on 数据库名.* from  &apos;用户名&apos;@&apos;主机&apos;;
+
+      revoke select on py3.* from &apos;py3&apos;@&apos;%&apos;;
+
+  -- 修改密码 自己修改自己的密码
+
+      语法1：不需登录
+      mysqladmin -u py -p password &apos;新密码&apos;
+
+      mysqladmin -upy3 -p password &apos;123456&apos;; -- 回车后输入原来的密码
+
+  -- 语法2：使用root登录，修改mysql数据库的user表
+      使用password()函数进行密码加密
+      注意修改完成后需要刷新权限
+
+      update user set authentication_string=password(&apos;123&apos;) where user=&apos;py3&apos;;
+
+      flush privileges
+
+  -- 删除账户
+
+      语法1：使用root登录
+      drop user &apos;用户名&apos;@&apos;主机&apos;;
+      drop user &apos;py3&apos;@&apos;%&apos;;
+
+      -- 语法2：使用root登录，删除mysql数据库的user表中数据
+          delete from user where user=&apos;用户名&apos;;
+          例：
+          delete from user where user=&apos;py&apos;;
+
+          -- 操作结束之后需要刷新权限
+          flush privileges
+
+  -- root账户忘记密码
+      -- 1、配置数据库登录是不需要密码
+          /etc/mysql/mysql.conf.d/mysqld.cnf
+          在[mysqld]后面添加 skip-grant-tables
+          重启数据库
+      -- 2、登录数据库，修改密码
+
+          mysql -uroot
+          update user set authentication_string=password(&apos;123&apos;) where user=&apos;root&apos;;
+
+      -- 3、配置登录需要密码
+          skip-grant-tables去掉
+
+          name = &apos;uo1241&apos;
+
+          insert into xxx values(&apos;name&apos;,,,);
+          zu000&apos;,,); drop database xx;
+          insert into xxx values(&apos;zu000&apos;,,); drop database xx;&apos;,,,);
+</code></pre><p>  – 函数<br>      – 创建</p>
+<pre><code>    只能调用select into 语句
+    select avg(age) into res from students;
+
+    语法如下
+    delimiter $$
+    create function 函数名称(参数列表) returns 返回类型
+    begin
+    sql语句
+    end
+    $$
+    delimiter ;
+
+
+    delimiter $$
+    create function my_trim(str varchar(10)) returns varchar(10)
+    begin
+    return rtrim(ltrim(str))
+    end
+    $$
+    delimiter ;
+
+-- 调用
+
+    select my_trim(&apos;  abc   &apos;);
+
+-- 变量
+    临时变量，只能用在 begin end 之间
+    declare i int default 0
+    set i = 5
+
+    用户变量/会话变量
+    set @age=20
+    select @age:=avg(age) from students;
+    select @age
+
+    系统变量
+    set @@wait_timeout = 1000
+    select @@wait_timeout
+
+    set global wait_timeout =2000
+    select @@global.wait_timeout
+
+-- 函数示例
+
+    要求：定义函数odd，输出1-100间的偶数
+
+    delimiter $$
+    create function odd() returns varchar(300)
+    begin
+    declare i int default 1;
+    declare res varchar default &apos;&apos;;
+    while i&lt;=100 do
+        if i%2=0 then
+        concat(res,&apos;,&apos;,i);
+        end if;
+        i = i+1;
+    end while;
+    return res;
+    end
+    $$
+    delimiter ;
+</code></pre><p>  – 存储过程<br>      创建</p>
+<pre><code>语法如下
+delimiter //
+create procedure 存储过程名称(in i int,out res varchar(30))
+begin
+sql语句
+end
+//
+delimiter ;
+
+delimiter //
+create procedure select_stu()
+begin
+select * from students;
+end
+//
+delimiter ;
+</code></pre><p>  – 视图<br>      create view 视图名称 as select语句;</p>
+<pre><code>create view stu_view as select s.name as 姓名,p.name as &apos;班级&apos; from students as s inner join pythons as p on s.cls_id = p.id;
+</code></pre><p>  – 事物</p>
+<pre><code>500 a 消费 200  a女 消费 100
+
+update set account=account-200
+
+update set account=account-100
+
+-- 提交
+    -- 客户端1
+        begin -- 开启事物
+
+        insert into pythons(name) values(&apos;python7&apos;);
+
+        查询可以看到数据
+
+    -- 客户端2
+        查询看不到数据
+
+    -- 客户端1
+        commit
+
+    -- 客户端2
+        查询看不到数据
+
+-- 回滚
+    -- 客户端1
+        begin -- 开启事物
+
+        insert into pythons(name) values(&apos;python7&apos;);
+
+        查询可以看到数据
+
+    -- 客户端2
+        查询看不到数据
+
+    -- 客户端1
+        rollback
+        查询看到的是以前的数据
+
+    -- 客户端2
+        查询看不到数据
+</code></pre><p>  – 索引</p>
+<pre><code>创建索引
+如果指定字段是字符串，需要指定长度，建议长度与定义字段时的长度一致
+字段类型如果不是字符串，可以不填写长度部分
+create index 索引名称 on 表名(字段名称(长度))
+create index name_index on students(name(20))
+create index age_index on students(age)
+
+一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
+</code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
 <h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
 sudo service mongod start
 
@@ -2084,7 +2712,7 @@ db.student.drop()
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
