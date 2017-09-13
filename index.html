@@ -329,7 +329,7 @@
         
           
             <p>详细代码可阅读我的<a href="https://github.com/tonytonypeng/Database" target="_blank" rel="external">github</a></p>
-<h3 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h3><pre><code>-- 数据库
+<h3 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h3><h4 id="MySQL基本使用"><a href="#MySQL基本使用" class="headerlink" title="MySQL基本使用"></a>MySQL基本使用</h4><pre><code>-- 数据库
     存储数据，把数据持久化到硬盘
 
 -- RDBMS
@@ -444,7 +444,7 @@
           -- 恢复
               -- 先创建数据库 aaa
               mysql -uroot -p aaa &lt; py3.sql
-</code></pre><h3 id="MySQL-查询"><a href="#MySQL-查询" class="headerlink" title="MySQL 查询"></a>MySQL 查询</h3><pre><code>-- 创建表
+</code></pre><h4 id="MySQL-查询"><a href="#MySQL-查询" class="headerlink" title="MySQL 查询"></a>MySQL 查询</h4><pre><code>-- 创建表
     create table students(
         id int unsigned primary key auto_increment not null,
         name varchar(20) default &apos;&apos;,
@@ -596,7 +596,7 @@
             from students;
 
             a = 3 if b==1 else 2
-</code></pre><h3 id="查询演练"><a href="#查询演练" class="headerlink" title="查询演练"></a>查询演练</h3><pre><code>-- 求所有电脑产品的平均价格,并且保留两位小数
+</code></pre><h4 id="查询演练"><a href="#查询演练" class="headerlink" title="查询演练"></a>查询演练</h4><pre><code>-- 求所有电脑产品的平均价格,并且保留两位小数
     select round(avg(price),2) from goods;
 -- 查询所有价格大于平均价格的商品，并且按价格降序排序
     select * from goods where price &gt; (select round(avg(price),2) from goods) order by price desc;
@@ -667,7 +667,7 @@
       创建外键时，mysql自动在那一列创建了索引，删除外键时不会自动删除，需要手动删除
 
         alter table goods dorp index goods;
-</code></pre><h3 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h3><pre><code>--账户管理
+</code></pre><h4 id="MySQL高级"><a href="#MySQL高级" class="headerlink" title="MySQL高级"></a>MySQL高级</h4><pre><code>--账户管理
 
   -- 账户管理是在mysql仓库中
   -- user表记录了所有的账户信息
@@ -874,8 +874,8 @@
     create index age_index on students(age)
 
     一般创建时，看那一列经常被用在where后面，在此列创建索引，优化查询效率
-</code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><p>[{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>json</p>
-<h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><pre><code>-- 开启服务
+</code></pre><h3 id="Mongo"><a href="#Mongo" class="headerlink" title="Mongo"></a>Mongo</h3><h4 id="mongodb-服务端"><a href="#mongodb-服务端" class="headerlink" title="mongodb 服务端"></a>mongodb 服务端</h4><p>  [{_id:124124,name:’小王’,age:18,chengji:{}},{_id:124124,name:’小王’,age:18,chengji:{}}]<br>  json</p>
+<pre><code>-- 开启服务
 sudo service mongod start
 
 -- 停止服务
