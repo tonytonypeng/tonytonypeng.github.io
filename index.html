@@ -1117,127 +1117,123 @@ db.student.drop()
       例:查找年龄大于18的学生，来自哪些省份
 
       db.stu.distinct(&apos;hometown&apos;,{age:{$gt:18}})
-</code></pre><h4 id="聚合-aggregate"><a href="#聚合-aggregate" class="headerlink" title="聚合 aggregate"></a>聚合 aggregate</h4><pre><code>--
-        聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()
-        语法
-        db.集合名称.aggregate({管道:{表达式}})
+</code></pre><h4 id="聚合-aggregate"><a href="#聚合-aggregate" class="headerlink" title="聚合 aggregate"></a>聚合 aggregate</h4><p>  –聚合<br>            聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()<br>            语法<br>            db.集合名称.aggregate({管道:{表达式}})</p>
+<pre><code>    $group
 
-        $group
+    将集合中的文档分组，可用于统计结果
+    \_id表示分组的依据，使用某个字段的格式为&apos;$字段&apos;
+    例1：统计男生、女生的总人数
 
-        将集合中的文档分组，可用于统计结果
-        \_id表示分组的依据，使用某个字段的格式为&apos;$字段&apos;
-        例1：统计男生、女生的总人数
-
-        db.stu.aggregate(
+    db.stu.aggregate(
+        {
+            $group:
             {
-                $group:
-                {
-                    \_id:&apos;$gender&apos;,
-                    count:{$sum:1}
-                }
+                \_id:&apos;$gender&apos;,
+                count:{$sum:1}
             }
-        )
-        按照性别分组，求每组的年龄总数
-        db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$sum:&apos;$age&apos;} } } )
-
-        按照性别分组，求每组的平均年龄
-        db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} } } )
-
-        按照性别分组，把年龄组成数组
-        db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$name&apos;} } } )
-
-        按照性别分组，把整个文档组成数组
-        db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$$ROOT&apos;} } } )
-
-
-    --Group by null
-
-        将集合中所有文档分为一组
-        例2：求学生总人数、平均年龄
-        db.stu.aggregate(
-            {$group:
-                {
-                    \_id:null,
-                    counter:{$sum:1},
-                    avgAge:{$avg:&apos;$age&apos;}
-                }
-            }
-        )
-
-    -- $match
-
-        用于过滤数据，只输出符合条件的文档
-        使用MongoDB的标准查询操作
-        例1：查询年龄大于20的学生
-        db.stu.aggregate({
-            $match:{age:{$gt:20}}
         }
-        )
+    )
+    按照性别分组，求每组的年龄总数
+    db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$sum:&apos;$age&apos;} } } )
 
-        例2：查询年龄大于20的男生、女生人数
-        db.stu.aggregate(
-            {$match:{age:{$gt:20}}},
-            {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}}
-        )
+    按照性别分组，求每组的平均年龄
+    db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} } } )
+
+    按照性别分组，把年龄组成数组
+    db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$name&apos;} } } )
+
+    按照性别分组，把整个文档组成数组
+    db.stu.aggregate( { $group: { \_id:&apos;$gender&apos;, count:{$push:&apos;$$ROOT&apos;} } } )
 
 
-    -- $project
+--Group by null
 
-        修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
-        例1：查询学生的姓名、年龄
-
-        db.stu.aggregate(
+    将集合中所有文档分为一组
+    例2：求学生总人数、平均年龄
+    db.stu.aggregate(
+        {$group:
             {
-                $project:{name:1,age:1,\_id:0}
+                \_id:null,
+                counter:{$sum:1},
+                avgAge:{$avg:&apos;$age&apos;}
             }
-        )
+        }
+    )
 
-    -- 分组后再投影
-        db.stu.aggregate(
-            {$group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} }},
-            {$project:{count:1,\_id:0}}
-        )
+-- $match
 
-    -- $sort
+    用于过滤数据，只输出符合条件的文档
+    使用MongoDB的标准查询操作
+    例1：查询年龄大于20的学生
+    db.stu.aggregate({
+        $match:{age:{$gt:20}}
+    }
+    )
 
-        将输入文档排序后输出
-        例1：查询学生信息，按年龄升序
-        db.stu.aggregate({$sort:{age:1}})
+    例2：查询年龄大于20的男生、女生人数
+    db.stu.aggregate(
+        {$match:{age:{$gt:20}}},
+        {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}}
+    )
 
 
-    -- $skip
+-- $project
 
-        跳过指定数量的文档，并返回余下的文档
-        例2：查询从第3条开始的学生信息
-        db.stu.aggregate({$skip:2})
-        例3：统计男生、女生人数，按人数升序，取第二条数据
+    修改输入文档的结构，如重命名、增加、删除字段、创建计算结果
+    例1：查询学生的姓名、年龄
 
-        db.stu.aggregate(
-            {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}},
-            {$sort:{counter:1}},
-            {$skip:1},
-            {$limit:1}
-        )
-        注意，必须先skip，再limit
+    db.stu.aggregate(
+        {
+            $project:{name:1,age:1,\_id:0}
+        }
+    )
 
-    -- $unwind
+-- 分组后再投影
+    db.stu.aggregate(
+        {$group: { \_id:&apos;$gender&apos;, count:{$avg:&apos;$age&apos;} }},
+        {$project:{count:1,\_id:0}}
+    )
 
-        将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
-        语法1
+-- $sort
 
-        对某字段值进行拆分
-        db.集合名称.aggregate({$unwind:&apos;$字段名称&apos;})
+    将输入文档排序后输出
+    例1：查询学生信息，按年龄升序
+    db.stu.aggregate({$sort:{age:1}})
 
-        db.t2.insert({_id:1,item:&apos;t-shirt&apos;,size:[&apos;S&apos;,&apos;M&apos;,&apos;L&apos;]})
 
-        db.t2.aggregate(
-            {$unwind:
-                {path:&apos;$size&apos;,
-                preserveNullAndEmptyArrays:true
-                }
+-- $skip
+
+    跳过指定数量的文档，并返回余下的文档
+    例2：查询从第3条开始的学生信息
+    db.stu.aggregate({$skip:2})
+    例3：统计男生、女生人数，按人数升序，取第二条数据
+
+    db.stu.aggregate(
+        {$group:{_id:&apos;$gender&apos;,counter:{$sum:1}}},
+        {$sort:{counter:1}},
+        {$skip:1},
+        {$limit:1}
+    )
+    注意，必须先skip，再limit
+
+-- $unwind
+
+    将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值
+    语法1
+
+    对某字段值进行拆分
+    db.集合名称.aggregate({$unwind:&apos;$字段名称&apos;})
+
+    db.t2.insert({_id:1,item:&apos;t-shirt&apos;,size:[&apos;S&apos;,&apos;M&apos;,&apos;L&apos;]})
+
+    db.t2.aggregate(
+        {$unwind:
+            {path:&apos;$size&apos;,
+            preserveNullAndEmptyArrays:true
             }
-        )
-</code></pre><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><pre><code>--
+        }
+    )
+</code></pre><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><pre><code>--索引
     创建组合索引时，(a,b,c)
     只要查询条件包含了组合索引的第一个字段，都能用到此索引
     (a) (a,b) (b,a) (a,c) (c,a) (a,b,c) (a,c,b) (b,a,c) (b,c,a) (c,a,b) (c,b,a)
@@ -1304,10 +1300,59 @@ db.student.drop()
       db.updateUser(&apos;py&apos;,{pwd: &apos;456&apos;})
       # 修改属性
       db.updateUser(&apos;py&apos;,{roles:[{role:&apos;read&apos;,db:&apos;python2&apos;}]})
+</code></pre><h4 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h4><p>  – Redis<br>        显示中文redis-cli –raw</p>
+<p>  – 主从配置</p>
+<pre><code>修改/etc/redis/redis.conf
 
--- Redis
+主服务器 192.168.133.133
+     # bind 127.0.0.1
+     bind 192.168.133.133
 
-    显示中文redis-cli --raw
+
+从服务器 192.168.\133.132
+
+    # bind 127.0.\0.1
+    bind 192.168.\133.132
+
+    slaveof 192.168.\133.133 6379
+</code></pre><p>  – 集群</p>
+<pre><code>192.168.\133.133
+配置 8001\.conf,8002\.conf,8003\.conf
+
+192.168\.133\.132
+配置 8003\.conf,8004\.conf,8005\.conf
+
+
+redis-trib.rb create --replicas 1 192.168.\133.133:8000 192.168.133.133:8001  192.168.133.133:8002 192.168.133.132:8003  192.168.133.132:8004  192.168.133.132:8005
+
+
+using 3 masters:
+192.168.133.133:8000
+192.168.133.132:8003
+192.168.133.133:8001
+Adding replica 192.168.133.132:8004 to 192.168.133.133:8000
+Adding replica 192.168.133.133:8002 to 192.168.133.132:8003
+Adding replica 192.168.133.132:8005 to 192.168.133.133:8001
+M: 123b71ddd2c01cb4222efe11b35160da45910957 192.168.133.133:8000
+   slots:0-5460 (5461 slots) master
+M: 5345b38d98fb888bdbe87a65100c7da204f03eb6 192.168.133.133:8001
+   slots:10923-16383 (5461 slots) master
+S: b65966651e6d1008708ef52aa4123bde85d82612 192.168.133.133:8002
+   replicates cc2f4c37de96453dae313a50c15e24f47c791074
+M: cc2f4c37de96453dae313a50c15e24f47c791074 192.168.133.132:8003
+   slots:5461-10922 (5462 slots) master
+S: 4fe5fb34960505152291d235ec91f55c40c72f8d 192.168.133.132:8004
+   replicates 123b71ddd2c01cb4222efe11b35160da45910957
+S: 4a79be6ac9d029aae6a9d4b2b744ea248d4e6069 192.168.133.132:8005
+   replicates 5345b38d98fb888bdbe87a65100c7da204f03eb6
+</code></pre><p>  –创建组合索引时，(a,b,c)<br>          只要查询条件包含了组合索引的第一个字段，都能用到此索引<br>          (a) (a,b) (b,a) (a,c) (c,a) (a,b,c) (a,c,b) (b,a,c) (b,c,a) (c,a,b) (c,b,a)</p>
+<pre><code>for(i=0;i&lt;10000;i++){
+    db.t1.insert({name:&apos;test&apos;+i,age:i,height:i+1})
+}
+db.t1.find({name:&apos;test1000&apos;}).explain(&apos;executionStats&apos;)
+db.t1.find({name:&apos;test1000&apos;,age:1000}).explain(&apos;executionStats&apos;)
+
+db.t1.ensureIndex({name:1,age:1,height:1})
 </code></pre>
           
         
