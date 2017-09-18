@@ -198,7 +198,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Home
+            Startseite
           </a>
         </li>
       
@@ -208,7 +208,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archives
+            Archiv
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-10T15:14:13+08:00">
                 2017-09-10
@@ -967,161 +967,157 @@ db.student.drop()
     db.sub.insert({title:&apos;linux2&apos;,count:10})
     db.sub.insert({title:&apos;linux3&apos;,count:10})
     db.sub.insert({title:&apos;linux4&apos;,count:10})
-</code></pre><h4 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h4><pre><code>  -- 基本查询
+</code></pre><h4 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h4><pre><code>-- 基本查询
 
-      方法find()：查询
-      db.集合名称.find({条件文档})
-      方法findOne()：查询，只返回第一个
-      db.集合名称.findOne({条件文档})
-      方法pretty()：将结果格式化
-      db.集合名称.find({条件文档}).pretty()
-
-
-    -- 比较运算符
-
-        等于，默认是等于判断，没有运算符
-        小于$lt  less than
-        小于或等于$lte less than equals
-        大于$gt great than
-        大于或等于$gte great than equals
-        不等于$ne not equals
-        例1：查询名称等于&apos;郭靖&apos;的学生
-
-        db.stu.find({name:&apos;郭靖&apos;})
-
-        -- 查询年龄小于30岁
-        db.stu.find({age:{$lt:30}})
-        db.stu.find({age:{$lte:20}})
-
-        -- 查询不等于18岁
-        db.stu.find({age:{$ne:20}})
-
-    -- 逻辑运算符
-
-        查询时可以有多个条件，多个条件之间需要通过逻辑运算符连接
-        逻辑与：默认是逻辑与的关系
-
-        -- 查询18的男生
-        db.stu.find({age:18,gender:true})
-
-        -- 查询18的学生或者家乡为大理的学生
-        db.stu.find({$or:[{age:18},{hometown:&apos;大理&apos;}]})
+    方法find()：查询
+    db.集合名称.find({条件文档})
+    方法findOne()：查询，只返回第一个
+    db.集合名称.findOne({条件文档})
+    方法pretty()：将结果格式化
+    db.集合名称.find({条件文档}).pretty()
 
 
-        例3：查询年龄大于或等于18，并且性别为true的学生
-        db.stu.find({
-            $or:[{age:{$gt:18}},{age:18}],
-            gender:true
-        })
+  -- 比较运算符
+
+      等于，默认是等于判断，没有运算符
+      小于$lt  less than
+      小于或等于$lte less than equals
+      大于$gt great than
+      大于或等于$gte great than equals
+      不等于$ne not equals
+      例1：查询名称等于&apos;郭靖&apos;的学生
+
+      db.stu.find({name:&apos;郭靖&apos;})
+
+      -- 查询年龄小于30岁
+      db.stu.find({age:{$lt:30}})
+      db.stu.find({age:{$lte:20}})
+
+      -- 查询不等于18岁
+      db.stu.find({age:{$ne:20}})
+
+  -- 逻辑运算符
+
+      查询时可以有多个条件，多个条件之间需要通过逻辑运算符连接
+      逻辑与：默认是逻辑与的关系
+
+      -- 查询18的男生
+      db.stu.find({age:18,gender:true})
+
+      -- 查询18的学生或者家乡为大理的学生
+      db.stu.find({$or:[{age:18},{hometown:&apos;大理&apos;}]})
 
 
-    -- 范围运算符
-
-        使用&quot;$in&quot;，&quot;$nin&quot; 判断是否在某个范围内
-        例6：查询年龄为18、28的学生
-
-        db.stu.find({age:{$in:[18,20]}})
-
-        db.stu.find({age:{$nin:[18,20]}})
+      例3：查询年龄大于或等于18，并且性别为true的学生
+      db.stu.find({
+          $or:[{age:{$gt:18}},{age:18}],
+          gender:true
+      })
 
 
-    -- 支持正则表达式
+  -- 范围运算符
 
-        mongodb提供的终端shell，同时也是一个js的执行器，可以编写js的代码和函数
-        使用//或$regex编写正则表达式
-        例7：查询姓黄的学生
-        db.stu.find({name:/黄/})
-        db.stu.find({name:{$regex:&apos;^黄&apos;}})
+      使用&quot;$in&quot;，&quot;$nin&quot; 判断是否在某个范围内
+      例6：查询年龄为18、28的学生
+
+      db.stu.find({age:{$in:[18,20]}})
+
+      db.stu.find({age:{$nin:[18,20]}})
 
 
+  -- 支持正则表达式
 
-    -- 自定义查询
-
-        使用$where后面写一个函数，返回满足条件的数据
-        例7：查询年龄大于30的学生
-
-        db.stu.find({
-            $where:function(){
-
-                return this.age&gt;30;
-            }
-        })
+      mongodb提供的终端shell，同时也是一个js的执行器，可以编写js的代码和函数
+      使用//或$regex编写正则表达式
+      例7：查询姓黄的学生
+      db.stu.find({name:/黄/})
+      db.stu.find({name:{$regex:&apos;^黄&apos;}})
 
 
 
-        -- Limit
+  -- 自定义查询
 
-            方法limit()：用于读取指定数量的文档
-            语法：
-            db.集合名称.find().limit(NUMBER)
+      使用$where后面写一个函数，返回满足条件的数据
+      例7：查询年龄大于30的学生
 
-            -- 查询前2条数据
-            db.stu.find().limit(2)
+      db.stu.find({
+          $where:function(){
 
-        -- skip
-
-            方法skip()：用于跳过指定数量的文档
-            语法：
-            db.集合名称.find().skip(NUMBER)
-
-            -- 跳过前2条，查询剩下的数据
-            db.stu.find().skip(2)
-
-            db.stu.find().limit(3).skip(3)
-            db.stu.find().skip(3).limit(3)
-
-
-    -- 投影
-
-        在查询到的返回结果中，只选择必要的字段，而不是选择一个文档的整个字段
-        如：一个文档有5个字段，需要显示只有3个，投影其中3个字段即可
-        语法：
-        参数为字段与值，值为1表示显示，值为0不显示
-        db.集合名称.find({},{字段名称:1,...})
-
-        db.stu.find({},{name:1,hometown:1})
-
-    -- 指定不显示id
-
-        db.stu.find({},{name:1,hometown:1,\_id:0})
-
-
-    -- 排序
-
-        方法sort()，用于对结果集进行排序
-        语法
-        db.集合名称.find().sort({字段:1,...})
-        参数1为升序排列
-        参数-1为降序排列
-        例1：根据性别降序，再根据年龄升序
-
-        db.stu.find().sort({age:1,gender:1})
-
-    -- 统计个数
-
-        方法count()用于统计结果集中文档条数
-        语法
-        db.集合名称.find({条件}).count()
-
-        db.stu.find().count()或db.stu.count()
-
-        db.stu.find({gender:true}).count() 或 db.stu.count({gender:true})
+              return this.age&gt;30;
+          }
+      })
 
 
 
-    -- 消除重复
+      -- Limit
 
-        方法distinct()对数据进行去重
-        语法
-        db.集合名称.distinct(&apos;去重字段&apos;,{条件})
-        例:查找年龄大于18的学生，来自哪些省份
+          方法limit()：用于读取指定数量的文档
+          语法：
+          db.集合名称.find().limit(NUMBER)
 
-        db.stu.distinct(&apos;hometown&apos;,{age:{$gt:18}})
+          -- 查询前2条数据
+          db.stu.find().limit(2)
+
+      -- skip
+
+          方法skip()：用于跳过指定数量的文档
+          语法：
+          db.集合名称.find().skip(NUMBER)
+
+          -- 跳过前2条，查询剩下的数据
+          db.stu.find().skip(2)
+
+          db.stu.find().limit(3).skip(3)
+          db.stu.find().skip(3).limit(3)
+
+
+  -- 投影
+
+      在查询到的返回结果中，只选择必要的字段，而不是选择一个文档的整个字段
+      如：一个文档有5个字段，需要显示只有3个，投影其中3个字段即可
+      语法：
+      参数为字段与值，值为1表示显示，值为0不显示
+      db.集合名称.find({},{字段名称:1,...})
+
+      db.stu.find({},{name:1,hometown:1})
+
+  -- 指定不显示id
+
+      db.stu.find({},{name:1,hometown:1,\_id:0})
+
+
+  -- 排序
+
+      方法sort()，用于对结果集进行排序
+      语法
+      db.集合名称.find().sort({字段:1,...})
+      参数1为升序排列
+      参数-1为降序排列
+      例1：根据性别降序，再根据年龄升序
+
+      db.stu.find().sort({age:1,gender:1})
+
+  -- 统计个数
+
+      方法count()用于统计结果集中文档条数
+      语法
+      db.集合名称.find({条件}).count()
+
+      db.stu.find().count()或db.stu.count()
+
+      db.stu.find({gender:true}).count() 或 db.stu.count({gender:true})
 
 
 
-    -- 聚合 aggregate
+  -- 消除重复
 
+      方法distinct()对数据进行去重
+      语法
+      db.集合名称.distinct(&apos;去重字段&apos;,{条件})
+      例:查找年龄大于18的学生，来自哪些省份
+
+      db.stu.distinct(&apos;hometown&apos;,{age:{$gt:18}})
+</code></pre><h4 id="聚合-aggregate"><a href="#聚合-aggregate" class="headerlink" title="聚合 aggregate"></a>聚合 aggregate</h4><pre><code>--
         聚合(aggregate)主要用于计算数据，类似sql中的sum()、avg()
         语法
         db.集合名称.aggregate({管道:{表达式}})
@@ -1241,9 +1237,7 @@ db.student.drop()
                 }
             }
         )
-
--- 索引
-
+</code></pre><h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><pre><code>--
     创建组合索引时，(a,b,c)
     只要查询条件包含了组合索引的第一个字段，都能用到此索引
     (a) (a,b) (b,a) (a,c) (c,a) (a,b,c) (a,c,b) (b,a,c) (b,c,a) (c,a,b) (c,b,a)
@@ -1394,7 +1388,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-01T08:42:23+08:00">
                 2017-09-01
@@ -1607,7 +1601,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-30T20:13:49+08:00">
                 2017-08-30
@@ -1811,7 +1805,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T23:22:08+08:00">
                 2017-08-29
@@ -1989,7 +1983,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-29T14:14:45+08:00">
                 2017-08-29
@@ -2160,7 +2154,7 @@ db.student.drop()
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-08-26T14:36:31+08:00">
                 2017-08-26
@@ -2356,7 +2350,7 @@ db.student.drop()
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">posts</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -2410,7 +2404,7 @@ db.student.drop()
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
