@@ -97,7 +97,9 @@
 <meta property="og:image" content="http://yoursite.com/2017/09/18/python前端学习/路径">
 <meta property="og:image" content="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/css%E6%A0%B7%E5%BC%8F%E5%B0%8F%E7%BB%93.png">
 <meta property="og:image" content="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/css%E9%80%89%E6%8B%A9%E5%99%A8.png">
-<meta property="og:updated_time" content="2017-09-19T12:43:54.706Z">
+<meta property="og:image" content="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/%E5%9D%97%E3%80%81%E8%A1%8C%E3%80%81%E8%A1%8C%E5%9D%97%E5%85%83%E7%B4%A0.png">
+<meta property="og:image" content="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/%E4%BC%AA%E7%B1%BB%EF%BC%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%EF%BC%89.png">
+<meta property="og:updated_time" content="2017-09-21T13:49:50.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 前端学习">
 <meta name="twitter:description" content="前端学习包括：HTML、CSS HTML html（超文本标记语言）基本结构。 12345678910 &amp;lt;!DOCTYPE html&amp;gt;-   &amp;lt;html&amp;gt;    -   &amp;lt;head&amp;gt;        -   &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt;        -   &amp;lt;title&amp;gt;我的个人主页&amp;lt;/title">
@@ -201,7 +203,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            ホーム
+            Startseite
           </a>
         </li>
       
@@ -211,7 +213,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            アーカイブ
+            Archiv
           </a>
         </li>
       
@@ -221,7 +223,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            タグ
+            Tags
           </a>
         </li>
       
@@ -288,7 +290,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">投稿日</span>
+                <span class="post-meta-item-text">Veröffentlicht am</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-18T15:12:37+08:00">
                 2017-09-18
@@ -395,6 +397,49 @@
 <li>margin-top塌陷：父元素的边界未设置，子元素找了浏览器边界作为基准。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">解决方案</div><div class="line">设置border/padding</div><div class="line">overflow:hidden</div><div class="line">伪类：content:&apos;&apos;  display:table</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h5 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h5><ul>
+<li>元素分为块元素和行内元素、行内块元素(延伸)</li>
+<li>块元素包括：div、p、dl、ol、ul。</li>
+<li>特点<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">默认宽度和父元素100%。</div><div class="line">始终霸占一行。</div><div class="line">支持全部样式。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">初始化样式重置。</div><div class="line">系统自带的样式。</div><div class="line">body：最大的父元素，非常特殊。</div></pre></td></tr></table></figure></p>
+<h5 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h5><ul>
+<li><p>行内元素包括：span、em(强调)、i(专业名词)、b(关键字和产品名称)、strong(重要的内容)。<br>特点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">始终在一行，遇到边界自动换行。</div><div class="line">不支持宽高。</div><div class="line">不支持margin上下。</div><div class="line">不支持padding上下。</div></pre></td></tr></table></figure>
+</li>
+<li><p>行内元素间隔的解决方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">不换行。</div><div class="line">父元素font-size设为0，子元素单独设置font-size。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h5><ul>
+<li><p>元素转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">display：inline   行内元素</div><div class="line">display：block    快元素</div><div class="line">display：inline-block  行内块元素</div></pre></td></tr></table></figure>
+</li>
+<li><p>隐藏元素：display：none；不占位置。</p>
+</li>
+<li>三者小结<br><img src="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/%E5%9D%97%E3%80%81%E8%A1%8C%E3%80%81%E8%A1%8C%E5%9D%97%E5%85%83%E7%B4%A0.png" alt="小结"></li>
+</ul>
+<h5 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h5><ul>
+<li><p>特点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">遇到父级或平级元素边界则停。</div><div class="line">自动换行。</div><div class="line">不占位置。</div><div class="line">文字绕浮动元素走。</div></pre></td></tr></table></figure>
+</li>
+<li><p>清除浮动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">overflow：hidden</div><div class="line">在所有子元素后面增加一个空白div，clear：both</div><div class="line">伪类(也可清除塌陷)，固定模式，如下图。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/%E4%BC%AA%E7%B1%BB%EF%BC%88%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8%EF%BC%89.png" alt="伪类"></p>
+<ul>
+<li>浮动的元素，垂直外边距不合并。</li>
+</ul>
+<h5 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h5><ul>
+<li>相对定位：relative，以自己为参照物，即使走了，还占位置。</li>
+<li>绝对定位：absolute，以父元素为准(父元素必须定位(相对)，脱离文档流，不占位置。</li>
+<li>固定定位：fixed，以浏览器为准，脱离文档流，不占位置。</li>
+<li>无定位：static。</li>
+<li>定位层级：z-index，值越大，越靠前。</li>
+<li>设置圆角：border-tadius。</li>
+</ul>
 
       
     </div>
@@ -488,10 +533,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            見出し
+            Inhaltsverzeichnis
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            概要
+            Übersicht
           </li>
         </ul>
       
@@ -512,7 +557,7 @@
             <div class="site-state-item site-state-posts">
               <a href="/archives">
                 <span class="site-state-item-count">7</span>
-                <span class="site-state-item-name">ポスト</span>
+                <span class="site-state-item-name">Artikel</span>
               </a>
             </div>
           
@@ -550,7 +595,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS"><span class="nav-number">1.1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表单"><span class="nav-number">1.1.1.</span> <span class="nav-text">表单</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS"><span class="nav-number">1.1.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#表单"><span class="nav-number">1.1.1.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#块元素"><span class="nav-number">1.1.2.</span> <span class="nav-text">块元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行内元素"><span class="nav-number">1.1.3.</span> <span class="nav-text">行内元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#行内块元素"><span class="nav-number">1.1.4.</span> <span class="nav-text">行内块元素</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#浮动"><span class="nav-number">1.1.5.</span> <span class="nav-text">浮动</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#定位"><span class="nav-number">1.1.6.</span> <span class="nav-text">定位</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -582,7 +627,7 @@
 
 
 <div class="powered-by">
-  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
