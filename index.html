@@ -384,6 +384,9 @@
 <li><p>列表标签：<ol>为有序列表、<ul>为无序列表，<li>中写文本。去掉前面的点：list-style：none。</li></ul></ol></p>
 </li>
 <li>定义列表：dl、dt(标题)、dd(内容)</li>
+<li>鼠标悬浮显示小手：{cursor：pointer}</li>
+<li>设置透明度(渐变)：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opacity:0.3;</div><div class="line">filter:alpha(opacity=30);</div></pre></td></tr></table></figure>
+</li>
 </ul>
 <h5 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h5><ul>
 <li>form标签：属性：action(地址)、method(方法：get、post)。</li>
@@ -439,6 +442,29 @@
 <li>无定位：static。</li>
 <li>定位层级：z-index，值越大，越靠前。</li>
 <li>设置圆角：border-tadius。</li>
+</ul>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><ul>
+<li>合并边框：{border-collapse：collapse}</li>
+<li>分割边框：{border-collapse:separate}/{border-collapse:apx bpx}</li>
+<li>文字垂直居上/中/下：vertical-align：top/center/bottom</li>
+<li>跨列合并：colspan，找到第几行的第几个。</li>
+<li>跨行合并：rowspan，找到第几列的第几个。</li>
+</ul>
+<h5 id="选择器的权重"><a href="#选择器的权重" class="headerlink" title="选择器的权重"></a>选择器的权重</h5><ul>
+<li>比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">选择器        权重</div><div class="line">标签          1</div><div class="line">类            10</div><div class="line">id           100</div><div class="line">行内式        1000   写在标签里，&lt;div style=&apos;color:blue&apos;&gt;</div><div class="line">!import      10000   提升属性的权重</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h5><ul>
+<li>路径：{background-image:url(‘xxxx’)}</li>
+<li>重复：{background-repeat:no-repeat/repeat-x/repeat-y}</li>
+<li>位置：{background-position:left/right/center/top/bottom任意组合}</li>
+<li>连写：{background:url(xxxx) no-repeat position color}</li>
+<li>属性：{attachment：fixed(不跟着走)/scroll(跟着走)}  附着。</li>
+</ul>
+<p>#####雪碧图</p>
+<ul>
+<li>也称精灵图，sprite，一张图上面放了N个小图片，好处：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">减少网络请求的次数。</div><div class="line">提高性能。</div><div class="line">提升用户的体验性。</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
           
