@@ -466,6 +466,42 @@
 <li>也称精灵图，sprite，一张图上面放了N个小图片，好处：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">减少网络请求的次数。</div><div class="line">提高性能。</div><div class="line">提升用户的体验性。</div></pre></td></tr></table></figure>
 </li>
 </ul>
+<h5 id="其他选择器"><a href="#其他选择器" class="headerlink" title="其他选择器"></a>其他选择器</h5><ul>
+<li>其他选择器权重都为1。</li>
+<li>通用选择器:*{属性:值}。</li>
+<li>E&gt;F{属性:值};子元素选择器,匹配所有属于E元素的子元素F。</li>
+<li>E+F{属性:值}; 相邻元素选择器,匹配所有紧随E元素之后的元素(下面)。</li>
+<li><p>属性选择器:标签[属性class] 针对所有是class属性的元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">标签[title=“123”],匹配所有title属性值是123的元素。</div><div class="line">标签[title^=“1”],匹配所有title属性值是以1开头元素。</div><div class="line">标签[title$=“1”],匹配所有title属性值是以1结尾元素。</div><div class="line">标签[title*=“1”],匹配所有title属性值是有1的元素。</div></pre></td></tr></table></figure>
+</li>
+<li><p>E:nth-child(n)：匹配元素类型为E且是父元素的第n个子元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:first-child：匹配元素类型为E且是父元素的第一个子元素。</div><div class="line">E:last-child：匹配元素类型为E且是父元素的最后一个子元素。</div></pre></td></tr></table></figure>
+</li>
+<li><p>E:nth-of-type(n) 第几个E类型元素。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:first-of-type    </div><div class="line">E:last-of-type</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="transition动画"><a href="#transition动画" class="headerlink" title="transition动画"></a>transition动画</h5><ul>
+<li>transition-property 设置过渡的属性，比如：width height background-color</li>
+<li>transition-duration 设置过渡的时间，比如：1s 500ms</li>
+<li>transition-timing-function 设置过渡的运动方式，有 linear(匀速)/ease(缓冲运动)</li>
+<li>transition-delay 设置动画的延迟</li>
+<li>transition: property duration timing-function delay 同时设置四个属性</li>
+</ul>
+<h5 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h5><ul>
+<li>transform 形变属性：rotate旋转、scale缩放、translate平移、skew斜切。</li>
+<li>translate(x,y) 设置盒子位移</li>
+<li>scale(x,y) 设置盒子缩放</li>
+<li>rotate(deg) 设置盒子旋转</li>
+<li>skew(x-angle,y-angle) 设置盒子斜切</li>
+<li>perspective 设置透视距离</li>
+<li>transform-style flat | preserve-3d 设置盒子是否按3d空间显示</li>
+<li>translateX、translateY、translateZ 设置三维移动</li>
+<li>rotateX、rotateY、rotateZ 设置三维旋转</li>
+<li>scaleX、scaleY、scaleZ 设置三维缩放</li>
+<li>tranform-origin设置变形的中心点,接受两个参数，它们可以是百分比，em，px等具体的值，也可以是left,center,right，或者 top,center,bottom等描述性参数 ;</li>
+<li>backface-visibility 设置盒子背面是否可见</li>
+</ul>
 
           
         
