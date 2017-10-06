@@ -353,14 +353,14 @@
 </li>
 </ul>
 <h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><ul>
-<li>css(层叠样式表)：行内式、嵌入式（内联式）、外链式：<link rel="stylesheets" href="./xxx.css"><br><img src="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/css%E6%A0%B7%E5%BC%8F%E5%B0%8F%E7%BB%93.png" alt="书写小结"></li>
+<li>css(层叠样式表)：行内式、嵌入式（内联式）、外链式：<link rel="stylesheet" href="./xxx.css"><br><img src="https://github.com/tonytonypeng/End-Web-developer-/raw/master/slots/css%E6%A0%B7%E5%BC%8F%E5%B0%8F%E7%BB%93.png" alt="书写小结"></li>
 <li>字体：font-family：汉字/英文/unicode编码。</li>
 <li>字体大小：font-size，px为像素。</li>
 <li>字体颜色：color。</li>
-<li>字体加粗：font-weight:bold</li>
-<li>字体斜体：font-style:italic</li>
-<li><p>字体的连写：字体大小和行高必须在字体类型之前。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font：normal 20px(大小)/50px(行高)  &quot;雅黑&quot;</div></pre></td></tr></table></figure>
+<li>字体加粗：font-weight:bold(加粗)/normal(不加粗)</li>
+<li>字体斜体：font-style:italic(倾斜)/normal(不倾斜)</li>
+<li><p>字体的连写：必须设置 font-size 和 font-family 两个属性，字体大小和行高必须在字体类型之前。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">font:font-weight font-style font-size/line-height font-family</div></pre></td></tr></table></figure>
 </li>
 <li><p>下划线：text-decoration:underline(增加)/none(删除)。</p>
 </li>
@@ -385,28 +385,34 @@
 </li>
 <li>定义列表：dl、dt(标题)、dd(内容)</li>
 <li>鼠标悬浮显示小手：{cursor：pointer}</li>
-<li>设置透明度(渐变)：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opacity:0.3;</div><div class="line">filter:alpha(opacity=30);</div></pre></td></tr></table></figure>
+<li><p>设置透明度(渐变)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">opacity:0.3;</div><div class="line">filter:alpha(opacity=30);</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置圆角：border-radius。</p>
 </li>
 </ul>
 <h5 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h5><ul>
 <li>form标签：属性：action(地址)、method(方法：get、post)。</li>
 <li>label标签：标注、显示信息。</li>
 <li><p>input标签：type为输入类型、name为表单key、value为值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type=&apos;password&apos;显示密文输入、&apos;radio&apos;单选、&apos;checkbox&apos;多选、&apos;text&apos;文本输入、&apos;file&apos;上传文件、&apos;button&apos;普通按钮。</div><div class="line">隐藏域：type=&apos;hidden&apos; name=&apos;,,,&apos;  value=&apos;True&apos;</div><div class="line">去掉选中框时的高亮：outline：none</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">type=&apos;password&apos;显示密文输入、&apos;radio&apos;单选、&apos;checkbox&apos;多选、&apos;text&apos;文本输入、&apos;file&apos;上传文件、&apos;button&apos;普通按钮、文本域&lt;textarea clos =&apos;列数 rows = &apos;行数&apos;&gt;</div><div class="line">隐藏域：type=&apos;hidden&apos; name=&apos;,,,&apos;  value=&apos;True&apos;</div><div class="line">去掉选中框时的高亮：outline：none</div></pre></td></tr></table></figure>
 </li>
 <li><p>下拉列表标签：select类型，option内容</p>
 </li>
 <li>margin外边距合并：以外边距较大的一方为准。</li>
-<li>margin-top塌陷：父元素的边界未设置，子元素找了浏览器边界作为基准。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">解决方案</div><div class="line">设置border/padding</div><div class="line">overflow:hidden</div><div class="line">伪类：content:&apos;&apos;  display:table</div></pre></td></tr></table></figure>
+<li>margin-top塌陷：父元素的边界未设置，子元素找了浏览器边界作为基准。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">解决方案</div><div class="line">设置border/padding</div><div class="line">overflow:hidden</div><div class="line">伪类：.clearfix:before&#123;</div><div class="line">content:&quot;&quot;;</div><div class="line">display:table;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h5><ul>
 <li>元素分为块元素和行内元素、行内块元素(延伸)</li>
 <li>块元素包括：div、p、dl、ol、ul。</li>
-<li>特点<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">默认宽度和父元素100%。</div><div class="line">始终霸占一行。</div><div class="line">支持全部样式。</div></pre></td></tr></table></figure>
+<li><p>特点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">默认宽度和父元素100%。</div><div class="line">始终霸占一行。</div><div class="line">支持全部样式。</div></pre></td></tr></table></figure>
+</li>
+<li><p>样式重置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">body,p,h1,h2,h3,h4,h5,h6,ul,ol,dl,dd&#123;</div><div class="line">margin:0px;</div><div class="line">padding:0px;</div><div class="line">&#125;</div><div class="line">ul,ol&#123;</div><div class="line">list-style:none;</div><div class="line">&#125;</div><div class="line">h1,h2,h3,h4,h5,h6&#123;</div><div class="line">font-size:100%;</div><div class="line">font-weight:normal;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>注意点<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">初始化样式重置。</div><div class="line">系统自带的样式。</div><div class="line">body：最大的父元素，非常特殊。</div></pre></td></tr></table></figure></p>
 <h5 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h5><ul>
 <li><p>行内元素包括：span、em(强调)、i(专业名词)、b(关键字和产品名称)、strong(重要的内容)。<br>特点</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">始终在一行，遇到边界自动换行。</div><div class="line">不支持宽高。</div><div class="line">不支持margin上下。</div><div class="line">不支持padding上下。</div></pre></td></tr></table></figure>
@@ -441,17 +447,21 @@
 <li>固定定位：fixed，以浏览器为准，脱离文档流，不占位置。</li>
 <li>无定位：static。</li>
 <li>定位层级：z-index，值越大，越靠前。</li>
-<li>设置圆角：border-tadius。</li>
+<li>绝对定位和固定定位的块元素和⾏内元素会⾃动转化为⾏内块元素。</li>
 </ul>
 <h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><ul>
-<li>合并边框：{border-collapse：collapse}</li>
+<li><p>表格常用属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">width height：宽 高</div><div class="line">align:left right center</div><div class="line">border：边框 像素</div><div class="line">cellpadding：文字和边框之间的间距</div><div class="line">cellspacing：格子之间的间距</div></pre></td></tr></table></figure>
+</li>
+<li><p>合并边框：{border-collapse：collapse}</p>
+</li>
 <li>分割边框：{border-collapse:separate}/{border-collapse:apx bpx}</li>
 <li>文字垂直居上/中/下：vertical-align：top/center/bottom</li>
 <li>跨列合并：colspan，找到第几行的第几个。</li>
 <li>跨行合并：rowspan，找到第几列的第几个。</li>
 </ul>
 <h5 id="选择器的权重"><a href="#选择器的权重" class="headerlink" title="选择器的权重"></a>选择器的权重</h5><ul>
-<li>比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">选择器        权重</div><div class="line">标签          1</div><div class="line">类            10</div><div class="line">id           100</div><div class="line">行内式        1000   写在标签里，&lt;div style=&apos;color:blue&apos;&gt;</div><div class="line">!import      10000   提升属性的权重</div></pre></td></tr></table></figure>
+<li>比较<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">选择器        权重</div><div class="line">标签          1</div><div class="line">类            10</div><div class="line">id           100</div><div class="line">行内式        1000   写在标签里，&lt;div style=&apos;color:blue&apos;&gt;</div><div class="line">!import      10000   写在属性值后面，提升属性的权重&#123;color:red !important;&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="背景图"><a href="#背景图" class="headerlink" title="背景图"></a>背景图</h5><ul>
@@ -500,6 +510,86 @@
 <li>scaleX、scaleY、scaleZ 设置三维缩放</li>
 <li>tranform-origin设置变形的中心点,接受两个参数，它们可以是百分比，em，px等具体的值，也可以是left,center,right，或者 top,center,bottom等描述性参数 ;</li>
 <li>backface-visibility 设置盒子背面是否可见</li>
+</ul>
+<h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><ul>
+<li>书写方式：行内式、嵌入式、外链式。script标签放在任何地方都可以，最好放合适地方。<br><img src="" alt="小结"></li>
+<li>alert：弹框，相当于print。</li>
+<li>onlick：监听按钮。</li>
+<li><p>变量；定义使用关键字’var’，定义多个变量使用，隔开。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">5种基本数据类型:Number、String、Boolean、Undefined(未定义)、Null(空对象)</div><div class="line">1种复合类型 object。</div><div class="line">typeof()查看类型。</div></pre></td></tr></table></figure>
+</li>
+<li><p>变量,函数,属性,参数的命名规范。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">区分大小写</div><div class="line">首字符必须是字母/_/$</div><div class="line">其他字符可以是字母,下划线,美元符号,数字</div></pre></td></tr></table></figure>
+</li>
+<li><p>匈牙利的命名风格。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">对象o Object 比如：oDiv</div><div class="line">数组a Array 比如：aItems</div><div class="line">字符串s String 比如：sUserName</div><div class="line">整数i Integer 比如：iItemCount</div><div class="line">布尔值b Boolean 比如：bIsComplete</div><div class="line">浮点数f Float 比如：fPrice</div><div class="line">函数fn Function 比如：fnHandler</div><div class="line">正则表达式re RegExp 比如：reEmailCheck</div></pre></td></tr></table></figure>
+</li>
+<li><p>多行注释可以嵌套单行注释。</p>
+</li>
+<li><p>获取元素的方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">给元素设置ID属性。</div><div class="line">可以使用内置对象document上的getElementById方法来获取页面上设置了id属性的元素，获取到的是一个html对象，然后将它赋值给一个变量，需要放在 window.onload = function()&#123;&#125;里面。</div></pre></td></tr></table></figure>
+</li>
+<li><p>操作元素的属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">有了元素,我们就能读写元素的属性</div><div class="line">1.读写属性</div><div class="line">  -通过点.读写</div><div class="line">  -通过[] 写入</div><div class="line">  属性写法的注意点:</div><div class="line">  html的属性和js里面属性写法一样</div><div class="line">  “class” 属性写成 “className”</div><div class="line">  “style” 属性里面的属性，有横杠的改成驼峰式，比如：“font-size”，改成”style.fontSize”</div><div class="line">2.读写标签包裹的内容</div><div class="line">读取如：oDiv.innerHtml</div><div class="line">写入如：oDiv.innerHTML = &quot;新内容</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h4><ul>
+<li>函数的预编译：在定义之前执行函数，系统自动查找定义的内容。变量的预编译，在定义之前使用变量，系统会自动赋值undefined类型</li>
+<li>匿名函数：不能单独写。</li>
+<li>函数的return：返回函数执行的结果、结束函数的运行、阻止默认行为。</li>
+</ul>
+<h4 id="条件语句"><a href="#条件语句" class="headerlink" title="条件语句"></a>条件语句</h4><ul>
+<li>基本条件运算符：==、&gt;、&gt;=、&lt;、&lt;= !=；if else。</li>
+<li><p>条件运算符进阶：==、===、&amp;&amp;(且)、||(或者)、!(否)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">对比 == ===;== 会自动隐式转换类型值对比; ===会先对比类型,类型不一致就是false。</div></pre></td></tr></table></figure>
+</li>
+<li><p>switch语句:比if else速度更快。</p>
+</li>
+</ul>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ul>
+<li>定义数组：var aList1 = new Array(1,2,3)或者var aList2 = [1,2,’3’]。</li>
+<li>基本操作：length获取数组的长度、 aList[0]用下标操作数组的某个数据、push()和pop()从数组最后增加成员或删除成员、reverse()颠倒数组内部元素倒置、indexOf()返回数组中元素第一次出现的索引值、join()将数组内元素通过分隔符合并成字符串、splice()在数组固定位置增加或者删除成员。</li>
+</ul>
+<h4 id="js的组成"><a href="#js的组成" class="headerlink" title="js的组成"></a>js的组成</h4><ul>
+<li>BOM 浏览器对象模型 操作浏览器的一些方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">alert()</div><div class="line">document.write()</div><div class="line">consle.log()</div><div class="line">document.title</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li>字符串的拼接通过 + 号。</li>
+<li>字符串的类型转换：parseInt(整数类型)、parseFloat(小数类型)。</li>
+<li>查找字符串：indexOf()包含这个字符并且返回第⼀次出现的下标,如果没有返回-1。</li>
+<li>截取字符串 subString(开始位置,结束位置),如果一个参数subString(2)代表从2开始截取剩下的全部。</li>
+<li>字符串的倒置： sTr.split().reverse().join()。</li>
+</ul>
+<h4 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h4><ul>
+<li>一次定时器：setTimeout；关闭定时器 clearTimeout。</li>
+<li>循环定时器：setinterval；关闭定时器:clearInterval。</li>
+<li>监听鼠标悬浮：悬浮的时候onmouseover， 移开的时候onmouseout。</li>
+</ul>
+<h4 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h4><ul>
+<li><p>时钟获取时间</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">获取当前时间var nowTime = new Date()</div><div class="line">年 nowTime.getFullyear()</div><div class="line">月 nowTime.getMonth() + 1;大坑: 月份0-11</div><div class="line">日 nowTime.getDate()</div><div class="line">星期 nowTime.getDay()</div><div class="line">时 nowTime.getHours()</div><div class="line">分 nowTime.getMunites()</div><div class="line">秒 nowTime.getSeconds()</div></pre></td></tr></table></figure>
+</li>
+<li><p>倒计时</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">获取时间差: 当前日期 new Date(); 活动日期: futureDate(2017,6(月份减1),7,0,0,0)</div><div class="line">获取时间差转换 var time = parseInt((futurDate - nowDate)/1000);换算成秒</div><div class="line">计算天数 parseInt(time/86400)</div><div class="line">计算小时 parseInt((time%86400)/3600)</div><div class="line">计算分钟 parseInt (((time%86400)%3600)/60)</div><div class="line">计算秒数 parseInt(time/60)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><ul>
+<li><p>匿名函数：直接运行、避免重复函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(函数)()</div><div class="line">;(函数)()</div><div class="line">!(函数)()</div><div class="line">~(函数)()</div></pre></td></tr></table></figure>
+</li>
+<li><p>jqurey通过选择器获取标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">通过ID获取标签:$(&quot;#first&quot;);</div><div class="line">通过类名获取标签:$(&quot;.box&quot;);</div><div class="line">通过标签获取标签:$(&quot;li&quot;);</div><div class="line">通过层级获取标签:$(&quot;.box span&quot;);</div><div class="line">让某个标签内部含有的那个标签选中:$box.has(&quot;span&quot;).css(&#123;&apos;textIndent&apos;:&apos;3em&apos;&#125;);</div><div class="line">指定多个同类标签的⻆标选中:$li.eq(3).css(&#123;&apos;color&apos;:&apos;black&apos;&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>length判断元素有无。</p>
+</li>
+<li><p>操作元素的属性.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">获取元素属性 $(&quot;#div1&quot;).css(&#123;fontSize&#125;)</div><div class="line">修改元素属性 $div.css(&#123;&apos;color&apos;:&apos;red&apos;&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>this代表的当前的获取的标签，indexof()可获得匹配元素相对于其同胞元素的索引位置。</p>
+</li>
+<li>jqurey动画：最后可跟回调函数。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">动画函数animate()</div><div class="line">1000 毫秒动画时间</div><div class="line">swing 渐变</div><div class="line">linear 匀速直线性</div></pre></td></tr></table></figure>
+</li>
 </ul>
 
           
